@@ -12,6 +12,9 @@ class DockerAnalyser
   centos_command = 'yum list installed'
   debian_command = 'dpkg -l'
   alpine_command = 'apk --update info'
+  
+  ubuntu = ['a5a467fddcb8848a80942d0191134c925fa16ffa9655c540acd34284f4f6375d','38f2c35e1b5168a220026e2b873f349e0ac880f27e9bd337e672ad88734fa9c5']
+  
     
   def determine_baseimage_flavour(image_id)
         image = Docker::Image.get(image_id)
