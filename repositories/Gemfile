@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+
+gem 'redis'
+gem 'bunny'
+
+
+# For testing purposes
+gem 'rest-client'
+
