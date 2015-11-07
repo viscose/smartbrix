@@ -4,6 +4,13 @@ class DockerModel
   
   @@base_images = {}
   
+  @@ubuntu_command = 'dpkg -l'
+  @@centos_command = 'yum list installed'
+  @@debian_command = 'dpkg -l'
+  @@alpine_command = 'apk --update info'
+  
+  @@base_image_flavours = {"ubuntu" => @@ubuntu_command,"centos" => @@centos_command, "debian" => @@debian_command, "fedora" => @@centos_command, "alpine" => @@alpine_command}
+  
   def initialize(args)
     file = args
     puts file
@@ -12,7 +19,15 @@ class DockerModel
       @@base_images[key]=row[0]
       
     end
-    puts @@base_images.inspect
+  end
+  
+  def determine_flavour(image_id)
+    flavour = @@base_images[image_id]    
+  end
+  
+  def get_access_command(image_id)
+    flavour = determine_flavour(image_id)
+    @@base_image_flavours[flavour]
   end
   
   
