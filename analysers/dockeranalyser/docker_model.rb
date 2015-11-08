@@ -25,9 +25,14 @@ class DockerModel
     flavour = @@base_images[image_id]    
   end
   
-  def get_access_command(image_id)
-    flavour = determine_flavour(image_id)
+  def get_access_command(flavour)
     @@base_image_flavours[flavour]
+  end
+  
+  def print_base_images()
+    @@base_images.each do |key, value|
+      puts "#{key}:#{value}"
+    end
   end
   
   
