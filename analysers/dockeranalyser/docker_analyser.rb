@@ -68,7 +68,7 @@ class DockerAnalyser
   
   ## Currently only a test method. 
   def start()
-    test_id = '456c6e416edb'
+    test_id = 'fb86ef4dd8b7'
     
     flavour = determine_baseimage_flavour(test_id)
     puts flavour

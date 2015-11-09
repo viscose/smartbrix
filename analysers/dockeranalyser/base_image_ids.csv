@@ -23,6 +23,7 @@ debian,oldstable-backports   ,325ebed123a5959119b54ed4ba113ef9043fc5d400d3712372
 debian,oldstable             ,4beb5d51a29111170d6e5416fc24736a283f872bb976f11bf43604af2ae45eeb
 debian,jessie-backports      ,9d6e571b7a1b4c4b569d54031f097bae5c7cc6b3d00631ab48773764d26a1cee
 debian,latest                ,d1f66aef36c95d9c80da2c35a51c432c7cb12f7033377b7c22263870cf1f2295
+debian,wheezy                ,74872ba2a3b0d8d80e0cf0bb252befe1f733d6aa43df7b51f35a883062f5862b
 fedora,20                    ,95ab8ef9075c5d004d4d2f78fc240e1f7fd27fd72d3aa596dc0f78e898ce6352
 fedora,rawhide               ,0de569eda6111bccd394c69f349fc9ef9b77638a2273dcba6350da23dd317090
 fedora,21                    ,db9d08baf815190c5e08d29d2049465d69107bc2fbda60409ba90fc57422d398
