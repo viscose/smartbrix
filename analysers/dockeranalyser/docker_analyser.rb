@@ -36,16 +36,60 @@ class DockerAnalyser
         
   end
   
-  def list_packages(image, command)
-    loaded_image = Docker::Image.get(image)
+  def list_packages(image_id, flavour)
+    loaded_image = Docker::Image.get(image_id)
     puts loaded_image
-
+    
+    command = @docker_model.get_access_command(flavour) 
+    puts "Trying to run"
+    shellcommand = "docker run -e \"COLUNS=300\" -it --rm #{loaded_image.id} #{command}"
+    puts shellcommand
     result = `docker run -it --rm #{loaded_image.id} #{command}`
+    puts "Run finished"
     
     
-    result_linewise = result.split("\n").reject{|item| !item.start_with?("ii")}.map{|item| item.gsub!(/\s+/, ',')}
+    case flavour
+    when "ubuntu","debian"
+      return parse_dpkg_response(result)
+    when "fedora","centos"
+      return parse_yum_response(result)
+    when "alpine"
+      return parse_apk_response(result)
+      
+    end
+    
+    
+  end
+  
+  
+  
+  ## Currently only a test method. 
+  def start()
+    test_id = '542604722136'
+    
+    flavour = determine_baseimage_flavour(test_id)
+    puts flavour
+    
+    if flavour 
+      puts "Got flavour determining command"
+      command = @docker_model.get_access_command(flavour)
+      puts "got command:#{command}"
+      list_packages(test_id,flavour)
+    end
+    
+  end
+  
+  
+  private 
+  
+  def parse_dpkg_response(result)
+    
     
     packages = {}
+    
+    result_linewise = result.split("\n").reject{|item| !item.start_with?("ii")}.map{|item| item.gsub!(/\s+/, ',')}
+   
+    
     puts result_linewise
     result_linewise.each do |package|
       
@@ -62,21 +106,52 @@ class DockerAnalyser
   end
   
   
-  def start()
-    test_id = '5eb72b199374'
+  def parse_yum_response(result)
+
+    packages = {}
     
-    flavour = determine_baseimage_flavour(test_id)
-    puts flavour
+    result_linewise = result.split("\n")
     
-    if flavour 
-      puts "Got flavour determining command"
-      command = @docker_model.get_access_command(flavour)
-      puts "got command:#{command}"
-      list_packages(test_id,command)
-    end
     
+    match = result_linewise.find {|element| element.start_with?("Installed")}
+    match_index = result_linewise.index(match)
+    
+    result_linewise.shift(match_index+1)
+    
+    result_linewise = result_linewise.map{|item| item.gsub!(/\s+/, ',')}
+    
+    result_linewise.each do |package|
+      
+      package_elements = package.split(",")
+      
+      puts package_elements
+    
+      packages[package_elements[0]]=package_elements[1]
+      
+    end 
+      
+    return packages
   end
   
+  def parse_apk_response(result)
+    
+    packages = {}
+    
+    result_linewise = result.split("\n").reject{|item| item.start_with?("WARNING")}
+    
+    result_linewise.each do |package|
+      
+      matches = package.match /^(?<package>(?:[^\d][^-]*)(?:-[^\d][^-]*)*)-(?<version>\d+(?:\.[^-]+)*)(?:-(?<patch>.*))?$/
+      
+      if matches
+          packages[matches[:package]]=matches[:version] # TODO Should include patch as well
+      end
+          
+    end 
+    
+    
+    return packages
+  end
   
 end
 
