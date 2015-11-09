@@ -44,10 +44,10 @@ class DockerAnalyser
     
     command = @docker_model.get_access_command(flavour) 
     puts "Trying to run"
-    #docker run -e "COLUMNS=300" --entrypoint=/bin/sh -it --rm 36ed56e55343e516e879781460016d72f4624e6987f86dbb40b5205599843056 -c 'dpkg -l'
     shellcommand = "docker run -e \"COLUMNS=300\" --entrypoint=\/bin\/sh -it --rm #{loaded_image.id} -c \'#{command}\'"
     puts shellcommand
-    result = `docker run -e \"COLUMNS=300\" --entrypoint=\/bin\/sh -it --rm #{loaded_image.id} -c \'#{command}\'`
+    #result = `docker run -e \"COLUMNS=300\" --entrypoint=\/bin\/sh -it --rm #{loaded_image.id} -c \'#{command}\'`
+    result = `#{shellcommand}`
     puts "Run finished"
     
     
@@ -68,7 +68,7 @@ class DockerAnalyser
   
   ## Currently only a test method. 
   def start()
-    test_id = '36ed56e55343'
+    test_id = '456c6e416edb'
     
     flavour = determine_baseimage_flavour(test_id)
     puts flavour
@@ -78,16 +78,25 @@ class DockerAnalyser
       command = @docker_model.get_access_command(flavour)
       puts "got command:#{command}"
       packages = list_packages(test_id,flavour)
-      
+      found = false
       packages.each do |name,version|
         
         # TODO this needs to be injected of course
         response = RestClient.get 'http://0.0.0.0:8000/cves?name=fusion', {:params => {'name' => name}}#, 'version' => version}}
-        puts response
         
+        
+        if response != "[]"
+          puts response
+          found = true
+        end
         
       end
+      if found == false
+        puts 'Found no vulnerabilities'
+      end
     end
+    
+    return packages
     
   end
   
@@ -100,15 +109,10 @@ class DockerAnalyser
     packages = {}
     
     result_linewise = result.split("\n").reject{|item| !item.start_with?("ii")}.map{|item| item.gsub!(/\s+/, ',')}
-   
-    
-    puts result_linewise
+  
     result_linewise.each do |package|
       
       package_elements = package.split(",")
-      
-      puts package_elements
-    
       packages[package_elements[1]]=package_elements[2]
       
     end
@@ -135,9 +139,6 @@ class DockerAnalyser
     result_linewise.each do |package|
       
       package_elements = package.split(",")
-      
-      puts package_elements
-    
       packages[package_elements[0]]=package_elements[1]
       
     end 
