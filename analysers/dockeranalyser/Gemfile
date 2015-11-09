@@ -3,4 +3,12 @@ source 'https://rubygems.org'
 
 gem 'docker-api'
 
+# To query the cve hub
+
+gem 'rest-client'
+
+# For better dev console
+gem 'pry'
+
+
 

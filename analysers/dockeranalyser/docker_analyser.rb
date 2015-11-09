@@ -3,6 +3,8 @@ gem 'docker-api'
 require 'docker'
 require './docker_model.rb'
 
+require 'rest-client'
+
 
 class DockerAnalyser
   
@@ -74,7 +76,16 @@ class DockerAnalyser
       puts "Got flavour determining command"
       command = @docker_model.get_access_command(flavour)
       puts "got command:#{command}"
-      list_packages(test_id,flavour)
+      packages = list_packages(test_id,flavour)
+      
+      packages.each do |name,version|
+        
+        # TODO this needs to be injected of course
+        response = RestClient.get 'http://0.0.0.0:8000/cves?name=fusion', {:params => {'name' => name, 'version' => version}}
+        puts response
+        
+        
+      end
     end
     
   end
