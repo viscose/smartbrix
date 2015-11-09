@@ -8,8 +8,9 @@ class DockerModel
   @@centos_command = 'yum list installed'
   @@debian_command = 'dpkg -l'
   @@alpine_command = 'apk --update info'
+  @@fedora_command = 'dnf list installed'
   
-  @@base_image_flavours = {"ubuntu" => @@ubuntu_command,"centos" => @@centos_command, "debian" => @@debian_command, "fedora" => @@centos_command, "alpine" => @@alpine_command}
+  @@base_image_flavours = {"ubuntu" => @@ubuntu_command,"centos" => @@centos_command, "debian" => @@debian_command, "fedora" => @@fedora_command, "alpine" => @@alpine_command}
   
   def initialize(args)
     file = args
