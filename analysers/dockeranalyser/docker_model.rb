@@ -5,7 +5,7 @@ class DockerModel
   @@base_images = {}
   
   @@ubuntu_command = 'dpkg -l'
-  @@centos_command = 'yum list installed'
+  @@centos_command = 'yum list installed --color=never'
   @@debian_command = 'dpkg -l'
   @@alpine_command = 'apk -vv info'
   @@fedora_command = 'dnf list installed'
