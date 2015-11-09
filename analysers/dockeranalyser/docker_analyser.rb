@@ -44,9 +44,10 @@ class DockerAnalyser
     
     command = @docker_model.get_access_command(flavour) 
     puts "Trying to run"
-    shellcommand = "docker run -e \"COLUNS=300\" -it --rm #{loaded_image.id} #{command}"
+    #docker run -e "COLUMNS=300" --entrypoint=/bin/sh -it --rm 36ed56e55343e516e879781460016d72f4624e6987f86dbb40b5205599843056 -c 'dpkg -l'
+    shellcommand = "docker run -e \"COLUMNS=300\" --entrypoint=\/bin\/sh -it --rm #{loaded_image.id} -c \'#{command}\'"
     puts shellcommand
-    result = `docker run -it --rm #{loaded_image.id} #{command}`
+    result = `docker run -e \"COLUMNS=300\" --entrypoint=\/bin\/sh -it --rm #{loaded_image.id} -c \'#{command}\'`
     puts "Run finished"
     
     
@@ -67,7 +68,7 @@ class DockerAnalyser
   
   ## Currently only a test method. 
   def start()
-    test_id = '542604722136'
+    test_id = '36ed56e55343'
     
     flavour = determine_baseimage_flavour(test_id)
     puts flavour
@@ -81,7 +82,7 @@ class DockerAnalyser
       packages.each do |name,version|
         
         # TODO this needs to be injected of course
-        response = RestClient.get 'http://0.0.0.0:8000/cves?name=fusion', {:params => {'name' => name, 'version' => version}}
+        response = RestClient.get 'http://0.0.0.0:8000/cves?name=fusion', {:params => {'name' => name}}#, 'version' => version}}
         puts response
         
         
