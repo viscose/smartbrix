@@ -7,7 +7,7 @@ class DockerModel
   @@ubuntu_command = 'dpkg -l'
   @@centos_command = 'yum list installed'
   @@debian_command = 'dpkg -l'
-  @@alpine_command = 'apk --update info'
+  @@alpine_command = 'apk -vv info'
   @@fedora_command = 'dnf list installed'
   
   @@base_image_flavours = {"ubuntu" => @@ubuntu_command,"centos" => @@centos_command, "debian" => @@debian_command, "fedora" => @@fedora_command, "alpine" => @@alpine_command}
