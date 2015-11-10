@@ -12,30 +12,149 @@ class DockerAnalyser
   Docker.url = DOCKER_HOST
   
   @docker_model = nil
+  @vulnerabilities = {}
+  @sharp_packagelist = {}
+  @fuzzy_packagelist = {}
   
   def initialize()
     @docker_model = DockerModel.new("base_image_ids.csv")
+    @vulnerabilities = Hash.new
   end
   
+  def analyse(test_id)
+    flavour = determine_baseimage_flavour(test_id)
+    puts flavour
     
-  def determine_baseimage_flavour(image_id)
-        image = Docker::Image.get(image_id)
-        history = image.history.reverse
+    if flavour 
+      puts "Got flavour determining command"
+      command = @docker_model.get_access_command(flavour)
+      puts "got command:#{command}"
+      packages = list_packages(test_id,flavour)
+      
+      return analyse_sharp(packages) && analyse_fuzzy(packages)
+      # found = analyse_sharp(packages)
+#
+#       if found == false
+#
+#         return analyse_fuzzy(packages)
+#       else
+#         return found
+#       end
+      
+    else
+      puts "Could not determine packages analytics failed for:#{test_id}"
+      return false
+      
+    end
+
+    
+  end
+  
+    #result.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }
+  
+  ## Currently only a test method. 
+  def test()
+    test_id = '8c100304a4f9'
+    
+    if analyse(test_id) 
+      puts "HEUREKA"
+      
+      @vulnerabilities.each do |name, vulnerability|
+        puts name
         
-        flavour = nil
-        
-        history.each do |entry|
-          puts entry["Id"]      
-          
-          flavour = @docker_model.determine_flavour("#{entry["Id"]}")
-          if flavour != nil
-            break;
-          end
-          
+      end
+    else
+      puts "SHARP"
+      puts @sharp_packagelist
+      puts "FUZZY"
+      puts @fuzzy_packagelist
+      
+    end
+    
+    return true
+    
+  end
+  
+  
+  private 
+  
+  def analyse_sharp(packages)
+    @sharp_packagelist = packages
+    analyse_packages(packages)
+    
+  end
+  
+  
+  def analyse_fuzzy(packages)
+    
+    packages = packages.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }
+    @fuzzy_packagelist = packages
+    analyse_packages(packages)
+    
+  end
+  
+  def analyse_packages(packages)
+    found = false
+    
+    packages.each do |name,version|
+      
+      # TODO this needs to be injected of course
+      response = RestClient.get 'http://0.0.0.0:8000/cves', {:params => {'name' => name}}#, 'version' => version}}
+      
+      
+      if response != "[]"
+        # puts response
+        if name != nil
+          puts "Trying to insert: #{name}"
+          @vulnerabilities["#{name}"] = response
         end
-        
-        return flavour
-        
+        found = true
+      else
+        puts "#{name} without vulnerability"
+      end
+      
+    end
+    
+    return found
+  end
+  
+  
+  def determine_baseimage_flavour(image_id)
+    image = Docker::Image.get(image_id)
+    history = image.history.reverse
+  
+    flavour = nil
+
+    # First we look if we know the base image
+    history.each do |entry|
+      puts entry["Id"]
+
+      flavour = @docker_model.determine_flavour("#{entry["Id"]}")
+      if flavour != nil
+        break;
+      end
+
+    end
+
+    # If we couldnt determine it via the known base image ids, this disregards differences between debian / ubuntu fedora / centos but we dont care about this for our purposes
+  
+    if flavour == nil
+      puts "Determining flavour via which"
+
+      if system("docker run --entrypoint=\/bin\/sh -it --rm #{image.id} -c \'which dpkg\'")
+        flavour = "ubuntu"
+      end
+      if system("docker run --entrypoint=\/bin\/sh -it --rm #{image.id} -c \'which yum\'")
+        flavour = "centos"
+      end
+      if system("docker run --entrypoint=\/bin\/sh -it --rm #{image.id} -c \'which apk\'")
+        flavour = "alpine"
+      end
+    
+    end
+  
+    return flavour
+  
   end
   
   def list_packages(image_id, flavour)
@@ -46,7 +165,6 @@ class DockerAnalyser
     puts "Trying to run"
     shellcommand = "docker run -e \"COLUMNS=300\" --entrypoint=\/bin\/sh -it --rm #{loaded_image.id} -c \'#{command}\'"
     puts shellcommand
-    #result = `docker run -e \"COLUMNS=300\" --entrypoint=\/bin\/sh -it --rm #{loaded_image.id} -c \'#{command}\'`
     result = `#{shellcommand}`
     puts "Run finished"
     
@@ -65,43 +183,18 @@ class DockerAnalyser
   end
   
   
-  
-  ## Currently only a test method. 
-  def start()
-    test_id = 'fb86ef4dd8b7'
+  def filter_package_name(name)
     
-    flavour = determine_baseimage_flavour(test_id)
-    puts flavour
+    subs  = name.gsub!(/\:.*/,'')
     
-    if flavour 
-      puts "Got flavour determining command"
-      command = @docker_model.get_access_command(flavour)
-      puts "got command:#{command}"
-      packages = list_packages(test_id,flavour)
-      found = false
-      packages.each do |name,version|
-        
-        # TODO this needs to be injected of course
-        response = RestClient.get 'http://0.0.0.0:8000/cves?name=fusion', {:params => {'name' => name}}#, 'version' => version}}
-        
-        
-        if response != "[]"
-          puts response
-          found = true
-        end
-        
-      end
-      if found == false
-        puts 'Found no vulnerabilities'
-      end
+    if subs != nil
+      return subs
+    else
+      return name
     end
-    
-    return packages
-    
   end
-  
-  
-  private 
+
+
   
   def parse_dpkg_response(result)
     
@@ -113,7 +206,7 @@ class DockerAnalyser
     result_linewise.each do |package|
       
       package_elements = package.split(",")
-      packages[package_elements[1]]=package_elements[2]
+      packages[filter_package_name(package_elements[1])]=package_elements[2]
       
     end
     
@@ -139,7 +232,7 @@ class DockerAnalyser
     result_linewise.each do |package|
       
       package_elements = package.split(",")
-      packages[package_elements[0]]=package_elements[1]
+      packages[filter_package_name(package_elements[0])]=package_elements[1]
       
     end 
       
@@ -157,7 +250,7 @@ class DockerAnalyser
       matches = package.match /^(?<package>(?:[^\d][^-]*)(?:-[^\d][^-]*)*)-(?<version>\d+(?:\.[^-]+)*)(?:-(?<patch>.*))?$/
       
       if matches
-          packages[matches[:package]]=matches[:version] # TODO Should include patch as well
+          packages[filter_package_name(matches[:package])]=matches[:version] # TODO Should include patch as well
       end
           
     end 
