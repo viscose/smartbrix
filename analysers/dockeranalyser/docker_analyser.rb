@@ -31,7 +31,8 @@ class DockerAnalyser
       puts "got command:#{command}"
       packages = list_packages(test_id,flavour)
       
-      return analyse_sharp(packages) && analyse_fuzzy(packages)
+      ##return analyse_sharp(packages) && analyse_fuzzy(packages)
+      return analyse_fuzzy(packages)
       # found = analyse_sharp(packages)
 #
 #       if found == false
@@ -60,7 +61,17 @@ class DockerAnalyser
       puts "HEUREKA"
       
       @vulnerabilities.each do |name, vulnerability|
-        puts name
+        puts "Found vulnerability for #{name}"
+        puts "Specifics are"
+        
+        vulnerability = JSON.parse(vulnerability)
+        vulnerability.each do |details|
+          puts "For package #{details["vulnerable_software"]} with the following #{details["summary"]}"
+        end
+        
+
+        puts @fuzzy_packagelist[name]
+        
         
       end
     else
