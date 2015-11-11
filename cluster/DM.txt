@@ -1,0 +1,21 @@
+#Doesnt work :()
+docker-machine create --driver openstack\
+ --openstack-project-name schleicher\
+ --openstack-ssh-user ubuntu\
+ --openstack-image-id be6ae07b-7deb-4926-bfd7-b11afe228d6a\
+ --openstack-flavor-name m1.small\
+ --openstack-floatingip-pool cloud\
+ --openstack-sec-groups default\
+ smartbrix-eval
+ 
+#Should definetly work  
+docker-machine create --driver generic\
+  --generic-ip-address 128.130.172.190\
+  --generic-ssh-user ubuntu\
+  --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+  smartbrix-eval
+ 
+ 
+ 
+ 
+ #Ubuntu 14.04 be6ae07b-7deb-4926-bfd7-b11afe228d6a
