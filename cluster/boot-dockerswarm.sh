@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Boot CoreOS Cluster
+# Boot Dockerswarm
 #
-# Usage: boot-coreoscluster.sh
+# Usage: boot-swarm.sh
 
 set -e
 
@@ -11,82 +11,42 @@ token=$(curl https://discovery.etcd.io/new)
 user_data_file=$HOME/.cache/nova-default-user-data
 num_instances=3
 
-# for i in $(seq 1 $num_instances); do
-#   echo "${token}"
-#   cat >${user_data_file}_$i <<EOF
-# #cloud-config
-# coreos:
-#   etcd:
-#     # generate a new token for each unique cluster from https://discovery.etcd.io/new
-#     # WARNING: replace each time you 'vagrant destroy'
-#     discovery: ${token}
-#     addr: \$private_ipv4:4001
-#     peer-addr: \$private_ipv4:7001
-#   fleet:
-#     public-ip: \$private_ipv4
-#     metadata: provider=$i
-#   units:
-#     - name: etcd.service
-#       command: start
-#     - name: fleet.service
-#       command: start
-#     - name: docker-tcp.socket
-#       command: start
-#       enable: true
-#       content: |
-#         [Unit]
-#         Description=Docker Socket for the API
-#
-#         [Socket]
-#         ListenStream=2375
-#         Service=docker.service
-#         BindIPv6Only=both
-#
-#         [Install]
-#         WantedBy=sockets.target
-#
-# EOF
-# done
+ip_1=128.130.172.178
+ip_2=128.130.172.190
+ip_3=128.130.172.213
 
-# image_string=444.4.0
-ip_string=$2
+swarm_token="$(docker run swarm create)"
 
-# image_id=$(
-#   nova image-list|
-#   grep $image_string|
-#   head -1|
-#   awk 'BEGIN { FS="[ \t]*[|][ \t]*" } ; {print $2}'
-# )
-#
-# if [ "$image_id" = "" ]; then
-#   echo "Could not find image matching '$image_string'!"
-#   exit 3
-# fi
+echo "Generated swarm token was: ${swarm_token}"
 
-image_id=be6ae07b-7deb-4926-bfd7-b11afe228d6a
-
-image_name=$(
-  nova image-show $image_id|
-  grep "| name"|
-  awk 'BEGIN { FS="[ \t]*[|][ \t]*" } ; {print $3}'
-)
-echo "Found image '${image_name}'..."
-
-instance_name=instance-$(date +"%s")
-
-for i in $(seq 1 $num_instances); do
-  echo "Starting instance... $i"
-  nova boot \
-    --image $image_id \
-    --flavor m1.small \
-    --key_name dsg-cloud \
-    ${instance_name}_$i
-done
+# Master
+docker-machine create --driver generic\
+  --generic-ip-address ${ip_1}\
+  --generic-ssh-user ubuntu\
+  --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+  --swarm \
+  --swarm-master \
+  --swarm-discovery token://${swarm_token} \
+  swarm-master
 
 
-if [ $? -ne 0 ]; then
-  echo "Instance failed to start."
-  exit 4
-fi
+# Node
+docker-machine create --driver generic\
+  --generic-ip-address ${ip_2}\
+  --generic-ssh-user ubuntu\
+  --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+  --swarm \
+  --swarm-discovery token://${swarm_token} \
+  swarm-agent-01
 
-echo "Instances started."
+# Node
+docker-machine create --driver generic\
+  --generic-ip-address ${ip_3}\
+  --generic-ssh-user ubuntu\
+  --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+  --swarm \
+  --swarm-discovery token://${swarm_token} \
+  swarm-agent-02
+
+
+echo "Swarm started."
