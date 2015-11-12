@@ -112,9 +112,9 @@ class DockerAnalyser
       
       
       # TODO this needs to be injected of course
-      cvehub = ENV["SB_CVEHUB"]
+      cveurl = ENV["SB_CVEHUB"]
       # response = RestClient.get 'http://0.0.0.0:8000/cves', {:params => {'name' => name}}#, 'version' => version}}
-      response = RestClient.get cvehub, {:params => {'name' => name}}#, 'version' => version}}
+      response = RestClient.get "http://#{cveurl}/cves", {:params => {'name' => name}}#, 'version' => version}}
       
       
       if response != "[]"
