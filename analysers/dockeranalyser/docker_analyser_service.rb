@@ -22,6 +22,7 @@ class DockerAnalyserService < Sinatra::Application
   
   get '/analyse' do
     "To be implemented"
+    @docker_analyser.test
   end
 
 

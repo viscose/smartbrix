@@ -8,8 +8,8 @@ require 'rest-client'
 
 class DockerAnalyser
   
-  DOCKER_HOST="tcp://192.168.99.100:2376"  
-  Docker.url = DOCKER_HOST
+  #DOCKER_HOST="tcp://0.0.0.0:2376"  
+  #Docker.url = DOCKER_HOST
   
   @docker_model = nil
   @vulnerabilities = {}
@@ -57,32 +57,32 @@ class DockerAnalyser
   def test()
     test_id = '8c100304a4f9'
  
-    puts ENV["DOCKER_HOST"]
-    # if analyse(test_id)
-   #    puts "HEUREKA"
-   #
-   #    @vulnerabilities.each do |name, vulnerability|
-   #      puts "Found vulnerability for #{name}"
-   #      puts "Specifics are"
-   #
-   #      vulnerability = JSON.parse(vulnerability)
-   #      vulnerability.each do |details|
-   #        puts "For package #{details["vulnerable_software"]} with the following #{details["summary"]}"
-   #      end
-   #
-   #
-   #      puts @fuzzy_packagelist[name]
-   #
-   #
-   #    end
-   #  else
-   #    puts "SHARP"
-   #    puts @sharp_packagelist
-   #    puts "FUZZY"
-   #    puts @fuzzy_packagelist
-   #
-   #  end
-   #
+    puts ENV["DBURL"]
+    if analyse(test_id)
+      puts "HEUREKA"
+
+      @vulnerabilities.each do |name, vulnerability|
+        puts "Found vulnerability for #{name}"
+        puts "Specifics are"
+
+        vulnerability = JSON.parse(vulnerability)
+        vulnerability.each do |details|
+          puts "For package #{details["vulnerable_software"]} with the following #{details["summary"]}"
+        end
+
+
+        puts @fuzzy_packagelist[name]
+
+
+      end
+    else
+      puts "SHARP"
+      puts @sharp_packagelist
+      puts "FUZZY"
+      puts @fuzzy_packagelist
+
+    end
+
     return true
     
   end
@@ -110,8 +110,11 @@ class DockerAnalyser
     
     packages.each do |name,version|
       
+      
       # TODO this needs to be injected of course
-      response = RestClient.get 'http://0.0.0.0:8000/cves', {:params => {'name' => name}}#, 'version' => version}}
+      cvehub = ENV["SB_CVEHUB"]
+      # response = RestClient.get 'http://0.0.0.0:8000/cves', {:params => {'name' => name}}#, 'version' => version}}
+      response = RestClient.get cvehub, {:params => {'name' => name}}#, 'version' => version}}
       
       
       if response != "[]"
