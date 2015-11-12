@@ -10,5 +10,9 @@ gem 'rest-client'
 # For better dev console
 gem 'pry'
 
+# For the service interface
+gem 'sinatra'
+
+
 
 

@@ -56,32 +56,33 @@ class DockerAnalyser
   ## Currently only a test method. 
   def test()
     test_id = '8c100304a4f9'
-    
-    if analyse(test_id) 
-      puts "HEUREKA"
-      
-      @vulnerabilities.each do |name, vulnerability|
-        puts "Found vulnerability for #{name}"
-        puts "Specifics are"
-        
-        vulnerability = JSON.parse(vulnerability)
-        vulnerability.each do |details|
-          puts "For package #{details["vulnerable_software"]} with the following #{details["summary"]}"
-        end
-        
-
-        puts @fuzzy_packagelist[name]
-        
-        
-      end
-    else
-      puts "SHARP"
-      puts @sharp_packagelist
-      puts "FUZZY"
-      puts @fuzzy_packagelist
-      
-    end
-    
+ 
+    puts ENV["DOCKER_HOST"]
+    # if analyse(test_id)
+   #    puts "HEUREKA"
+   #
+   #    @vulnerabilities.each do |name, vulnerability|
+   #      puts "Found vulnerability for #{name}"
+   #      puts "Specifics are"
+   #
+   #      vulnerability = JSON.parse(vulnerability)
+   #      vulnerability.each do |details|
+   #        puts "For package #{details["vulnerable_software"]} with the following #{details["summary"]}"
+   #      end
+   #
+   #
+   #      puts @fuzzy_packagelist[name]
+   #
+   #
+   #    end
+   #  else
+   #    puts "SHARP"
+   #    puts @sharp_packagelist
+   #    puts "FUZZY"
+   #    puts @fuzzy_packagelist
+   #
+   #  end
+   #
     return true
     
   end

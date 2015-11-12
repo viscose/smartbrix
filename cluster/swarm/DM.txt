@@ -1,0 +1,19 @@
+After starting
+
+boot-dockerswarm-instances.sh
+boot-dockerswarm.sh
+
+you should see
+
+eval $(docker-machine env --swarm swarm-master)
+
+docker info 
+
+
+--- General creation commands ---
+
+docker-machine create --driver generic\
+  --generic-ip-address 128.130.172.213\
+  --generic-ssh-user ubuntu\
+  --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+  smartbrix-controller
