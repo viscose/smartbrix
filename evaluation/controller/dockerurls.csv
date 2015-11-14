@@ -1,0 +1,976 @@
+ubuntuofficial2.6 KSTARS31.7 MPULLSDETAILS,docker pull ubuntu
+nginxofficial1.6 KSTARS11.5 MPULLSDETAILS,docker pull nginx
+centosofficial1.6 KSTARS2.7 MPULLSDETAILS,docker pull centos
+redisofficial1.3 KSTARS10.4 MPULLSDETAILS,docker pull redis
+mysqlofficial1.3 KSTARS8.8 MPULLSDETAILS,docker pull mysql
+postgresofficial1.2 KSTARS4.4 MPULLSDETAILS,docker pull postgres
+nodeofficial1.2 KSTARS3.8 MPULLSDETAILS,docker pull node
+mongoofficial1.1 KSTARS5.0 MPULLSDETAILS,docker pull mongo
+phusion/baseimagepublic867STARS913.9 KPULLSDETAILS,docker pull phusion/baseimage
+debianofficial864STARS5.3 MPULLSDETAILS,docker pull debian
+jenkinsofficial791STARS1.1 MPULLSDETAILS,docker pull jenkins
+wordpressofficial584STARS3.8 MPULLSDETAILS,docker pull wordpress
+elasticsearchofficial529STARS2.0 MPULLSDETAILS,docker pull elasticsearch
+phpofficial501STARS1.3 MPULLSDETAILS,docker pull php
+registryofficial471STARS9.9 MPULLSDETAILS,docker pull registry
+sameersbn/gitlabpublic | automated build469STARS1.9 MPULLSDETAILS,docker pull sameersbn/gitlab
+javaofficial460STARS1.2 MPULLSDETAILS,docker pull java
+golangofficial425STARS1.2 MPULLSDETAILS,docker pull golang
+pythonofficial408STARS1.8 MPULLSDETAILS,docker pull python
+jwilder/nginx-proxypublic | automated build398STARS1.4 MPULLSDETAILS,docker pull jwilder/nginx-proxy
+busyboxofficial356STARS44.6 MPULLSDETAILS,docker pull busybox
+railsofficial340STARS929.3 KPULLSDETAILS,docker pull rails
+tomcatofficial334STARS2.3 MPULLSDETAILS,docker pull tomcat
+alpineofficial320STARS339.8 KPULLSDETAILS,docker pull alpine
+rubyofficial301STARS798.9 KPULLSDETAILS,docker pull ruby
+mariadbofficial286STARS740.0 KPULLSDETAILS,docker pull mariadb
+rabbitmqofficial283STARS2.1 MPULLSDETAILS,docker pull rabbitmq
+microsoft/aspnetpublic | automated build277STARS103.3 KPULLSDETAILS,docker pull microsoft/aspnet
+fedoraofficial238STARS439.3 KPULLSDETAILS,docker pull fedora
+logstashofficial212STARS1.0 MPULLSDETAILS,docker pull logstash
+sequenceiq/hadoop-dockerpublic | automated build178STARS70.0 KPULLSDETAILS,docker pull sequenceiq/hadoop-docker
+haproxyofficial170STARS1.0 MPULLSDETAILS,docker pull haproxy
+httpdofficial169STARS1.4 MPULLSDETAILS,docker pull httpd
+ghostofficial165STARS273.6 KPULLSDETAILS,docker pull ghost
+kibanaofficial162STARS346.6 KPULLSDETAILS,docker pull kibana
+kylemanna/openvpnpublic | automated build159STARS265.9 KPULLSDETAILS,docker pull kylemanna/openvpn
+djangoofficial158STARS684.1 KPULLSDETAILS,docker pull django
+progrium/consulpublic | automated build155STARS6.1 MPULLSDETAILS,docker pull progrium/consul
+memcachedofficial151STARS621.4 KPULLSDETAILS,docker pull memcached
+wnameless/oracle-xe-11gpublic | automated build145STARS104.0 KPULLSDETAILS,docker pull wnameless/oracle-xe-11g
+gitlab/gitlab-cepublic | automated build144STARS3.1 MPULLSDETAILS,docker pull gitlab/gitlab-ce
+sameersbn/redminepublic | automated build143STARS135.4 KPULLSDETAILS,docker pull sameersbn/redmine
+jboss/wildflypublic | automated build140STARS77.7 KPULLSDETAILS,docker pull jboss/wildfly
+sequenceiq/sparkpublic | automated build135STARS28.4 KPULLSDETAILS,docker pull sequenceiq/spark
+base/archlinuxpublic | automated build132STARS20.9 KPULLSDETAILS,docker pull base/archlinux
+scratchofficial125STARS229.7 KPULLSDETAILS,docker pull scratch
+rethinkdbofficial124STARS316.0 KPULLSDETAILS,docker pull rethinkdb
+cassandraofficial124STARS325.1 KPULLSDETAILS,docker pull cassandra
+iojsofficial111STARS380.4 KPULLSDETAILS,docker pull iojs
+owncloudofficial111STARS121.7 KPULLSDETAILS,docker pull owncloud
+pblittle/docker-logstashpublic | automated build105STARS209.1 KPULLSDETAILS,docker pull pblittle/docker-logstash
+itzg/minecraft-serverpublic | automated build105STARS267.3 KPULLSDETAILS,docker pull itzg/minecraft-server
+hopsoft/graphite-statsdpublic | automated build102STARS78.3 KPULLSDETAILS,docker pull hopsoft/graphite-statsd
+google/golangpublic | automated build97STARS104.5 KPULLSDETAILS,docker pull google/golang
+richarvey/nginx-php-fpmpublic | automated build97STARS7.6 KPULLSDETAILS,docker pull richarvey/nginx-php-fpm
+kalilinux/kali-linux-dockerpublic | automated build96STARS14.8 KPULLSDETAILS,docker pull kalilinux/kali-linux-docker
+sonarqubeofficial96STARS68.1 KPULLSDETAILS,docker pull sonarqube
+resin/rpi-raspbianpublic94STARS26.3 KPULLSDETAILS,docker pull resin/rpi-raspbian
+buildpack-depsofficial93STARS245.8 KPULLSDETAILS,docker pull buildpack-deps
+alexeiled/docker-oracle-xe-11gpublic | automated build92STARS18.9 KPULLSDETAILS,docker pull alexeiled/docker-oracle-xe-11g
+monoofficial91STARS171.0 KPULLSDETAILS,docker pull mono
+odooofficial90STARS241.1 KPULLSDETAILS,docker pull odoo
+shipyard/shipyardpublic89STARS183.9 KPULLSDETAILS,docker pull shipyard/shipyard
+grafana/grafanapublic89STARS153.0 KPULLSDETAILS,docker pull grafana/grafana
+drupalofficial89STARS95.3 KPULLSDETAILS,docker pull drupal
+oraclelinuxofficial88STARS1.3 MPULLSDETAILS,docker pull oraclelinux
+phusion/passenger-fullpublic87STARS64.9 KPULLSDETAILS,docker pull phusion/passenger-full
+tutum/influxdbpublic | automated build87STARS730.8 KPULLSDETAILS,docker pull tutum/influxdb
+makuk66/docker-solrpublic | automated build86STARS26.2 KPULLSDETAILS,docker pull makuk66/docker-solr
+sonatype/nexuspublic | automated build84STARS146.0 KPULLSDETAILS,docker pull sonatype/nexus
+tpires/neo4jpublic | automated build82STARS15.9 KPULLSDETAILS,docker pull tpires/neo4j
+cptactionhank/atlassian-jirapublic | automated build80STARS46.5 KPULLSDETAILS,docker pull cptactionhank/atlassian-jira
+qnib/elkpublic | automated build78STARS32.9 KPULLSDETAILS,docker pull qnib/elk
+jplock/zookeeperpublic | automated build77STARS1.3 MPULLSDETAILS,docker pull jplock/zookeeper
+wurstmeister/kafkapublic | automated build77STARS58.0 KPULLSDETAILS,docker pull wurstmeister/kafka
+timhaak/plexpublic | automated build77STARS131.2 KPULLSDETAILS,docker pull timhaak/plex
+spotify/cassandrapublic | automated build77STARS6.1 MPULLSDETAILS,docker pull spotify/cassandra
+docker/whalesaypublic77STARS131.7 KPULLSDETAILS,docker pull docker/whalesay
+l3iggs/owncloudpublic | automated build76STARS467.9 KPULLSDETAILS,docker pull l3iggs/owncloud
+dockerfiles/django-uwsgi-nginxpublic | automated build75STARS18.5 KPULLSDETAILS,docker pull dockerfiles/django-uwsgi-nginx
+atlassian/stashpublic | automated build75STARS5.1 KPULLSDETAILS,docker pull atlassian/stash
+clojureofficial74STARS76.4 KPULLSDETAILS,docker pull clojure
+swarmofficial74STARS16.6 MPULLSDETAILS,docker pull swarm
+gliderlabs/alpinepublic72STARS92.1 KPULLSDETAILS,docker pull gliderlabs/alpine
+mavenofficial70STARS180.7 KPULLSDETAILS,docker pull maven
+ansible/ubuntu14.04-ansiblepublic | automated build69STARS12.6 KPULLSDETAILS,docker pull ansible/ubuntu14.04-ansible
+paintedfox/postgresqlpublic | automated build68STARS27.8 KPULLSDETAILS,docker pull paintedfox/postgresql
+tutum/mongodbpublic | automated build66STARS81.9 KPULLSDETAILS,docker pull tutum/mongodb
+ipython/notebookpublic | automated build66STARS5.4 KPULLSDETAILS,docker pull ipython/notebook
+dockerui/dockeruipublic | automated build66STARS1.6 MPULLSDETAILS,docker pull dockerui/dockerui
+perlofficial65STARS194.7 KPULLSDETAILS,docker pull perl
+google/nodejs-runtimepublic | automated build64STARS1.4 MPULLSDETAILS,docker pull google/nodejs-runtime
+ipython/scipyserverpublic | automated build63STARS49.2 KPULLSDETAILS,docker pull ipython/scipyserver
+mysql/mysql-serverpublic | automated build63STARS52.8 KPULLSDETAILS,docker pull mysql/mysql-server
+cptactionhank/atlassian-confluencepublic | automated build62STARS30.4 KPULLSDETAILS,docker pull cptactionhank/atlassian-confluence
+opensuseofficial62STARS81.1 KPULLSDETAILS,docker pull opensuse
+meteorhacks/meteordpublic | automated build62STARS79.3 KPULLSDETAILS,docker pull meteorhacks/meteord
+ansible/centos7-ansiblepublic | automated build60STARS10.2 KPULLSDETAILS,docker pull ansible/centos7-ansible
+perconaofficial60STARS90.1 KPULLSDETAILS,docker pull percona
+rancher/serverpublic59STARS61.1 KPULLSDETAILS,docker pull rancher/server
+sebp/elkpublic | automated build58STARS39.9 KPULLSDETAILS,docker pull sebp/elk
+websphere-libertyofficial57STARS140.7 KPULLSDETAILS,docker pull websphere-liberty
+konradkleine/docker-registry-frontendpublic | automated build56STARS293.9 KPULLSDETAILS,docker pull konradkleine/docker-registry-frontend
+haskellofficial56STARS116.1 KPULLSDETAILS,docker pull haskell
+spotify/kafkapublic | automated build56STARS27.1 KPULLSDETAILS,docker pull spotify/kafka
+google/nodejspublic | automated build54STARS87.9 KPULLSDETAILS,docker pull google/nodejs
+kamon/grafana_graphitepublic54STARS22.0 KPULLSDETAILS,docker pull kamon/grafana_graphite
+heroku/cedarpublic | automated build54STARS55.4 KPULLSDETAILS,docker pull heroku/cedar
+tianon/truepublic | automated build52STARS53.0 KPULLSDETAILS,docker pull tianon/true
+google/cloud-sdkpublic | automated build52STARS87.6 KPULLSDETAILS,docker pull google/cloud-sdk
+couchbaseofficial52STARS131.4 KPULLSDETAILS,docker pull couchbase
+progrium/busyboxpublic | automated build51STARS101.2 KPULLSDETAILS,docker pull progrium/busybox
+hipacheofficial50STARS54.2 KPULLSDETAILS,docker pull hipache
+maxexcloo/nginx-phppublic | automated build50STARS9.6 KPULLSDETAILS,docker pull maxexcloo/nginx-php
+gccofficial50STARS103.5 KPULLSDETAILS,docker pull gcc
+google/golang-runtimepublic | automated build49STARS901.1 KPULLSDETAILS,docker pull google/golang-runtime
+celeryofficial49STARS54.7 KPULLSDETAILS,docker pull celery
+redmineofficial49STARS77.0 KPULLSDETAILS,docker pull redmine
+mattdm/fedorapublic48STARS6.2 KPULLSDETAILS,docker pull mattdm/fedora
+tutum/grafanapublic | automated build48STARS556.0 KPULLSDETAILS,docker pull tutum/grafana
+samsaffron/discoursepublic47STARS342.3 KPULLSDETAILS,docker pull samsaffron/discourse
+google/debianpublic | automated build47STARS1.1 MPULLSDETAILS,docker pull google/debian
+jchaney/owncloudpublic | automated build44STARS12.0 KPULLSDETAILS,docker pull jchaney/owncloud
+klaemo/couchdbpublic | automated build44STARS33.7 KPULLSDETAILS,docker pull klaemo/couchdb
+clue/ttrsspublic | automated build43STARS27.8 KPULLSDETAILS,docker pull clue/ttrss
+mhart/alpine-nodepublic43STARS55.4 KPULLSDETAILS,docker pull mhart/alpine-node
+jdubois/jhipster-dockerpublic | automated build43STARS6.2 KPULLSDETAILS,docker pull jdubois/jhipster-docker
+orchardup/mysqlpublic | automated build42STARS28.3 KPULLSDETAILS,docker pull orchardup/mysql
+ubuntu-upstartofficial42STARS91.6 KPULLSDETAILS,docker pull ubuntu-upstart
+sameersbn/gitlab-cipublic | automated build42STARS106.0 KPULLSDETAILS,docker pull sameersbn/gitlab-ci
+trenpixster/elixirpublic42STARS8.7 KPULLSDETAILS,docker pull trenpixster/elixir
+rocker/rstudiopublic | automated build42STARS7.2 KPULLSDETAILS,docker pull rocker/rstudio
+mdillon/postgispublic | automated build42STARS29.8 KPULLSDETAILS,docker pull mdillon/postgis
+ulexus/meteorpublic | automated build42STARS440.4 KPULLSDETAILS,docker pull ulexus/meteor
+prom/prometheuspublic | automated build42STARS1.0 MPULLSDETAILS,docker pull prom/prometheus
+mesosphere/marathonpublic | automated build42STARS2.3 MPULLSDETAILS,docker pull mesosphere/marathon
+berngp/docker-zabbixpublic | automated build41STARS5.2 KPULLSDETAILS,docker pull berngp/docker-zabbix
+berngp/docker-zabbixpublic | automated build41STARS5.2 KPULLSDETAILS,docker pull berngp/docker-zabbix
+sequenceiq/ambaripublic | automated build41STARS18.0 KPULLSDETAILS,docker pull sequenceiq/ambari
+jpetazzo/dindpublic | automated build41STARS108.5 KPULLSDETAILS,docker pull jpetazzo/dind
+selenium/hubpublic | automated build40STARS91.6 KPULLSDETAILS,docker pull selenium/hub
+jettyofficial40STARS214.7 KPULLSDETAILS,docker pull jetty
+eboraas/apache-phppublic | automated build40STARS47.6 KPULLSDETAILS,docker pull eboraas/apache-php
+bittorrent/syncpublic | automated build39STARS348PULLSDETAILS,docker pull bittorrent/sync
+abh1nav/cassandrapublic | automated build38STARS1.5 MPULLSDETAILS,docker pull abh1nav/cassandra
+svendowideit/ambassadorpublic38STARS63.5 KPULLSDETAILS,docker pull svendowideit/ambassador
+cpuguy83/nagiospublic | automated build38STARS47.4 KPULLSDETAILS,docker pull cpuguy83/nagios
+xcgd/odoopublic | automated build38STARS26.4 KPULLSDETAILS,docker pull xcgd/odoo
+evarga/jenkins-slavepublic | automated build37STARS36.8 KPULLSDETAILS,docker pull evarga/jenkins-slave
+samalba/docker-registrypublic | automated build36STARS144.8 KPULLSDETAILS,docker pull samalba/docker-registry
+svendowideit/sambapublic | automated build36STARS10.7 KPULLSDETAILS,docker pull svendowideit/samba
+neo4j/neo4jpublic | automated build36STARS5.9 KPULLSDETAILS,docker pull neo4j/neo4j
+catatnight/postfixpublic | automated build35STARS10.2 KPULLSDETAILS,docker pull catatnight/postfix
+centurylink/drupalpublic | automated build35STARS1.5 MPULLSDETAILS,docker pull centurylink/drupal
+linode/lamppublic35STARS18.1 KPULLSDETAILS,docker pull linode/lamp
+timhaak/sabnzbdpublic | automated build35STARS61.6 KPULLSDETAILS,docker pull timhaak/sabnzbd
+graylog2/allinonepublic34STARS246.5 KPULLSDETAILS,docker pull graylog2/allinone
+graylog2/allinonepublic34STARS246.5 KPULLSDETAILS,docker pull graylog2/allinone
+tianon/centospublic33STARS8.7 KPULLSDETAILS,docker pull tianon/centos
+phusion/passenger-nodejspublic33STARS11.7 KPULLSDETAILS,docker pull phusion/passenger-nodejs
+clue/frontroutepublic | automated build33STARS1.1 KPULLSDETAILS,docker pull clue/frontroute
+corbinu/docker-phpmyadminpublic | automated build33STARS16.5 KPULLSDETAILS,docker pull corbinu/docker-phpmyadmin
+fedora/apachepublic | automated build33STARS239.9 KPULLSDETAILS,docker pull fedora/apache
+gliderlabs/registratorpublic | automated build33STARS11.9 MPULLSDETAILS,docker pull gliderlabs/registrator
+vvoyer/docker-selenium-firefox-chromepublic | automated build32STARS11.4 KPULLSDETAILS,docker pull vvoyer/docker-selenium-firefox-chrome
+slafs/sentrypublic | automated build32STARS45.5 KPULLSDETAILS,docker pull slafs/sentry
+needo/couchpotatopublic | automated build32STARS13.7 KPULLSDETAILS,docker pull needo/couchpotato
+glassfishofficial32STARS93.3 KPULLSDETAILS,docker pull glassfish
+centurylink/golang-builderpublic | automated build32STARS4.7 KPULLSDETAILS,docker pull centurylink/golang-builder
+vvoyer/docker-selenium-firefox-chromepublic | automated build32STARS11.4 KPULLSDETAILS,docker pull vvoyer/docker-selenium-firefox-chrome
+needo/couchpotatopublic | automated build32STARS13.7 KPULLSDETAILS,docker pull needo/couchpotato
+sath89/oracle-xe-11gpublic | automated build32STARS2.9 KPULLSDETAILS,docker pull sath89/oracle-xe-11g
+maestrodev/build-agentpublic | automated build31STARS763PULLSDETAILS,docker pull maestrodev/build-agent
+php-zendserverofficial31STARS59.4 KPULLSDETAILS,docker pull php-zendserver
+tleyden5iwx/caffe-cpu-masterpublic | automated build31STARS1.3 KPULLSDETAILS,docker pull tleyden5iwx/caffe-cpu-master
+hypriot/rpi-nodepublic31STARS1.4 KPULLSDETAILS,docker pull hypriot/rpi-node
+docker-devofficial31STARS101.4 KPULLSDETAILS,docker pull docker-dev
+stenote/docker-lemppublic | automated build31STARS2.8 KPULLSDETAILS,docker pull stenote/docker-lemp
+php-zendserverofficial31STARS59.4 KPULLSDETAILS,docker pull php-zendserver
+tleyden5iwx/caffe-cpu-masterpublic | automated build31STARS1.3 KPULLSDETAILS,docker pull tleyden5iwx/caffe-cpu-master
+hypriot/rpi-nodepublic31STARS1.4 KPULLSDETAILS,docker pull hypriot/rpi-node
+mailgun/vulcandpublic | automated build30STARS6.8 MPULLSDETAILS,docker pull mailgun/vulcand
+frvi/dashingpublic | automated build30STARS1.6 KPULLSDETAILS,docker pull frvi/dashing
+r-baseofficial30STARS49.3 KPULLSDETAILS,docker pull r-base
+jacekmarchwicki/androidpublic | automated build30STARS2.7 KPULLSDETAILS,docker pull jacekmarchwicki/android
+frolvlad/alpine-oraclejdk8public | automated build30STARS4.0 KPULLSDETAILS,docker pull frolvlad/alpine-oraclejdk8
+zabbix/zabbix-server-2.4public | automated build30STARS2.7 KPULLSDETAILS,docker pull zabbix/zabbix-server-2.4
+base/archpublic29STARS9.5 KPULLSDETAILS,docker pull base/arch
+jimeh/zncpublic | automated build29STARS2.7 KPULLSDETAILS,docker pull jimeh/znc
+sameersbn/postgresqlpublic | automated build29STARS486.2 KPULLSDETAILS,docker pull sameersbn/postgresql
+codeskyblue/docker-gogspublic | automated build29STARS181.9 KPULLSDETAILS,docker pull codeskyblue/docker-gogs
+centurylink/mysqlpublic | automated build29STARS3.9 MPULLSDETAILS,docker pull centurylink/mysql
+sylvainlasnier/memcachedpublic | automated build29STARS203.9 KPULLSDETAILS,docker pull sylvainlasnier/memcached
+azul/zulu-openjdkpublic | automated build29STARS5.5 KPULLSDETAILS,docker pull azul/zulu-openjdk
+atmoz/sftppublic | automated build29STARS26.0 KPULLSDETAILS,docker pull atmoz/sftp
+jupyter/jupyterhubpublic | automated build29STARS4.2 KPULLSDETAILS,docker pull jupyter/jupyterhub
+willdurand/elkpublic | automated build29STARS21.3 KPULLSDETAILS,docker pull willdurand/elk
+base/archpublic29STARS9.5 KPULLSDETAILS,docker pull base/arch
+sameersbn/postgresqlpublic | automated build29STARS486.2 KPULLSDETAILS,docker pull sameersbn/postgresql
+dperson/smokepingpublic | automated build28STARS1.8 KPULLSDETAILS,docker pull dperson/smokeping
+million12/varnishpublic | automated build28STARS106.7 KPULLSDETAILS,docker pull million12/varnish
+centurylink/panamax-uipublic | automated build28STARS548.7 KPULLSDETAILS,docker pull centurylink/panamax-ui
+diameter/rtorrent-rutorrentpublic | automated build28STARS14.1 KPULLSDETAILS,docker pull diameter/rtorrent-rutorrent
+paintedfox/mariadbpublic | automated build28STARS5.8 KPULLSDETAILS,docker pull paintedfox/mariadb
+jekyll/jekyllpublic | automated build28STARS7.6 KPULLSDETAILS,docker pull jekyll/jekyll
+linuxserver/plexpublic | automated build28STARS31.6 KPULLSDETAILS,docker pull linuxserver/plex
+gogs/gogspublic | automated build28STARS6.0 KPULLSDETAILS,docker pull gogs/gogs
+dockerofficial28STARS244.1 KPULLSDETAILS,docker pull docker
+solrofficial28STARS7.3 KPULLSDETAILS,docker pull solr
+million12/nginx-phppublic | automated build27STARS5.0 KPULLSDETAILS,docker pull million12/nginx-php
+clue/json-serverpublic | automated build27STARS691PULLSDETAILS,docker pull clue/json-server
+rocker/hadleyversepublic | automated build27STARS11.9 KPULLSDETAILS,docker pull rocker/hadleyverse
+amazon/amazon-ecs-agentpublic27STARS8.9 MPULLSDETAILS,docker pull amazon/amazon-ecs-agent
+kitematic/minecraftpublic | automated build27STARS7.4 KPULLSDETAILS,docker pull kitematic/minecraft
+poklet/cassandrapublic | automated build27STARS171.3 KPULLSDETAILS,docker pull poklet/cassandra
+dorowu/ubuntu-desktop-lxde-vncpublic | automated build27STARS6.5 KPULLSDETAILS,docker pull dorowu/ubuntu-desktop-lxde-vnc
+yesnault/docker-phabricatorpublic | automated build27STARS2.8 KPULLSDETAILS,docker pull yesnault/docker-phabricator
+oddrationale/docker-shadowsockspublic | automated build27STARS19.3 KPULLSDETAILS,docker pull oddrationale/docker-shadowsocks
+mattgruter/dronepublic | automated build27STARS12.1 KPULLSDETAILS,docker pull mattgruter/drone
+hello-worldofficial26STARS2.2 MPULLSDETAILS,docker pull hello-world
+nodesource/nodepublic | automated build26STARS26.3 KPULLSDETAILS,docker pull nodesource/node
+openshift/originpublic26STARS143.4 KPULLSDETAILS,docker pull openshift/origin
+google/pythonpublic | automated build26STARS42.7 KPULLSDETAILS,docker pull google/python
+stilliard/pure-ftpdpublic | automated build26STARS47.8 KPULLSDETAILS,docker pull stilliard/pure-ftpd
+needo/plexpublic | automated build26STARS24.8 KPULLSDETAILS,docker pull needo/plex
+torusware/speedus-redispublic | automated build26STARS1.6 KPULLSDETAILS,docker pull torusware/speedus-redis
+crosbymichael/dockeruipublic25STARS34.0 KPULLSDETAILS,docker pull crosbymichael/dockerui
+training/webapppublic | automated build25STARS81.5 KPULLSDETAILS,docker pull training/webapp
+rroemhild/ejabberdpublic | automated build25STARS38.7 KPULLSDETAILS,docker pull rroemhild/ejabberd
+jwilder/docker-genpublic | automated build25STARS957.6 KPULLSDETAILS,docker pull jwilder/docker-gen
+dperson/transmissionpublic | automated build25STARS12.7 KPULLSDETAILS,docker pull dperson/transmission
+tuxeh/sonarrpublic | automated build25STARS11.8 KPULLSDETAILS,docker pull tuxeh/sonarr
+crateofficial25STARS139.3 KPULLSDETAILS,docker pull crate
+marcbachmann/kibana4public | automated build25STARS58.5 KPULLSDETAILS,docker pull marcbachmann/kibana4
+gocd/gocd-serverpublic25STARS109.8 KPULLSDETAILS,docker pull gocd/gocd-server
+nazarpc/phpmyadminpublic | automated build25STARS9.7 KPULLSDETAILS,docker pull nazarpc/phpmyadmin
+torusware/speedus-ubuntupublic | automated build25STARS1.3 KPULLSDETAILS,docker pull torusware/speedus-ubuntu
+tomparys/skypepublic24STARS2.0 KPULLSDETAILS,docker pull tomparys/skype
+wnameless/mysql-phpmyadminpublic | automated build24STARS4.3 KPULLSDETAILS,docker pull wnameless/mysql-phpmyadmin
+mesosphere/mesos-masterpublic24STARS3.4 MPULLSDETAILS,docker pull mesosphere/mesos-master
+adelton/freeipa-serverpublic | automated build24STARS36.1 KPULLSDETAILS,docker pull adelton/freeipa-server
+composer/composerpublic | automated build24STARS6.9 KPULLSDETAILS,docker pull composer/composer
+gitlab/gitlab-runnerpublic | automated build24STARS81.1 KPULLSDETAILS,docker pull gitlab/gitlab-runner
+microsoft/azure-clipublic | automated build24STARS24.7 KPULLSDETAILS,docker pull microsoft/azure-cli
+eboraas/apachepublic | automated build24STARS96.5 KPULLSDETAILS,docker pull eboraas/apache
+beakernotebook/beakerpublic23STARS21.5 KPULLSDETAILS,docker pull beakernotebook/beaker
+sequenceiq/hadoop-ubuntupublic | automated build23STARS4.2 KPULLSDETAILS,docker pull sequenceiq/hadoop-ubuntu
+yaronr/backup-volume-containerpublic | automated build23STARS5.7 KPULLSDETAILS,docker pull yaronr/backup-volume-container
+rocker/shinypublic | automated build23STARS1.7 KPULLSDETAILS,docker pull rocker/shiny
+helmi03/docker-postgispublic | automated build23STARS1.5 KPULLSDETAILS,docker pull helmi03/docker-postgis
+crashsystems/gitlab-dockerpublic | automated build23STARS2.3 KPULLSDETAILS,docker pull crashsystems/gitlab-docker
+mbentley/ubuntu-django-uwsgi-nginxpublic | automated build23STARS1.8 KPULLSDETAILS,docker pull mbentley/ubuntu-django-uwsgi-nginx
+redjack/mesos-masterpublic | automated build23STARS130.7 KPULLSDETAILS,docker pull redjack/mesos-master
+clue/adminerpublic | automated build23STARS5.3 KPULLSDETAILS,docker pull clue/adminer
+fedora/mariadbpublic | automated build23STARS1.0 KPULLSDETAILS,docker pull fedora/mariadb
+sameersbn/bindpublic | automated build23STARS18.1 KPULLSDETAILS,docker pull sameersbn/bind
+mesoscloud/zookeeperpublic | automated build23STARS10.5 KPULLSDETAILS,docker pull mesoscloud/zookeeper
+rocket.chatofficial23STARS21.4 KPULLSDETAILS,docker pull rocket.chat
+paimpozhil/magento-dockerpublic | automated build22STARS5.6 KPULLSDETAILS,docker pull paimpozhil/magento-docker
+rocker/r-basepublic | automated build22STARS2.8 KPULLSDETAILS,docker pull rocker/r-base
+marvambass/nginx-registry-proxypublic | automated build22STARS105.1 KPULLSDETAILS,docker pull marvambass/nginx-registry-proxy
+netflixoss/eurekapublic | automated build22STARS5.2 KPULLSDETAILS,docker pull netflixoss/eureka
+dperson/sambapublic | automated build22STARS1.5 KPULLSDETAILS,docker pull dperson/samba
+pypyofficial22STARS208.7 KPULLSDETAILS,docker pull pypy
+danieldent/meteorpublic | automated build22STARS119.8 KPULLSDETAILS,docker pull danieldent/meteor
+pypyofficial22STARS208.7 KPULLSDETAILS,docker pull pypy
+dperson/sambapublic | automated build22STARS1.5 KPULLSDETAILS,docker pull dperson/samba
+oracle/oraclelinuxpublic | automated build22STARS1.3 KPULLSDETAILS,docker pull oracle/oraclelinux
+martin/docker-cleanup-volumespublic | automated build22STARS216.6 KPULLSDETAILS,docker pull martin/docker-cleanup-volumes
+wernight/plex-media-serverpublic | automated build22STARS1.8 KPULLSDETAILS,docker pull wernight/plex-media-server
+joomlaofficial22STARS80.2 KPULLSDETAILS,docker pull joomla
+emby/embyserverpublic | automated build22STARS26.3 KPULLSDETAILS,docker pull emby/embyserver
+sameersbn/mysqlpublic | automated build21STARS936.8 KPULLSDETAILS,docker pull sameersbn/mysql
+jrubyofficial21STARS229.2 KPULLSDETAILS,docker pull jruby
+sameersbn/squidpublic | automated build21STARS32.7 KPULLSDETAILS,docker pull sameersbn/squid
+progrium/registratorpublic | automated build21STARS6.8 MPULLSDETAILS,docker pull progrium/registrator
+ches/kafkapublic | automated build21STARS40.5 KPULLSDETAILS,docker pull ches/kafka
+google/docker-registrypublic21STARS5.1 MPULLSDETAILS,docker pull google/docker-registry
+selenium/node-chromepublic | automated build21STARS118.7 KPULLSDETAILS,docker pull selenium/node-chrome
+siomiz/softethervpnpublic | automated build21STARS1.6 KPULLSDETAILS,docker pull siomiz/softethervpn
+gliderlabs/logspoutpublic | automated build21STARS13.5 MPULLSDETAILS,docker pull gliderlabs/logspout
+ibmcom/db2express-cpublic21STARS30.0 KPULLSDETAILS,docker pull ibmcom/db2express-c
+orchardup/postgresqlpublic | automated build21STARS196.2 KPULLSDETAILS,docker pull orchardup/postgresql
+anapsix/gitlab-cipublic | automated build21STARS1.9 KPULLSDETAILS,docker pull anapsix/gitlab-ci
+linuxkonsult/kali-metasploitpublic | automated build21STARS3.3 KPULLSDETAILS,docker pull linuxkonsult/kali-metasploit
+durdn/atlassian-jirapublic | automated build21STARS1.5 KPULLSDETAILS,docker pull durdn/atlassian-jira
+sameersbn/mysqlpublic | automated build21STARS936.8 KPULLSDETAILS,docker pull sameersbn/mysql
+snasello/liferay-6.2public | automated build21STARS5.6 KPULLSDETAILS,docker pull snasello/liferay-6.2
+outcoldman/splunkpublic | automated build21STARS10.6 KPULLSDETAILS,docker pull outcoldman/splunk
+ipython/scipystackpublic | automated build20STARS4.8 KPULLSDETAILS,docker pull ipython/scipystack
+centurylink/gitlabpublic | automated build20STARS520.4 KPULLSDETAILS,docker pull centurylink/gitlab
+32bit/ubuntupublic20STARS7.5 KPULLSDETAILS,docker pull 32bit/ubuntu
+tleyden5iwx/caffe-gpu-masterpublic | automated build20STARS633PULLSDETAILS,docker pull tleyden5iwx/caffe-gpu-master
+nsqio/nsqpublic20STARS524.9 KPULLSDETAILS,docker pull nsqio/nsq
+irssiofficial20STARS148.6 KPULLSDETAILS,docker pull irssi
+drone/dronepublic | automated build20STARS240.6 KPULLSDETAILS,docker pull drone/drone
+jolicode/hhvmpublic | automated build20STARS4.3 KPULLSDETAILS,docker pull jolicode/hhvm
+phusion/passenger-ruby21public20STARS17.9 KPULLSDETAILS,docker pull phusion/passenger-ruby21
+hachque/phabricatorpublic | automated build20STARS91.2 KPULLSDETAILS,docker pull hachque/phabricator
+sjoerdmulder/teamcitypublic | automated build20STARS1.1 KPULLSDETAILS,docker pull sjoerdmulder/teamcity
+fedora/firefoxpublic | automated build20STARS2.8 KPULLSDETAILS,docker pull fedora/firefox
+fedora/redispublic | automated build20STARS340PULLSDETAILS,docker pull fedora/redis
+kylemanna/bitcoindpublic | automated build20STARS132.6 KPULLSDETAILS,docker pull kylemanna/bitcoind
+abh1nav/dockeruipublic | automated build20STARS176.3 KPULLSDETAILS,docker pull abh1nav/dockerui
+jpetazzo/squid-in-a-canpublic | automated build20STARS2.8 KPULLSDETAILS,docker pull jpetazzo/squid-in-a-can
+rosofficial20STARS50.7 KPULLSDETAILS,docker pull ros
+bigdatauniversity/sparkpublic20STARS2.8 KPULLSDETAILS,docker pull bigdatauniversity/spark
+distribution/registrypublic | automated build20STARS533.7 KPULLSDETAILS,docker pull distribution/registry
+jordan/icinga2public | automated build19STARS3.0 KPULLSDETAILS,docker pull jordan/icinga2
+elsdoerfer/thumborpublic | automated build19STARS3.2 KPULLSDETAILS,docker pull elsdoerfer/thumbor
+sdhibit/rpi-raspbianpublic | automated build19STARS766PULLSDETAILS,docker pull sdhibit/rpi-raspbian
+agileek/ionic-frameworkpublic | automated build19STARS801PULLSDETAILS,docker pull agileek/ionic-framework
+selenium/node-firefoxpublic | automated build19STARS73.4 KPULLSDETAILS,docker pull selenium/node-firefox
+orchardup/jenkinspublic | automated build19STARS17.5 KPULLSDETAILS,docker pull orchardup/jenkins
+golden/meteor-devpublic | automated build19STARS10.7 KPULLSDETAILS,docker pull golden/meteor-dev
+jordan/icinga2public | automated build19STARS3.0 KPULLSDETAILS,docker pull jordan/icinga2
+sameersbn/openfirepublic | automated build19STARS47.8 KPULLSDETAILS,docker pull sameersbn/openfire
+elsdoerfer/thumborpublic | automated build19STARS3.2 KPULLSDETAILS,docker pull elsdoerfer/thumbor
+fedora/registrypublic | automated build19STARS145PULLSDETAILS,docker pull fedora/registry
+fedora/nginxpublic | automated build19STARS1.1 KPULLSDETAILS,docker pull fedora/nginx
+fedora/pythonpublic | automated build19STARS221PULLSDETAILS,docker pull fedora/python
+fedora/qpidpublic | automated build19STARS174PULLSDETAILS,docker pull fedora/qpid
+fedora/sshpublic | automated build19STARS12.6 KPULLSDETAILS,docker pull fedora/ssh
+sameersbn/redispublic | automated build19STARS515.0 KPULLSDETAILS,docker pull sameersbn/redis
+f99aq8ove/gitbucketpublic | automated build19STARS1.9 KPULLSDETAILS,docker pull f99aq8ove/gitbucket
+sameersbn/openfirepublic | automated build19STARS47.8 KPULLSDETAILS,docker pull sameersbn/openfire
+fedora/registrypublic | automated build19STARS145PULLSDETAILS,docker pull fedora/registry
+fedora/nginxpublic | automated build19STARS1.1 KPULLSDETAILS,docker pull fedora/nginx
+fedora/pythonpublic | automated build19STARS221PULLSDETAILS,docker pull fedora/python
+fedora/qpidpublic | automated build19STARS174PULLSDETAILS,docker pull fedora/qpid
+fedora/sshpublic | automated build19STARS12.6 KPULLSDETAILS,docker pull fedora/ssh
+ubuntu-debootstrapofficial19STARS817.1 KPULLSDETAILS,docker pull ubuntu-debootstrap
+sdelements/lets-chatpublic | automated build19STARS46.4 KPULLSDETAILS,docker pull sdelements/lets-chat
+tvial/docker-mailserverpublic | automated build19STARS2.2 KPULLSDETAILS,docker pull tvial/docker-mailserver
+dduportal/docker-composepublic | automated build19STARS7.0 KPULLSDETAILS,docker pull dduportal/docker-compose
+mesoscloud/mesos-masterpublic | automated build19STARS27.1 KPULLSDETAILS,docker pull mesoscloud/mesos-master
+neo4jofficial19STARS5.6 KPULLSDETAILS,docker pull neo4j
+mattermost/platformpublic | automated build19STARS10.3 KPULLSDETAILS,docker pull mattermost/platform
+phusion/passenger-customizablepublic18STARS8.3 KPULLSDETAILS,docker pull phusion/passenger-customizable
+joostlaan/hhvm-laravelpublic | automated build18STARS722PULLSDETAILS,docker pull joostlaan/hhvm-laravel
+timhaak/sickbeardpublic | automated build18STARS29.7 KPULLSDETAILS,docker pull timhaak/sickbeard
+jordan/rundeckpublic | automated build18STARS37.3 KPULLSDETAILS,docker pull jordan/rundeck
+stephenreed/jenkins-java8-maven-gitpublic | automated build18STARS2.7 KPULLSDETAILS,docker pull stephenreed/jenkins-java8-maven-git
+clue/phpvirtualboxpublic | automated build18STARS5.1 KPULLSDETAILS,docker pull clue/phpvirtualbox
+fedora/memcachedpublic | automated build18STARS7.2 KPULLSDETAILS,docker pull fedora/memcached
+fedora/rabbitmqpublic | automated build18STARS436PULLSDETAILS,docker pull fedora/rabbitmq
+tleyden5iwx/ubuntu-cudapublic | automated build18STARS1.0 KPULLSDETAILS,docker pull tleyden5iwx/ubuntu-cuda
+baxeico/django-uwsgi-nginxpublic | automated build18STARS266PULLSDETAILS,docker pull baxeico/django-uwsgi-nginx
+centos/freeipapublic18STARS10.4 KPULLSDETAILS,docker pull centos/freeipa
+tvelocity/etherpad-litepublic | automated build18STARS1.7 KPULLSDETAILS,docker pull tvelocity/etherpad-lite
+synctree/mediawikipublic | automated build18STARS153.3 KPULLSDETAILS,docker pull synctree/mediawiki
+l3iggs/archlinuxpublic | automated build18STARS1.6 KPULLSDETAILS,""
+juliaofficial18STARS56.0 KPULLSDETAILS,docker pull julia
+develar/javapublic | automated build18STARS2.0 KPULLSDETAILS,docker pull develar/java
+arangodbofficial18STARS50.8 KPULLSDETAILS,docker pull arangodb
+tutum/hello-worldpublic | automated build17STARS2.8 MPULLSDETAILS,docker pull tutum/hello-world
+tpires/sonar-serverpublic | automated build17STARS94.2 KPULLSDETAILS,docker pull tpires/sonar-server
+aespinosa/jenkinspublic | automated build17STARS4.9 KPULLSDETAILS,docker pull aespinosa/jenkins
+cellofellow/rpi-archpublic17STARS492PULLSDETAILS,docker pull cellofellow/rpi-arch
+eugeneware/docker-wordpress-nginxpublic | automated build17STARS9.3 KPULLSDETAILS,docker pull eugeneware/docker-wordpress-nginx
+wernerb/docker-xbmc-serverpublic | automated build17STARS2.5 KPULLSDETAILS,docker pull wernerb/docker-xbmc-server
+aostanin/delugepublic | automated build17STARS6.2 KPULLSDETAILS,docker pull aostanin/deluge
+kbastani/neo4j-graph-analyticspublic | automated build17STARS4.2 KPULLSDETAILS,docker pull kbastani/neo4j-graph-analytics
+occitech/cakephppublic | automated build17STARS2.8 KPULLSDETAILS,docker pull occitech/cakephp
+phpmentors/symfony-apppublic | automated build17STARS2.5 KPULLSDETAILS,docker pull phpmentors/symfony-app
+webcenter/activemqpublic | automated build17STARS22.5 KPULLSDETAILS,docker pull webcenter/activemq
+ncarlier/libreboardpublic | automated build17STARS2.2 KPULLSDETAILS,docker pull ncarlier/libreboard
+tommylau/shadowsockspublic | automated build17STARS77.1 KPULLSDETAILS,docker pull tommylau/shadowsocks
+htdvisser/taiga-front-distpublic | automated build17STARS312.9 KPULLSDETAILS,docker pull htdvisser/taiga-front-dist
+armv7/armhf-ubuntupublic17STARS2.4 KPULLSDETAILS,docker pull armv7/armhf-ubuntu
+kitematic/hello-world-nginxpublic17STARS48.2 KPULLSDETAILS,docker pull kitematic/hello-world-nginx
+tpires/sonar-serverpublic | automated build17STARS94.2 KPULLSDETAILS,docker pull tpires/sonar-server
+occitech/cakephppublic | automated build17STARS2.8 KPULLSDETAILS,docker pull occitech/cakephp
+phpmentors/symfony-apppublic | automated build17STARS2.5 KPULLSDETAILS,docker pull phpmentors/symfony-app
+kbastani/neo4j-graph-analyticspublic | automated build17STARS4.2 KPULLSDETAILS,docker pull kbastani/neo4j-graph-analytics
+ncarlier/libreboardpublic | automated build17STARS2.2 KPULLSDETAILS,docker pull ncarlier/libreboard
+webcenter/activemqpublic | automated build17STARS22.5 KPULLSDETAILS,docker pull webcenter/activemq
+kitematic/hello-world-nginxpublic17STARS48.2 KPULLSDETAILS,docker pull kitematic/hello-world-nginx
+tommylau/shadowsockspublic | automated build17STARS77.1 KPULLSDETAILS,docker pull tommylau/shadowsocks
+htdvisser/taiga-front-distpublic | automated build17STARS312.9 KPULLSDETAILS,docker pull htdvisser/taiga-front-dist
+armv7/armhf-ubuntupublic17STARS2.4 KPULLSDETAILS,docker pull armv7/armhf-ubuntu
+tlongren/docker-wordpress-nginx-sshpublic | automated build17STARS1.2 KPULLSDETAILS,docker pull tlongren/docker-wordpress-nginx-ssh
+linuxserver/couchpotatopublic | automated build17STARS11.2 KPULLSDETAILS,docker pull linuxserver/couchpotato
+couchbase/serverpublic | automated build17STARS128.3 KPULLSDETAILS,docker pull couchbase/server
+gliderlabs/consulpublic | automated build17STARS51.5 KPULLSDETAILS,docker pull gliderlabs/consul
+eboraas/laravelpublic | automated build17STARS1.9 KPULLSDETAILS,docker pull eboraas/laravel
+atlassian/bamboo-base-agentpublic16STARS47.0 KPULLSDETAILS,docker pull atlassian/bamboo-base-agent
+centurylink/dockerfile-from-imagepublic | automated build16STARS2.0 KPULLSDETAILS,docker pull centurylink/dockerfile-from-image
+tobegit3hub/seagullpublic | automated build16STARS3.4 KPULLSDETAILS,docker pull tobegit3hub/seagull
+maartenba/youtrackpublic | automated build16STARS403PULLSDETAILS,docker pull maartenba/youtrack
+haugene/transmission-openvpnpublic | automated build16STARS953PULLSDETAILS,docker pull haugene/transmission-openvpn
+centurylink/dockerfile-from-imagepublic | automated build16STARS2.0 KPULLSDETAILS,docker pull centurylink/dockerfile-from-image
+google/python-runtimepublic | automated build16STARS40.3 KPULLSDETAILS,docker pull google/python-runtime
+atlassian/bamboo-base-agentpublic16STARS47.0 KPULLSDETAILS,docker pull atlassian/bamboo-base-agent
+tobegit3hub/seagullpublic | automated build16STARS3.4 KPULLSDETAILS,docker pull tobegit3hub/seagull
+maartenba/youtrackpublic | automated build16STARS403PULLSDETAILS,docker pull maartenba/youtrack
+haugene/transmission-openvpnpublic | automated build16STARS953PULLSDETAILS,docker pull haugene/transmission-openvpn
+dperson/openvpn-clientpublic | automated build16STARS64.2 KPULLSDETAILS,docker pull dperson/openvpn-client
+htdvisser/taiga-backpublic | automated build16STARS9.7 KPULLSDETAILS,docker pull htdvisser/taiga-back
+jmar71n/freepbxpublic | automated build16STARS1.0 KPULLSDETAILS,docker pull jmar71n/freepbx
+jeanblanchard/busybox-javapublic16STARS13.5 KPULLSDETAILS,docker pull jeanblanchard/busybox-java
+mashape/kongpublic | automated build16STARS217.9 KPULLSDETAILS,docker pull mashape/kong
+barnybug/elasticsearchpublic | automated build15STARS29.7 KPULLSDETAILS,docker pull barnybug/elasticsearch
+vettl/amazon-linuxpublic15STARS73.2 KPULLSDETAILS,docker pull vettl/amazon-linux
+ewindisch/dockenstackpublic | automated build15STARS2.8 KPULLSDETAILS,docker pull ewindisch/dockenstack
+aerospike/aerospike-serverpublic | automated build15STARS18.8 KPULLSDETAILS,docker pull aerospike/aerospike-server
+elgalu/docker-seleniumpublic | automated build15STARS3.0 KPULLSDETAILS,docker pull elgalu/docker-selenium
+suttang/gollumpublic | automated build15STARS14.0 KPULLSDETAILS,docker pull suttang/gollum
+jrottenberg/ffmpegpublic | automated build15STARS50.9 KPULLSDETAILS,docker pull jrottenberg/ffmpeg
+fedora/nodejspublic | automated build15STARS362PULLSDETAILS,docker pull fedora/nodejs
+needo/sabnzbdpublic | automated build15STARS10.9 KPULLSDETAILS,docker pull needo/sabnzbd
+datadog/docker-dd-agentpublic | automated build15STARS4.1 MPULLSDETAILS,docker pull datadog/docker-dd-agent
+chef/ubuntu-14.04public15STARS4.8 KPULLSDETAILS,docker pull chef/ubuntu-14.04
+samos123/drupalpublic | automated build15STARS5.5 KPULLSDETAILS,docker pull samos123/drupal
+occitech/magentopublic | automated build15STARS5.0 KPULLSDETAILS,docker pull occitech/magento
+appcontainers/wordpresspublic | automated build15STARS206.9 KPULLSDETAILS,docker pull appcontainers/wordpress
+dylanlindgren/docker-laravel-nginxpublic | automated build15STARS7.6 KPULLSDETAILS,docker pull dylanlindgren/docker-laravel-nginx
+correl/erlangpublic | automated build15STARS1.5 KPULLSDETAILS,docker pull correl/erlang
+fgrehm/netbeanspublic | automated build15STARS2.2 KPULLSDETAILS,docker pull fgrehm/netbeans
+phensley/docker-dnspublic | automated build15STARS6.5 KPULLSDETAILS,docker pull phensley/docker-dns
+marvambass/piwikpublic | automated build15STARS1.5 KPULLSDETAILS,docker pull marvambass/piwik
+twiecki/pydata-docker-jupyterhubpublic | automated build15STARS889PULLSDETAILS,docker pull twiecki/pydata-docker-jupyterhub
+itzg/elasticsearchpublic | automated build15STARS93.2 KPULLSDETAILS,docker pull itzg/elasticsearch
+gocd/gocd-agentpublic15STARS98.0 KPULLSDETAILS,docker pull gocd/gocd-agent
+rancher/agentpublic15STARS550.9 KPULLSDETAILS,docker pull rancher/agent
+continuumio/anacondapublic | automated build15STARS1.7 KPULLSDETAILS,docker pull continuumio/anaconda
+epahomov/docker-sparkpublic | automated build15STARS1.4 KPULLSDETAILS,docker pull epahomov/docker-spark
+fluent/fluentdpublic | automated build15STARS12.2 KPULLSDETAILS,docker pull fluent/fluentd
+natsofficial15STARS25.9 KPULLSDETAILS,docker pull nats
+h3nrik/nginx-ldappublic | automated build15STARS1.8 KPULLSDETAILS,docker pull h3nrik/nginx-ldap
+mikesplain/openvaspublic | automated build14STARS2.5 KPULLSDETAILS,docker pull mikesplain/openvas
+ansi/mosquittopublic | automated build14STARS72.4 KPULLSDETAILS,docker pull ansi/mosquitto
+mesosphere/mesos-slavepublic14STARS5.4 MPULLSDETAILS,docker pull mesosphere/mesos-slave
+jwilder/docker-discoverpublic | automated build14STARS15.9 KPULLSDETAILS,docker pull jwilder/docker-discover
+mprasil/dokuwikipublic | automated build14STARS3.4 KPULLSDETAILS,docker pull mprasil/dokuwiki
+williamyeh/scalapublic | automated build14STARS2.4 KPULLSDETAILS,docker pull williamyeh/scala
+rastasheep/ubuntu-sshdpublic | automated build14STARS15.3 KPULLSDETAILS,docker pull rastasheep/ubuntu-sshd
+philipz/nginx-hhvm-wordpresspublic | automated build14STARS805PULLSDETAILS,docker pull philipz/nginx-hhvm-wordpress
+kartoza/geoserverpublic | automated build14STARS1.5 KPULLSDETAILS,docker pull kartoza/geoserver
+schickling/rustpublic | automated build14STARS593PULLSDETAILS,docker pull schickling/rust
+caioquirino/docker-cloudera-quickstartpublic | automated build14STARS1.4 KPULLSDETAILS,docker pull caioquirino/docker-cloudera-quickstart
+owasp/zap2docker-stablepublic14STARS1.7 KPULLSDETAILS,docker pull owasp/zap2docker-stable
+devdb/kibanapublic | automated build14STARS2.6 KPULLSDETAILS,docker pull devdb/kibana
+andypetrella/spark-notebookpublic14STARS2.2 KPULLSDETAILS,docker pull andypetrella/spark-notebook
+zenoss/core_5.0public14STARS11.5 KPULLSDETAILS,docker pull zenoss/core_5.0
+alexcheng/magentopublic | automated build14STARS1.0 KPULLSDETAILS,docker pull alexcheng/magento
+hypriot/rpi-pythonpublic14STARS621PULLSDETAILS,docker pull hypriot/rpi-python
+hypriot/rpi-javapublic14STARS383PULLSDETAILS,docker pull hypriot/rpi-java
+learn/tutorialpublic14STARS133.2 KPULLSDETAILS,docker pull learn/tutorial
+ahazem/androidpublic | automated build14STARS1.2 KPULLSDETAILS,docker pull ahazem/android
+mikesplain/openvaspublic | automated build14STARS2.5 KPULLSDETAILS,docker pull mikesplain/openvas
+wurstmeister/stormpublic | automated build14STARS1.9 KPULLSDETAILS,docker pull wurstmeister/storm
+google/mysqlpublic | automated build14STARS44.4 KPULLSDETAILS,docker pull google/mysql
+tiagoboldt/sharelatex-dockerpublic | automated build14STARS2.0 KPULLSDETAILS,docker pull tiagoboldt/sharelatex-docker
+elsdoerfer/gitolitepublic | automated build14STARS1.1 KPULLSDETAILS,docker pull elsdoerfer/gitolite
+redjack/mesos-slavepublic | automated build14STARS288.3 KPULLSDETAILS,docker pull redjack/mesos-slave
+hiroakis/docker-sensu-serverpublic | automated build14STARS2.3 KPULLSDETAILS,docker pull hiroakis/docker-sensu-server
+durdn/atlassian-stashpublic | automated build14STARS520PULLSDETAILS,docker pull durdn/atlassian-stash
+akoeplinger/mono-aspnetvnextpublic | automated build14STARS744PULLSDETAILS,docker pull akoeplinger/mono-aspnetvnext
+clue/apt-cacherpublic | automated build14STARS435PULLSDETAILS,docker pull clue/apt-cacher
+ksoichiro/android-emulatorpublic | automated build14STARS480PULLSDETAILS,docker pull ksoichiro/android-emulator
+abevoelker/rubypublic | automated build14STARS1.6 KPULLSDETAILS,docker pull abevoelker/ruby
+fhuz/docker-stormpublic | automated build14STARS10.3 KPULLSDETAILS,docker pull fhuz/docker-storm
+deangiberson/aws-dynamodb-localpublic | automated build14STARS13.8 KPULLSDETAILS,docker pull deangiberson/aws-dynamodb-local
+olavgg/moinmoin-wikipublic | automated build14STARS11.6 KPULLSDETAILS,docker pull olavgg/moinmoin-wiki
+cpuguy83/docker-grand-ambassadorpublic | automated build14STARS23.8 KPULLSDETAILS,docker pull cpuguy83/docker-grand-ambassador
+jupyter/notebookpublic | automated build14STARS2.2 KPULLSDETAILS,docker pull jupyter/notebook
+onlyoffice/documentserverpublic | automated build14STARS7.3 KPULLSDETAILS,docker pull onlyoffice/documentserver
+williamyeh/ansiblepublic | automated build14STARS7.7 KPULLSDETAILS,docker pull williamyeh/ansible
+ryankennedyio/deepdreampublic14STARS16.0 KPULLSDETAILS,docker pull ryankennedyio/deepdream
+mquandalle/wekanpublic | automated build14STARS1.7 KPULLSDETAILS,docker pull mquandalle/wekan
+atlassian/bitbucket-serverpublic | automated build14STARS6.4 KPULLSDETAILS,docker pull atlassian/bitbucket-server
+frosquin/softetherpublic | automated build13STARS805PULLSDETAILS,docker pull frosquin/softether
+tutum/hipachepublic | automated build13STARS4.4 KPULLSDETAILS,docker pull tutum/hipache
+consol/tomcat-7.0public | automated build13STARS3.2 KPULLSDETAILS,docker pull consol/tomcat-7.0
+tianon/speedtestpublic | automated build13STARS7.8 MPULLSDETAILS,docker pull tianon/speedtest
+michaloo/fluentdpublic | automated build13STARS6.5 KPULLSDETAILS,docker pull michaloo/fluentd
+maccam912/meanjspublic | automated build13STARS2.0 KPULLSDETAILS,docker pull maccam912/meanjs
+neurodebianofficial13STARS131.9 KPULLSDETAILS,docker pull neurodebian
+ipython/ipythonpublic | automated build13STARS5.6 KPULLSDETAILS,docker pull ipython/ipython
+kubernetes/fluentd-elasticsearchpublic13STARS3.2 MPULLSDETAILS,docker pull kubernetes/fluentd-elasticsearch
+mozart/grailspublic | automated build13STARS15.8 KPULLSDETAILS,docker pull mozart/grails
+schickling/mailcatcherpublic | automated build13STARS7.4 KPULLSDETAILS,docker pull schickling/mailcatcher
+adbrowne/eventstorepublic | automated build13STARS4.7 KPULLSDETAILS,docker pull adbrowne/eventstore
+microbox/etcdpublic | automated build13STARS319.5 KPULLSDETAILS,docker pull microbox/etcd
+thriftofficial13STARS44.4 KPULLSDETAILS,docker pull thrift
+binhex/arch-delugevpnpublic | automated build13STARS7.4 KPULLSDETAILS,docker pull binhex/arch-delugevpn
+hypriot/rpi-golangpublic13STARS575PULLSDETAILS,docker pull hypriot/rpi-golang
+wadmiraal/drupalpublic | automated build13STARS1.5 KPULLSDETAILS,docker pull wadmiraal/drupal
+tommylau/ocservpublic | automated build13STARS213.7 KPULLSDETAILS,docker pull tommylau/ocserv
+andyshinn/dnsmasqpublic | automated build13STARS17.7 KPULLSDETAILS,docker pull andyshinn/dnsmasq
+microbox/etcdpublic | automated build13STARS319.5 KPULLSDETAILS,docker pull microbox/etcd
+kubernetes/fluentd-elasticsearchpublic13STARS3.2 MPULLSDETAILS,docker pull kubernetes/fluentd-elasticsearch
+schickling/mailcatcherpublic | automated build13STARS7.4 KPULLSDETAILS,docker pull schickling/mailcatcher
+ipython/ipythonpublic | automated build13STARS5.6 KPULLSDETAILS,docker pull ipython/ipython
+adbrowne/eventstorepublic | automated build13STARS4.7 KPULLSDETAILS,docker pull adbrowne/eventstore
+mozart/grailspublic | automated build13STARS15.8 KPULLSDETAILS,docker pull mozart/grails
+thriftofficial13STARS44.4 KPULLSDETAILS,docker pull thrift
+tommylau/ocservpublic | automated build13STARS213.7 KPULLSDETAILS,docker pull tommylau/ocserv
+binhex/arch-delugevpnpublic | automated build13STARS7.4 KPULLSDETAILS,docker pull binhex/arch-delugevpn
+hypriot/rpi-golangpublic13STARS575PULLSDETAILS,docker pull hypriot/rpi-golang
+devopsil/puppetpublic | automated build13STARS25.8 KPULLSDETAILS,docker pull devopsil/puppet
+hbussell/docker-fluentd-kibanapublic | automated build13STARS1.3 KPULLSDETAILS,docker pull hbussell/docker-fluentd-kibana
+adamalex/play-docker-cipublic | automated build13STARS91PULLSDETAILS,docker pull adamalex/play-docker-ci
+bettervoice/postgresql-containerpublic | automated build13STARS190PULLSDETAILS,docker pull bettervoice/postgresql-container
+suchja/winepublic | automated build13STARS1.0 KPULLSDETAILS,docker pull suchja/wine
+tutum/apache-phppublic13STARS53.6 KPULLSDETAILS,docker pull tutum/apache-php
+linuxserver/nzbgetpublic | automated build13STARS17.0 KPULLSDETAILS,docker pull linuxserver/nzbget
+pschmitt/owncloudpublic | automated build13STARS6.3 KPULLSDETAILS,docker pull pschmitt/owncloud
+digitalwonderland/logstash-forwarderpublic | automated build12STARS29.5 KPULLSDETAILS,docker pull digitalwonderland/logstash-forwarder
+kartoza/postgispublic | automated build12STARS6.1 KPULLSDETAILS,docker pull kartoza/postgis
+tpires/sonar-mysqlpublic | automated build12STARS102.5 KPULLSDETAILS,docker pull tpires/sonar-mysql
+lukasz/docker-scalapublic | automated build12STARS3.5 KPULLSDETAILS,docker pull lukasz/docker-scala
+clue/h5aipublic | automated build12STARS293PULLSDETAILS,docker pull clue/h5ai
+scivm/scientific-python-2.7public | automated build12STARS1.1 KPULLSDETAILS,docker pull scivm/scientific-python-2.7
+klaemo/couchdb-sslpublic | automated build12STARS2.0 KPULLSDETAILS,docker pull klaemo/couchdb-ssl
+cruxofficial12STARS41.2 KPULLSDETAILS,docker pull crux
+digitalwonderland/logstash-forwarderpublic | automated build12STARS29.5 KPULLSDETAILS,docker pull digitalwonderland/logstash-forwarder
+jamesdbloom/docker-java8-mavenpublic | automated build12STARS2.5 KPULLSDETAILS,docker pull jamesdbloom/docker-java8-maven
+macadmins/bsdpypublic | automated build12STARS112.1 KPULLSDETAILS,docker pull macadmins/bsdpy
+durdn/atlassian-basepublic | automated build12STARS878PULLSDETAILS,docker pull durdn/atlassian-base
+jboss/base-jdkpublic | automated build12STARS5.7 KPULLSDETAILS,docker pull jboss/base-jdk
+dordoka/play-frameworkpublic | automated build12STARS3.6 KPULLSDETAILS,docker pull dordoka/play-framework
+selenium/basepublic | automated build12STARS7.9 KPULLSDETAILS,docker pull selenium/base
+hpoo/oocepublic12STARS172PULLSDETAILS,docker pull hpoo/ooce
+luzifer/mumblepublic | automated build12STARS23.7 KPULLSDETAILS,docker pull luzifer/mumble
+nodebb/dockerpublic | automated build12STARS4.7 KPULLSDETAILS,docker pull nodebb/docker
+genezys/gitlabpublic | automated build12STARS1.3 KPULLSDETAILS,docker pull genezys/gitlab
+cbuisson/chef-serverpublic | automated build12STARS1.0 KPULLSDETAILS,docker pull cbuisson/chef-server
+grahamdumpleton/mod-wsgi-dockerpublic | automated build12STARS22.3 KPULLSDETAILS,docker pull grahamdumpleton/mod-wsgi-docker
+kylemanna/aosppublic | automated build12STARS3.4 KPULLSDETAILS,docker pull kylemanna/aosp
+kiyoto/docker-fluentdpublic | automated build12STARS1.2 KPULLSDETAILS,docker pull kiyoto/docker-fluentd
+coderstephen/php7public | automated build12STARS752PULLSDETAILS,docker pull coderstephen/php7
+sitespeedio/sitespeed.iopublic | automated build12STARS37.9 KPULLSDETAILS,docker pull sitespeedio/sitespeed.io
+hypriot/rpi-iojspublic12STARS366PULLSDETAILS,docker pull hypriot/rpi-iojs
+mbabineau/zookeeper-exhibitorpublic | automated build12STARS454.1 KPULLSDETAILS,docker pull mbabineau/zookeeper-exhibitor
+wurstmeister/storm-nimbuspublic | automated build12STARS5.8 KPULLSDETAILS,docker pull wurstmeister/storm-nimbus
+hwuethrich/bamboo-serverpublic | automated build12STARS1.4 KPULLSDETAILS,docker pull hwuethrich/bamboo-server
+cruxofficial12STARS41.2 KPULLSDETAILS,docker pull crux
+scivm/scientific-python-2.7public | automated build12STARS1.1 KPULLSDETAILS,docker pull scivm/scientific-python-2.7
+tpires/sonar-mysqlpublic | automated build12STARS102.5 KPULLSDETAILS,docker pull tpires/sonar-mysql
+lukasz/docker-scalapublic | automated build12STARS3.5 KPULLSDETAILS,docker pull lukasz/docker-scala
+klaemo/couchdb-sslpublic | automated build12STARS2.0 KPULLSDETAILS,docker pull klaemo/couchdb-ssl
+clue/h5aipublic | automated build12STARS293PULLSDETAILS,docker pull clue/h5ai
+durdn/atlassian-basepublic | automated build12STARS878PULLSDETAILS,docker pull durdn/atlassian-base
+jboss/torqueboxpublic | automated build12STARS236PULLSDETAILS,docker pull jboss/torquebox
+sequenceiq/ambari-shellpublic | automated build12STARS877PULLSDETAILS,docker pull sequenceiq/ambari-shell
+digitalwonderland/elasticsearchpublic | automated build12STARS2.5 KPULLSDETAILS,docker pull digitalwonderland/elasticsearch
+mhart/alpine-iojspublic12STARS6.4 KPULLSDETAILS,docker pull mhart/alpine-iojs
+tutum/mysqlpublic12STARS318.3 KPULLSDETAILS,docker pull tutum/mysql
+jeanblanchard/javapublic12STARS2.0 KPULLSDETAILS,docker pull jeanblanchard/java
+tutum/haproxypublic12STARS82.3 KPULLSDETAILS,docker pull tutum/haproxy
+dock0/archpublic | automated build12STARS9.7 KPULLSDETAILS,docker pull dock0/arch
+dockerfiles/centos-lamppublic | automated build11STARS1.5 KPULLSDETAILS,docker pull dockerfiles/centos-lamp
+jamesbrink/postgresqlpublic | automated build11STARS1.3 KPULLSDETAILS,docker pull jamesbrink/postgresql
+crosbymichael/skydnspublic11STARS43.2 KPULLSDETAILS,docker pull crosbymichael/skydns
+aostanin/nzbgetpublic | automated build11STARS1.7 KPULLSDETAILS,docker pull aostanin/nzbget
+jagregory/pandocpublic | automated build11STARS496PULLSDETAILS,docker pull jagregory/pandoc
+jboss/keycloakpublic | automated build11STARS187.7 KPULLSDETAILS,docker pull jboss/keycloak
+needo/nzbdronepublic | automated build11STARS10.0 KPULLSDETAILS,docker pull needo/nzbdrone
+jauer/moodlepublic | automated build11STARS1.0 KPULLSDETAILS,docker pull jauer/moodle
+tleyden5iwx/couchbase-server-3.0.1public | automated build11STARS629.6 KPULLSDETAILS,docker pull tleyden5iwx/couchbase-server-3.0.1
+kbastani/docker-neo4jpublic | automated build11STARS3.3 KPULLSDETAILS,docker pull kbastani/docker-neo4j
+jess/atompublic | automated build11STARS517PULLSDETAILS,docker pull jess/atom
+istepanov/dokuwikipublic | automated build11STARS929PULLSDETAILS,docker pull istepanov/dokuwiki
+anigeo/awsclipublic | automated build11STARS67.7 KPULLSDETAILS,docker pull anigeo/awscli
+opencpu/rstudiopublic | automated build11STARS504PULLSDETAILS,docker pull opencpu/rstudio
+selenium/standalone-firefoxpublic | automated build11STARS963.8 KPULLSDETAILS,docker pull selenium/standalone-firefox
+jess/tor-browserpublic | automated build11STARS1.4 KPULLSDETAILS,docker pull jess/tor-browser
+sheepkiller/kafka-managerpublic | automated build11STARS177.8 KPULLSDETAILS,docker pull sheepkiller/kafka-manager
+jasonwyatt/nginx-loadbalancerpublic | automated build11STARS430PULLSDETAILS,docker pull jasonwyatt/nginx-loadbalancer
+guttertec/hubotpublic | automated build11STARS4.7 KPULLSDETAILS,docker pull guttertec/hubot
+dylanlindgren/docker-laravel-composerpublic | automated build11STARS4.4 KPULLSDETAILS,docker pull dylanlindgren/docker-laravel-composer
+istepanov/dokuwikipublic | automated build11STARS929PULLSDETAILS,docker pull istepanov/dokuwiki
+paulczar/percona-galerapublic | automated build11STARS442.8 KPULLSDETAILS,docker pull paulczar/percona-galera
+azul/zulu-openjdk-debianpublic | automated build11STARS6.2 KPULLSDETAILS,docker pull azul/zulu-openjdk-debian
+sagemath/sagepublic11STARS379PULLSDETAILS,docker pull sagemath/sage
+kbastani/docker-neo4jpublic | automated build11STARS3.3 KPULLSDETAILS,docker pull kbastani/docker-neo4j
+jess/atompublic | automated build11STARS517PULLSDETAILS,docker pull jess/atom
+tleyden5iwx/couchbase-server-3.0.1public | automated build11STARS629.6 KPULLSDETAILS,docker pull tleyden5iwx/couchbase-server-3.0.1
+anigeo/awsclipublic | automated build11STARS67.7 KPULLSDETAILS,docker pull anigeo/awscli
+durdn/atlassian-crowdpublic | automated build11STARS129PULLSDETAILS,docker pull durdn/atlassian-crowd
+google/nodejs-hellopublic | automated build11STARS803.2 KPULLSDETAILS,docker pull google/nodejs-hello
+shaker/readthedocspublic | automated build11STARS459PULLSDETAILS,docker pull shaker/readthedocs
+sergiogomez/docker-moodlepublic | automated build11STARS400PULLSDETAILS,docker pull sergiogomez/docker-moodle
+jboss/keycloakpublic | automated build11STARS187.7 KPULLSDETAILS,docker pull jboss/keycloak
+needo/nzbdronepublic | automated build11STARS10.0 KPULLSDETAILS,docker pull needo/nzbdrone
+maprtech/mapr-sandbox-basepublic11STARS538PULLSDETAILS,docker pull maprtech/mapr-sandbox-base
+osixia/openldappublic11STARS18.6 KPULLSDETAILS,docker pull osixia/openldap
+needo/sickragepublic | automated build11STARS7.6 KPULLSDETAILS,docker pull needo/sickrage
+memsql/quickstartpublic11STARS1.0 KPULLSDETAILS,docker pull memsql/quickstart
+diogomonica/docker-bench-securitypublic | automated build11STARS52.7 KPULLSDETAILS,docker pull diogomonica/docker-bench-security
+marcelocg/phoenixpublic | automated build11STARS944PULLSDETAILS,docker pull marcelocg/phoenix
+danriti/nginx-gunicorn-flaskpublic | automated build11STARS265PULLSDETAILS,docker pull danriti/nginx-gunicorn-flask
+kaazing/gatewaypublic | automated build11STARS92PULLSDETAILS,docker pull kaazing/gateway
+kaazing-gatewayofficial11STARS7.1 KPULLSDETAILS,docker pull kaazing-gateway
+anapsix/alpine-javapublic | automated build11STARS3.1 KPULLSDETAILS,docker pull anapsix/alpine-java
+mesoscloud/mesos-slavepublic | automated build11STARS8.3 KPULLSDETAILS,docker pull mesoscloud/mesos-slave
+gentoo/stage3-amd64public | automated build11STARS1.0 KPULLSDETAILS,docker pull gentoo/stage3-amd64
+bitnami/php-fpmpublic | automated build11STARS1.4 KPULLSDETAILS,docker pull bitnami/php-fpm
+aheil/teamspeak3-serverpublic | automated build11STARS579PULLSDETAILS,docker pull aheil/teamspeak3-server
+guilhem/vagrant-ubuntupublic | automated build11STARS3.6 KPULLSDETAILS,docker pull guilhem/vagrant-ubuntu
+mmckeen/owncloudpublic | automated build10STARS1.2 KPULLSDETAILS,docker pull mmckeen/owncloud
+cpswan/node-redpublic | automated build10STARS2.7 KPULLSDETAILS,docker pull cpswan/node-red
+wurstmeister/storm-supervisorpublic | automated build10STARS6.6 KPULLSDETAILS,docker pull wurstmeister/storm-supervisor
+homme/openstreetmap-tilespublic | automated build10STARS1.1 KPULLSDETAILS,docker pull homme/openstreetmap-tiles
+elventear/transmissionpublic | automated build10STARS972PULLSDETAILS,docker pull elventear/transmission
+jacksoncage/varnishpublic | automated build10STARS3.5 KPULLSDETAILS,docker pull jacksoncage/varnish
+ncolomer/couchbasepublic | automated build10STARS872PULLSDETAILS,docker pull ncolomer/couchbase
+jamesdbloom/docker-java7-mavenpublic | automated build10STARS19.8 KPULLSDETAILS,docker pull jamesdbloom/docker-java7-maven
+zsol/haskell-platform-2013.2.0.0public10STARS10.0 KPULLSDETAILS,docker pull zsol/haskell-platform-2013.2.0.0
+tehranian/dind-jenkins-slavepublic | automated build10STARS1.9 KPULLSDETAILS,docker pull tehranian/dind-jenkins-slave
+p0bailey/docker-flaskpublic | automated build10STARS1.7 KPULLSDETAILS,docker pull p0bailey/docker-flask
+siomiz/chromepublic | automated build10STARS3.9 KPULLSDETAILS,docker pull siomiz/chrome
+iliyan/jenkins-ci-phppublic | automated build10STARS557PULLSDETAILS,docker pull iliyan/jenkins-ci-php
+netflixoss/asgardpublic | automated build10STARS69.2 KPULLSDETAILS,docker pull netflixoss/asgard
+schickling/beanstalkdpublic | automated build10STARS6.7 KPULLSDETAILS,docker pull schickling/beanstalkd
+codetroopers/jenkins-slave-jdk8-androidpublic | automated build10STARS25.2 KPULLSDETAILS,docker pull codetroopers/jenkins-slave-jdk8-android
+keyvanfatehi/sinopiapublic | automated build10STARS7.9 KPULLSDETAILS,docker pull keyvanfatehi/sinopia
+richarvey/nginx-nodejspublic | automated build10STARS739PULLSDETAILS,docker pull richarvey/nginx-nodejs
+elcolio/etcdpublic | automated build10STARS73.0 KPULLSDETAILS,docker pull elcolio/etcd
+isuper/java-oraclepublic | automated build10STARS3.6 KPULLSDETAILS,docker pull isuper/java-oracle
+nerdammer/hbasepublic | automated build10STARS1.1 KPULLSDETAILS,docker pull nerdammer/hbase
+kaixhin/cudapublic | automated build10STARS1.3 KPULLSDETAILS,docker pull kaixhin/cuda
+ricardoamaro/drupal8public | automated build10STARS650PULLSDETAILS,docker pull ricardoamaro/drupal8
+zsol/haskell-platform-2013.2.0.0public10STARS10.0 KPULLSDETAILS,docker pull zsol/haskell-platform-2013.2.0.0
+wurstmeister/storm-supervisorpublic | automated build10STARS6.6 KPULLSDETAILS,docker pull wurstmeister/storm-supervisor
+jamesdbloom/docker-java7-mavenpublic | automated build10STARS19.8 KPULLSDETAILS,docker pull jamesdbloom/docker-java7-maven
+homme/openstreetmap-tilespublic | automated build10STARS1.1 KPULLSDETAILS,docker pull homme/openstreetmap-tiles
+3scale/openrestypublic | automated build10STARS924PULLSDETAILS,docker pull 3scale/openresty
+jacksoncage/varnishpublic | automated build10STARS3.5 KPULLSDETAILS,docker pull jacksoncage/varnish
+p0bailey/docker-flaskpublic | automated build10STARS1.7 KPULLSDETAILS,docker pull p0bailey/docker-flask
+netflixoss/asgardpublic | automated build10STARS69.2 KPULLSDETAILS,docker pull netflixoss/asgard
+siomiz/chromepublic | automated build10STARS3.9 KPULLSDETAILS,docker pull siomiz/chrome
+schickling/beanstalkdpublic | automated build10STARS6.7 KPULLSDETAILS,docker pull schickling/beanstalkd
+codetroopers/jenkins-slave-jdk8-androidpublic | automated build10STARS25.2 KPULLSDETAILS,docker pull codetroopers/jenkins-slave-jdk8-android
+keyvanfatehi/sinopiapublic | automated build10STARS7.9 KPULLSDETAILS,docker pull keyvanfatehi/sinopia
+isuper/java-oraclepublic | automated build10STARS3.6 KPULLSDETAILS,docker pull isuper/java-oracle
+elcolio/etcdpublic | automated build10STARS73.0 KPULLSDETAILS,docker pull elcolio/etcd
+richarvey/nginx-nodejspublic | automated build10STARS739PULLSDETAILS,docker pull richarvey/nginx-nodejs
+ricardoamaro/drupal8public | automated build10STARS650PULLSDETAILS,docker pull ricardoamaro/drupal8
+uzyexe/newrelicpublic | automated build10STARS821.5 KPULLSDETAILS,docker pull uzyexe/newrelic
+ckan/ckanpublic | automated build10STARS2.8 KPULLSDETAILS,docker pull ckan/ckan
+agungf/c9-idepublic | automated build10STARS112PULLSDETAILS,docker pull agungf/c9-ide
+frolvlad/alpine-python3public | automated build10STARS917PULLSDETAILS,docker pull frolvlad/alpine-python3
+klikatech/teamcitypublic | automated build10STARS259PULLSDETAILS,docker pull klikatech/teamcity
+francescou/docker-compose-uipublic | automated build10STARS5.8 KPULLSDETAILS,docker pull francescou/docker-compose-ui
+bitnami/apachepublic | automated build10STARS3.4 KPULLSDETAILS,docker pull bitnami/apache
+rocketchat/rocket.chatpublic | automated build10STARS5.1 KPULLSDETAILS,docker pull rocketchat/rocket.chat
+mbentley/django-uwsgi-nginxpublic | automated build10STARS610PULLSDETAILS,docker pull mbentley/django-uwsgi-nginx
+cpuguy83/mailpublic | automated build10STARS346PULLSDETAILS,docker pull cpuguy83/mail
+darh/php-essentialspublic | automated build9STARS7.4 KPULLSDETAILS,docker pull darh/php-essentials
+nickgs/drupal8public9STARS20.5 KPULLSDETAILS,docker pull nickgs/drupal8
+crosbymichael/skydockpublic9STARS29.4 KPULLSDETAILS,docker pull crosbymichael/skydock
+narf/latexpublic | automated build9STARS298PULLSDETAILS,docker pull narf/latex
+nickstenning/slapdpublic | automated build9STARS2.7 KPULLSDETAILS,docker pull nickstenning/slapd
+saltstack/centos-6-minimalpublic | automated build9STARS1.4 KPULLSDETAILS,docker pull saltstack/centos-6-minimal
+blalor/centospublic | automated build9STARS5.2 KPULLSDETAILS,docker pull blalor/centos
+ctlc/dropboxpublic | automated build9STARS199PULLSDETAILS,docker pull ctlc/dropbox
+base/chef-serverpublic | automated build9STARS1.4 KPULLSDETAILS,docker pull base/chef-server
+parente/ipython-notebookpublic9STARS311PULLSDETAILS,docker pull parente/ipython-notebook
+jamescarr/mcrouterpublic | automated build9STARS1.6 KPULLSDETAILS,docker pull jamescarr/mcrouter
+centurylink/wordpresspublic | automated build9STARS2.0 MPULLSDETAILS,docker pull centurylink/wordpress
+filemon/oracle_11gpublic9STARS1.3 KPULLSDETAILS,docker pull filemon/oracle_11g
+cpuguy83/docker-volumespublic | automated build9STARS6.9 KPULLSDETAILS,docker pull cpuguy83/docker-volumes
+cptactionhank/atlassian-stashpublic | automated build9STARS16.2 KPULLSDETAILS,docker pull cptactionhank/atlassian-stash
+prom/promdashpublic | automated build9STARS182.6 KPULLSDETAILS,docker pull prom/promdash
+yaronr/haproxy-confdpublic | automated build9STARS44.5 KPULLSDETAILS,docker pull yaronr/haproxy-confd
+sequenceiq/socatpublic | automated build9STARS5.9 KPULLSDETAILS,docker pull sequenceiq/socat
+paulczar/glusterfspublic | automated build9STARS14.2 KPULLSDETAILS,docker pull paulczar/glusterfs
+digiampietro/gns3-largepublic | automated build9STARS324PULLSDETAILS,docker pull digiampietro/gns3-large
+maoo/alfresco-allinone-communitypublic9STARS35.5 KPULLSDETAILS,docker pull maoo/alfresco-allinone-community
+petergrace/opentsdb-dockerpublic | automated build9STARS1.6 KPULLSDETAILS,docker pull petergrace/opentsdb-docker
+progrium/ambassadordpublic | automated build9STARS352.5 KPULLSDETAILS,docker pull progrium/ambassadord
+mattikus/murmurpublic | automated build9STARS717PULLSDETAILS,docker pull mattikus/murmur
+macadmins/reposadopublic | automated build9STARS712PULLSDETAILS,docker pull macadmins/reposado
+tinyerp/ubuntu-openerppublic9STARS1.0 KPULLSDETAILS,docker pull tinyerp/ubuntu-openerp
+ctlc/btsyncpublic | automated build9STARS5.2 KPULLSDETAILS,docker pull ctlc/btsync
+mattgruter/doubledockerpublic | automated build9STARS311PULLSDETAILS,docker pull mattgruter/doubledocker
+filemon/oracle_11gpublic9STARS1.3 KPULLSDETAILS,docker pull filemon/oracle_11g
+cpuguy83/docker-volumespublic | automated build9STARS6.9 KPULLSDETAILS,docker pull cpuguy83/docker-volumes
+camunda/camunda-bpm-platformpublic9STARS134.2 KPULLSDETAILS,docker pull camunda/camunda-bpm-platform
+combro2k/virtualmailpublic | automated build9STARS616PULLSDETAILS,docker pull combro2k/virtualmail
+tatsushid/tinycorepublic | automated build9STARS1.8 KPULLSDETAILS,docker pull tatsushid/tinycore
+campbellsoftwaresolutions/osticketpublic | automated build9STARS343PULLSDETAILS,docker pull campbellsoftwaresolutions/osticket
+julialang/juliapublic | automated build9STARS349PULLSDETAILS,docker pull julialang/julia
+sitespeedio/graphitepublic | automated build9STARS14.2 KPULLSDETAILS,docker pull sitespeedio/graphite
+nickgs/drupal8public9STARS20.5 KPULLSDETAILS,docker pull nickgs/drupal8
+atlassianfan/stashpublic | automated build9STARS3.4 KPULLSDETAILS,docker pull atlassianfan/stash
+crosbymichael/skydockpublic9STARS29.4 KPULLSDETAILS,docker pull crosbymichael/skydock
+nornagon/postgrespublic | automated build9STARS1.8 KPULLSDETAILS,docker pull nornagon/postgres
+amazon/aws-eb-pythonpublic9STARS265.2 KPULLSDETAILS,docker pull amazon/aws-eb-python
+prosody/prosodypublic9STARS636PULLSDETAILS,docker pull prosody/prosody
+paulczar/glusterfspublic | automated build9STARS14.2 KPULLSDETAILS,docker pull paulczar/glusterfs
+cptactionhank/atlassian-stashpublic | automated build9STARS16.2 KPULLSDETAILS,docker pull cptactionhank/atlassian-stash
+prom/promdashpublic | automated build9STARS182.6 KPULLSDETAILS,docker pull prom/promdash
+sequenceiq/socatpublic | automated build9STARS5.9 KPULLSDETAILS,docker pull sequenceiq/socat
+rocker/ropenscipublic | automated build9STARS2.6 KPULLSDETAILS,docker pull rocker/ropensci
+digiampietro/gns3-largepublic | automated build9STARS324PULLSDETAILS,docker pull digiampietro/gns3-large
+oddpoet/hbase-cdh5public | automated build9STARS749PULLSDETAILS,docker pull oddpoet/hbase-cdh5
+arangodb/arangodbpublic9STARS2.4 KPULLSDETAILS,docker pull arangodb/arangodb
+istepanov/backup-to-s3public | automated build9STARS4.6 KPULLSDETAILS,docker pull istepanov/backup-to-s3
+tianon/syncthingpublic | automated build9STARS114.0 KPULLSDETAILS,docker pull tianon/syncthing
+kfei/docktorrentpublic | automated build9STARS952PULLSDETAILS,docker pull kfei/docktorrent
+blackfire/blackfirepublic | automated build9STARS1.5 KPULLSDETAILS,docker pull blackfire/blackfire
+yaronr/haproxy-confdpublic | automated build9STARS44.5 KPULLSDETAILS,docker pull yaronr/haproxy-confd
+strongloop/strong-pmpublic | automated build9STARS2.8 KPULLSDETAILS,docker pull strongloop/strong-pm
+errordeveloper/oracle-jdkpublic | automated build9STARS226PULLSDETAILS,docker pull errordeveloper/oracle-jdk
+combro2k/virtualmailpublic | automated build9STARS616PULLSDETAILS,docker pull combro2k/virtualmail
+camunda/camunda-bpm-platformpublic9STARS134.2 KPULLSDETAILS,docker pull camunda/camunda-bpm-platform
+tatsushid/tinycorepublic | automated build9STARS1.8 KPULLSDETAILS,docker pull tatsushid/tinycore
+xcgd/postgresqlpublic | automated build9STARS3.8 KPULLSDETAILS,docker pull xcgd/postgresql
+supertest2014/nyanpublic9STARS2.4 KPULLSDETAILS,docker pull supertest2014/nyan
+progrium/ambassadordpublic | automated build9STARS352.5 KPULLSDETAILS,docker pull progrium/ambassadord
+jboss/drools-workbench-showcasepublic | automated build9STARS1.2 KPULLSDETAILS,docker pull jboss/drools-workbench-showcase
+newrelic/nrsysmondpublic9STARS3.7 MPULLSDETAILS,docker pull newrelic/nrsysmond
+skynetservices/skydnspublic9STARS8.6 MPULLSDETAILS,docker pull skynetservices/skydns
+manell/wiresharkpublic | automated build9STARS136PULLSDETAILS,docker pull manell/wireshark
+advancedclimatesystems/pythonpublic9STARS531PULLSDETAILS,docker pull advancedclimatesystems/python
+gentoo/portagepublic | automated build9STARS708PULLSDETAILS,docker pull gentoo/portage
+minimum2scp/es-kibanapublic | automated build9STARS1.0 KPULLSDETAILS,docker pull minimum2scp/es-kibana
+killercentury/jenkins-dindpublic | automated build9STARS2.4 KPULLSDETAILS,docker pull killercentury/jenkins-dind
+osrg/ryupublic | automated build8STARS1.2 KPULLSDETAILS,docker pull osrg/ryu
+crate/cratepublic | automated build8STARS2.3 KPULLSDETAILS,docker pull crate/crate
+spaziodati/openrefinepublic | automated build8STARS292PULLSDETAILS,docker pull spaziodati/openrefine
+reinblau/php-apache2public | automated build8STARS1.5 KPULLSDETAILS,docker pull reinblau/php-apache2
+uchiwa/uchiwapublic | automated build8STARS68.3 KPULLSDETAILS,docker pull uchiwa/uchiwa
+devries/dnsmasqpublic | automated build8STARS6.1 KPULLSDETAILS,docker pull devries/dnsmasq
+sequenceiq/drillpublic | automated build8STARS2.7 KPULLSDETAILS,docker pull sequenceiq/drill
+hanswesterbeek/google-debian-oracle-jdkpublic | automated build8STARS802PULLSDETAILS,docker pull hanswesterbeek/google-debian-oracle-jdk
+tianon/steampublic | automated build8STARS1.1 KPULLSDETAILS,docker pull tianon/steam
+rootlogin/apache2-symfony2public | automated build8STARS341PULLSDETAILS,docker pull rootlogin/apache2-symfony2
+radial/busyboxpluspublic | automated build8STARS2.2 KPULLSDETAILS,docker pull radial/busyboxplus
+ricardoamaro/drupalpublic8STARS319PULLSDETAILS,docker pull ricardoamaro/drupal
+mattdm/fedora-smallpublic8STARS740PULLSDETAILS,docker pull mattdm/fedora-small
+linuxkonsult/kalipublic8STARS1.2 KPULLSDETAILS,docker pull linuxkonsult/kali
+btobolaski/owncloudpublic | automated build8STARS677PULLSDETAILS,docker pull btobolaski/owncloud
+grue/docker-sentrypublic | automated build8STARS346PULLSDETAILS,docker pull grue/docker-sentry
+fredericlb/docker-phabricatorpublic | automated build8STARS576PULLSDETAILS,docker pull fredericlb/docker-phabricator
+openlabs/trytonpublic | automated build8STARS5.1 KPULLSDETAILS,docker pull openlabs/tryton
+abevoelker/postgrespublic | automated build8STARS2.8 KPULLSDETAILS,docker pull abevoelker/postgres
+sequenceiq/phoenixpublic | automated build8STARS317PULLSDETAILS,docker pull sequenceiq/phoenix
+uchiwa/uchiwapublic | automated build8STARS68.3 KPULLSDETAILS,docker pull uchiwa/uchiwa
+cbeer/piwikpublic | automated build8STARS231.2 KPULLSDETAILS,docker pull cbeer/piwik
+devries/dnsmasqpublic | automated build8STARS6.1 KPULLSDETAILS,docker pull devries/dnsmasq
+spaziodati/openrefinepublic | automated build8STARS292PULLSDETAILS,docker pull spaziodati/openrefine
+osrg/ryupublic | automated build8STARS1.2 KPULLSDETAILS,docker pull osrg/ryu
+tinyerp/ubuntu-odoopublic8STARS599PULLSDETAILS,docker pull tinyerp/ubuntu-odoo
+sequenceiq/dnsmasqpublic | automated build8STARS883PULLSDETAILS,docker pull sequenceiq/dnsmasq
+macadmins/munkipublic | automated build8STARS491PULLSDETAILS,docker pull macadmins/munki
+ruo91/hadooppublic | automated build8STARS2.3 KPULLSDETAILS,docker pull ruo91/hadoop
+alunduil/roundcubepublic | automated build8STARS46.5 KPULLSDETAILS,docker pull alunduil/roundcube
+hanswesterbeek/google-debian-oracle-jdkpublic | automated build8STARS802PULLSDETAILS,docker pull hanswesterbeek/google-debian-oracle-jdk
+frodenas/couchdbpublic | automated build8STARS111.2 KPULLSDETAILS,docker pull frodenas/couchdb
+frodenas/neo4jpublic | automated build8STARS92.7 KPULLSDETAILS,docker pull frodenas/neo4j
+johnston/apachepublic8STARS82PULLSDETAILS,docker pull johnston/apache
+reinblau/php-apache2public | automated build8STARS1.5 KPULLSDETAILS,docker pull reinblau/php-apache2
+crate/cratepublic | automated build8STARS2.3 KPULLSDETAILS,docker pull crate/crate
+nano/node.jspublic | automated build8STARS875PULLSDETAILS,docker pull nano/node.js
+32bit/debianpublic8STARS1.8 KPULLSDETAILS,docker pull 32bit/debian
+tutum/builderpublic | automated build8STARS67.5 KPULLSDETAILS,docker pull tutum/builder
+armv7/armhf-archlinuxpublic8STARS282PULLSDETAILS,docker pull armv7/armhf-archlinux
+odarriba/timemachinepublic | automated build8STARS634PULLSDETAILS,docker pull odarriba/timemachine
+mbrt/golang-vim-devpublic | automated build8STARS353PULLSDETAILS,docker pull mbrt/golang-vim-dev
+continuumio/anaconda3public | automated build8STARS578PULLSDETAILS,docker pull continuumio/anaconda3
+sharelatex/sharelatexpublic8STARS2.1 KPULLSDETAILS,docker pull sharelatex/sharelatex
+rothnic/anaconda-notebookpublic | automated build8STARS425PULLSDETAILS,docker pull rothnic/anaconda-notebook
+tutum/logrotatepublic | automated build8STARS2.5 MPULLSDETAILS,docker pull tutum/logrotate
+cedvan/toran-proxypublic | automated build8STARS1.2 KPULLSDETAILS,docker pull cedvan/toran-proxy
+danlynn/ember-clipublic | automated build8STARS355PULLSDETAILS,docker pull danlynn/ember-cli
+centurylink/ca-certspublic | automated build8STARS2.3 KPULLSDETAILS,docker pull centurylink/ca-certs
+jolicode/phauditpublic | automated build8STARS286PULLSDETAILS,docker pull jolicode/phaudit
+digitallyseamless/nodejs-bower-gruntpublic | automated build8STARS6.0 KPULLSDETAILS,docker pull digitallyseamless/nodejs-bower-grunt
+ibmcom/websphere-libertypublic8STARS458PULLSDETAILS,docker pull ibmcom/websphere-liberty
+mattdm/fedora-smallpublic8STARS740PULLSDETAILS,docker pull mattdm/fedora-small
+zaiste/postgresqlpublic8STARS6.7 KPULLSDETAILS,docker pull zaiste/postgresql
+ricardoamaro/drupalpublic8STARS319PULLSDETAILS,docker pull ricardoamaro/drupal
+nickstenning/mediawikipublic8STARS19.1 KPULLSDETAILS,docker pull nickstenning/mediawiki
+wurstmeister/storm-uipublic | automated build8STARS4.8 KPULLSDETAILS,docker pull wurstmeister/storm-ui
+linuxkonsult/kalipublic8STARS1.2 KPULLSDETAILS,docker pull linuxkonsult/kali
+fredericlb/docker-phabricatorpublic | automated build8STARS576PULLSDETAILS,docker pull fredericlb/docker-phabricator
+ctlc/ambassadorpublic | automated build8STARS2.3 KPULLSDETAILS,docker pull ctlc/ambassador
+ctlc/haproxy-serfpublic | automated build8STARS376PULLSDETAILS,docker pull ctlc/haproxy-serf
+tianon/steampublic | automated build8STARS1.1 KPULLSDETAILS,docker pull tianon/steam
+btobolaski/owncloudpublic | automated build8STARS677PULLSDETAILS,docker pull btobolaski/owncloud
+grue/docker-sentrypublic | automated build8STARS346PULLSDETAILS,docker pull grue/docker-sentry
+moul/drupalpublic | automated build8STARS494PULLSDETAILS,docker pull moul/drupal
+rootlogin/apache2-symfony2public | automated build8STARS341PULLSDETAILS,docker pull rootlogin/apache2-symfony2
+clue/httpiepublic | automated build8STARS347PULLSDETAILS,docker pull clue/httpie
+ruo91/hadooppublic | automated build8STARS2.3 KPULLSDETAILS,docker pull ruo91/hadoop
+tutum/logrotatepublic | automated build8STARS2.5 MPULLSDETAILS,docker pull tutum/logrotate
+tutum/builderpublic | automated build8STARS67.5 KPULLSDETAILS,docker pull tutum/builder
+danlynn/ember-clipublic | automated build8STARS355PULLSDETAILS,docker pull danlynn/ember-cli
+jolicode/phauditpublic | automated build8STARS286PULLSDETAILS,docker pull jolicode/phaudit
+cedvan/toran-proxypublic | automated build8STARS1.2 KPULLSDETAILS,docker pull cedvan/toran-proxy
+continuumio/anaconda3public | automated build8STARS578PULLSDETAILS,docker pull continuumio/anaconda3
+centurylink/ca-certspublic | automated build8STARS2.3 KPULLSDETAILS,docker pull centurylink/ca-certs
+jess/visualstudiopublic | automated build8STARS391PULLSDETAILS,docker pull jess/visualstudio
+apsl/thumborpublic | automated build8STARS814PULLSDETAILS,docker pull apsl/thumbor
+hypriot/rpi-gogs-raspbianpublic8STARS359PULLSDETAILS,docker pull hypriot/rpi-gogs-raspbian
+voxxit/vaultpublic | automated build8STARS24.2 KPULLSDETAILS,docker pull voxxit/vault
+icinga/icinga2public | automated build8STARS1.0 KPULLSDETAILS,docker pull icinga/icinga2
+jess/visualstudiopublic | automated build8STARS391PULLSDETAILS,docker pull jess/visualstudio
+tchughesiv/cf-minipublic | automated build8STARS1.1 KPULLSDETAILS,docker pull tchughesiv/cf-mini
+torusware/speedus-mongopublic | automated build8STARS682PULLSDETAILS,docker pull torusware/speedus-mongo
+cloudera/impala-devpublic8STARS826PULLSDETAILS,docker pull cloudera/impala-dev
+couchbase/sync-gatewaypublic | automated build8STARS41.0 KPULLSDETAILS,docker pull couchbase/sync-gateway
+hypriot/rpi-gpiopublic8STARS139PULLSDETAILS,docker pull hypriot/rpi-gpio
+spotify/docker-gcpublic | automated build8STARS208.7 KPULLSDETAILS,docker pull spotify/docker-gc
+fluxcapacitor/pipelinepublic8STARS1.8 KPULLSDETAILS,docker pull fluxcapacitor/pipeline
+linuxserver/plexpypublic | automated build8STARS8.2 KPULLSDETAILS,docker pull linuxserver/plexpy
+hypriot/rpi-gogs-raspbianpublic8STARS359PULLSDETAILS,docker pull hypriot/rpi-gogs-raspbian
+apsl/thumborpublic | automated build8STARS814PULLSDETAILS,docker pull apsl/thumbor
+velvia/spark-jobserverpublic8STARS1.4 KPULLSDETAILS,docker pull velvia/spark-jobserver
+kanboard/kanboardpublic | automated build8STARS849PULLSDETAILS,docker pull kanboard/kanboard
+bitnami/mariadbpublic | automated build8STARS1.5 KPULLSDETAILS,docker pull bitnami/mariadb
+eboraas/phalconpublic | automated build8STARS5.2 KPULLSDETAILS,docker pull eboraas/phalcon
+onosproject/onospublic | automated build8STARS2.0 KPULLSDETAILS,docker pull onosproject/onos
+mesoscloud/marathonpublic | automated build8STARS7.8 KPULLSDETAILS,docker pull mesoscloud/marathon
+hylangofficial7STARS167.5 KPULLSDETAILS,docker pull hylang
+centurylink/ngrokpublic | automated build7STARS5.7 KPULLSDETAILS,docker pull centurylink/ngrok
+openpf/openprojectpublic | automated build7STARS646PULLSDETAILS,docker pull openpf/openproject
+madhavkobal/dockeruipublic7STARS175PULLSDETAILS,docker pull madhavkobal/dockerui
+appsembler/edx-fullpublic7STARS372PULLSDETAILS,docker pull appsembler/edx-full
+simonswine/ispconfig-php-5.6public | automated build7STARS13.0 KPULLSDETAILS,docker pull simonswine/ispconfig-php-5.6
+csanchez/jenkins-swarm-slavepublic | automated build7STARS13.6 KPULLSDETAILS,docker pull csanchez/jenkins-swarm-slave
+abevoelker/openprojectpublic | automated build7STARS1.2 KPULLSDETAILS,docker pull abevoelker/openproject
+dougbtv/asteriskpublic7STARS1.1 KPULLSDETAILS,docker pull dougbtv/asterisk
+million12/centos-supervisorpublic | automated build7STARS2.2 KPULLSDETAILS,docker pull million12/centos-supervisor
+exoplatform/ubuntu-jdk7-exopublic | automated build7STARS608PULLSDETAILS,docker pull exoplatform/ubuntu-jdk7-exo
+dylanlindgren/docker-laravel-datapublic | automated build7STARS5.2 KPULLSDETAILS,docker pull dylanlindgren/docker-laravel-data
+offlinehacker/nixospublic7STARS342PULLSDETAILS,docker pull offlinehacker/nixos
+exoplatform/ubuntu-jdk7-exo-chatpublic | automated build7STARS270PULLSDETAILS,docker pull exoplatform/ubuntu-jdk7-exo-chat
+centurylinklabs/dockerfile-from-imagepublic | automated build7STARS48PULLSDETAILS,docker pull centurylinklabs/dockerfile-from-image
+nepalez/rubypublic | automated build7STARS300PULLSDETAILS,docker pull nepalez/ruby
+tnolet/haproxy-restpublic | automated build7STARS628PULLSDETAILS,docker pull tnolet/haproxy-rest
+nshou/elasticsearch-kibanapublic | automated build7STARS914PULLSDETAILS,docker pull nshou/elasticsearch-kibana
+tobert/cassandrapublic7STARS10.2 KPULLSDETAILS,docker pull tobert/cassandra
+yelp/dockershpublic | automated build7STARS131PULLSDETAILS,docker pull yelp/dockersh
+tonistiigi/dnsdockpublic | automated build7STARS13.5 KPULLSDETAILS,docker pull tonistiigi/dnsdock
+linuxkonsult/postfixpublic | automated build7STARS9.0 KPULLSDETAILS,docker pull linuxkonsult/postfix
+lgsd/diamondpublic | automated build7STARS3.9 KPULLSDETAILS,docker pull lgsd/diamond
+scrapinghub/devpipublic | automated build7STARS736PULLSDETAILS,docker pull scrapinghub/devpi
+relateiq/oracle-java8public | automated build7STARS12.0 KPULLSDETAILS,docker pull relateiq/oracle-java8
+zumbrunnen/postgresqlpublic | automated build7STARS803PULLSDETAILS,docker pull zumbrunnen/postgresql
+zaiste/jenkinspublic | automated build7STARS3.0 KPULLSDETAILS,docker pull zaiste/jenkins
+alanct/cloud9public | automated build7STARS429PULLSDETAILS,docker pull alanct/cloud9
+mist/mistiopublic7STARS643PULLSDETAILS,docker pull mist/mistio
+abevoelker/openprojectpublic | automated build7STARS1.2 KPULLSDETAILS,docker pull abevoelker/openproject
+google/golang-hellopublic | automated build7STARS211.2 KPULLSDETAILS,docker pull google/golang-hello
+yelp/dockershpublic | automated build7STARS131PULLSDETAILS,docker pull yelp/dockersh
+guywithnose/solrpublic | automated build7STARS1.5 KPULLSDETAILS,docker pull guywithnose/solr
+cerisier/prerenderpublic | automated build7STARS634PULLSDETAILS,docker pull cerisier/prerender
+sameersbn/apt-cacher-ngpublic | automated build7STARS14.5 KPULLSDETAILS,docker pull sameersbn/apt-cacher-ng
+offlinehacker/nixospublic7STARS342PULLSDETAILS,docker pull offlinehacker/nixos
+dgageot/java8public | automated build7STARS749PULLSDETAILS,docker pull dgageot/java8
+dklawren/docker-bugzillapublic | automated build7STARS16.7 KPULLSDETAILS,docker pull dklawren/docker-bugzilla
+binhex/arch-madsonicpublic | automated build7STARS6.8 KPULLSDETAILS,docker pull binhex/arch-madsonic
+centurylinklabs/dockerfile-from-imagepublic | automated build7STARS48PULLSDETAILS,docker pull centurylinklabs/dockerfile-from-image
+tonistiigi/dnsdockpublic | automated build7STARS13.5 KPULLSDETAILS,docker pull tonistiigi/dnsdock
+blacktop/bropublic | automated build7STARS1.8 KPULLSDETAILS,docker pull blacktop/bro
+maxexcloo/datapublic | automated build7STARS10.3 KPULLSDETAILS,docker pull maxexcloo/data
+maxexcloo/javapublic | automated build7STARS26.9 KPULLSDETAILS,docker pull maxexcloo/java
+training/sinatrapublic7STARS28.9 KPULLSDETAILS,docker pull training/sinatra
+centurylink/ngrokpublic | automated build7STARS5.7 KPULLSDETAILS,docker pull centurylink/ngrok
+simonswine/ispconfig-php-5.6public | automated build7STARS13.0 KPULLSDETAILS,docker pull simonswine/ispconfig-php-5.6
+sergeyzh/vmware-toolspublic | automated build7STARS180.5 KPULLSDETAILS,docker pull sergeyzh/vmware-tools
+larrycai/openldappublic | automated build7STARS545PULLSDETAILS,docker pull larrycai/openldap
+macadmins/munkiwebadminpublic | automated build7STARS5.9 KPULLSDETAILS,docker pull macadmins/munkiwebadmin
+jamesdbloom/couchbasepublic | automated build7STARS1.8 KPULLSDETAILS,docker pull jamesdbloom/couchbase
+amatriain/prestashoppublic7STARS984PULLSDETAILS,docker pull amatriain/prestashop
+nepalez/rubypublic | automated build7STARS300PULLSDETAILS,docker pull nepalez/ruby
+tnolet/haproxy-restpublic | automated build7STARS628PULLSDETAILS,docker pull tnolet/haproxy-rest
+combro2k/roundcube-docker-imagepublic | automated build7STARS261PULLSDETAILS,docker pull combro2k/roundcube-docker-image
+hylangofficial7STARS167.5 KPULLSDETAILS,docker pull hylang
+openpf/openprojectpublic | automated build7STARS646PULLSDETAILS,docker pull openpf/openproject
+nshou/elasticsearch-kibanapublic | automated build7STARS914PULLSDETAILS,docker pull nshou/elasticsearch-kibana
+million12/centos-supervisorpublic | automated build7STARS2.2 KPULLSDETAILS,docker pull million12/centos-supervisor
+exoplatform/ubuntu-jdk7-exopublic | automated build7STARS608PULLSDETAILS,docker pull exoplatform/ubuntu-jdk7-exo
+rocker/r-develpublic | automated build7STARS847PULLSDETAILS,docker pull rocker/r-devel
+sequenceiq/kylinpublic | automated build7STARS1.8 KPULLSDETAILS,docker pull sequenceiq/kylin
+exoplatform/ubuntu-jdk7-exo-chatpublic | automated build7STARS270PULLSDETAILS,docker pull exoplatform/ubuntu-jdk7-exo-chat
+dylanlindgren/docker-laravel-datapublic | automated build7STARS5.2 KPULLSDETAILS,docker pull dylanlindgren/docker-laravel-data
+wurstmeister/zookeeperpublic | automated build7STARS29.6 KPULLSDETAILS,docker pull wurstmeister/zookeeper
+awakening/awakening-nginx-rtmppublic | automated build7STARS1.6 KPULLSDETAILS,docker pull awakening/awakening-nginx-rtmp
+nkatsaros/atlassian-crowdpublic | automated build7STARS207PULLSDETAILS,docker pull nkatsaros/atlassian-crowd
+madhavkobal/dockeruipublic7STARS175PULLSDETAILS,docker pull madhavkobal/dockerui
+appsembler/edx-fullpublic7STARS372PULLSDETAILS,docker pull appsembler/edx-full
+arcus/kibanapublic | automated build7STARS9.1 KPULLSDETAILS,docker pull arcus/kibana
+scivm/scientific-python-3.3public | automated build7STARS212PULLSDETAILS,docker pull scivm/scientific-python-3.3
+nordaaker/convospublic | automated build7STARS241PULLSDETAILS,docker pull nordaaker/convos
+niallo/striderpublic | automated build7STARS1.4 KPULLSDETAILS,docker pull niallo/strider
+matteocollina/moscapublic | automated build7STARS424PULLSDETAILS,docker pull matteocollina/mosca
+zaiste/jenkinspublic | automated build7STARS3.0 KPULLSDETAILS,docker pull zaiste/jenkins
+scrapinghub/devpipublic | automated build7STARS736PULLSDETAILS,docker pull scrapinghub/devpi
+relateiq/oracle-java8public | automated build7STARS12.0 KPULLSDETAILS,docker pull relateiq/oracle-java8
+plabedan/gentoo-minimalpublic7STARS700PULLSDETAILS,docker pull plabedan/gentoo-minimal
+alanct/cloud9public | automated build7STARS429PULLSDETAILS,docker pull alanct/cloud9
+revolutionanalytics/rro-ubuntupublic | automated build7STARS78PULLSDETAILS,docker pull revolutionanalytics/rro-ubuntu
+csanchez/jenkins-swarm-slavepublic | automated build7STARS13.6 KPULLSDETAILS,docker pull csanchez/jenkins-swarm-slave
+luzifer/teamspeak3public | automated build7STARS46.5 KPULLSDETAILS,docker pull luzifer/teamspeak3
+eriksencosta/php-devpublic | automated build7STARS188PULLSDETAILS,docker pull eriksencosta/php-dev
+foreman/foremanpublic7STARS1.3 KPULLSDETAILS,docker pull foreman/foreman
+selenium/standalone-chromepublic | automated build7STARS34.2 KPULLSDETAILS,docker pull selenium/standalone-chrome
+bios/docker-owncloudpublic | automated build7STARS387PULLSDETAILS,docker pull bios/docker-owncloud
+saltstack/ubuntu-14.04-minimalpublic | automated build7STARS681PULLSDETAILS,docker pull saltstack/ubuntu-14.04-minimal
+nimmis/java-centospublic | automated build7STARS2.6 KPULLSDETAILS,docker pull nimmis/java-centos
+jtgasper3/shibboleth-idppublic | automated build7STARS574PULLSDETAILS,docker pull jtgasper3/shibboleth-idp
+theivan/weblogicpublic7STARS1.1 KPULLSDETAILS,docker pull theivan/weblogic
+macadmins/munki-puppetpublic | automated build7STARS398PULLSDETAILS,docker pull macadmins/munki-puppet
+macadmins/puppetmasterpublic | automated build7STARS16.4 KPULLSDETAILS,docker pull macadmins/puppetmaster
+tutum/quickstart-pythonpublic | automated build7STARS18.3 KPULLSDETAILS,docker pull tutum/quickstart-python
+ethereum/client-gopublic | automated build7STARS2.7 KPULLSDETAILS,docker pull ethereum/client-go
+google/dartpublic7STARS2.3 KPULLSDETAILS,docker pull google/dart
+mesosphere/mesos-dnspublic7STARS120.0 KPULLSDETAILS,docker pull mesosphere/mesos-dns
+asciidoctor/docker-asciidoctorpublic | automated build7STARS556PULLSDETAILS,docker pull asciidoctor/docker-asciidoctor
+blacktop/cuckoopublic | automated build7STARS653PULLSDETAILS,docker pull blacktop/cuckoo
+larrycai/openldappublic | automated build7STARS545PULLSDETAILS,docker pull larrycai/openldap
+dgageot/java8public | automated build7STARS749PULLSDETAILS,docker pull dgageot/java8
+training/sinatrapublic7STARS28.9 KPULLSDETAILS,docker pull training/sinatra
+needo/delugepublic | automated build7STARS3.6 KPULLSDETAILS,docker pull needo/deluge
+dklawren/docker-bugzillapublic | automated build7STARS16.7 KPULLSDETAILS,docker pull dklawren/docker-bugzilla
+sameersbn/apt-cacher-ngpublic | automated build7STARS14.5 KPULLSDETAILS,docker pull sameersbn/apt-cacher-ng
+binhex/arch-madsonicpublic | automated build7STARS6.8 KPULLSDETAILS,docker pull binhex/arch-madsonic
+djfarrelly/maildevpublic | automated build7STARS14.7 KPULLSDETAILS,docker pull djfarrelly/maildev
+sometheycallme/docker-nessuspublic7STARS412PULLSDETAILS,docker pull sometheycallme/docker-nessus
+fpco/stack-buildpublic7STARS1.0 KPULLSDETAILS,docker pull fpco/stack-build
+jboss/jbpm-workbenchpublic | automated build7STARS700PULLSDETAILS,docker pull jboss/jbpm-workbench
+containersol/docker-registry-proxypublic | automated build7STARS9.7 KPULLSDETAILS,docker pull containersol/docker-registry-proxy
+torusware/speedus-centospublic | automated build7STARS784PULLSDETAILS,docker pull torusware/speedus-centos
+shadowsocks/shadowsocks-libevpublic | automated build7STARS7.3 KPULLSDETAILS,docker pull shadowsocks/shadowsocks-libev
+knickers/mongo-expresspublic | automated build7STARS2.2 KPULLSDETAILS,docker pull knickers/mongo-express
+rakudo-starofficial7STARS45.7 KPULLSDETAILS,docker pull rakudo-star
+zymlabs/symfony-zympublic | automated build7STARS80.7 KPULLSDETAILS,docker pull zymlabs/symfony-zym
+mesoscloud/chronospublic | automated build7STARS2.5 KPULLSDETAILS,docker pull mesoscloud/chronos
+mjibson/deepdreampublic7STARS467PULLSDETAILS,docker pull mjibson/deepdream
+linuxserver/sabnzbdpublic | automated build7STARS714PULLSDETAILS,docker pull linuxserver/sabnzbd
+rdsubhas/tor-privoxy-alpinepublic | automated build7STARS165PULLSDETAILS,docker pull rdsubhas/tor-privoxy-alpine
+bitnami/nginxpublic | automated build7STARS1.3 KPULLSDETAILS,docker pull bitnami/nginx
+bitnami/nodepublic | automated build7STARS1.9 KPULLSDETAILS,docker pull bitnami/node
+pydio/pydio-corepublic | automated build7STARS2.6 KPULLSDETAILS,docker pull pydio/pydio-core
+k0st/alpine-postgrespublic | automated build7STARS161PULLSDETAILS,docker pull k0st/alpine-postgres
+jordi/abpublic | automated build7STARS2.3 KPULLSDETAILS,docker pull jordi/ab
+audreyt/ethercalcpublic6STARS944PULLSDETAILS,docker pull audreyt/ethercalc
+quintenk/supervisorpublic | automated build6STARS320PULLSDETAILS,docker pull quintenk/supervisor
+deis/databasepublic6STARS1.2 MPULLSDETAILS,docker pull deis/database
+deis/routerpublic6STARS1.2 MPULLSDETAILS,docker pull deis/router
+juanluisbaptiste/bigbluebuttonpublic | automated build6STARS1.4 KPULLSDETAILS,docker pull juanluisbaptiste/bigbluebutton
+xena/elemental-ircdpublic | automated build6STARS506PULLSDETAILS,docker pull xena/elemental-ircd
+finnlabs/railspublic | automated build6STARS5.5 KPULLSDETAILS,docker pull finnlabs/rails
+marcellodesales/swagger-editorpublic6STARS1.0 KPULLSDETAILS,docker pull marcellodesales/swagger-editor
+jupyter/demopublic6STARS14.0 KPULLSDETAILS,docker pull jupyter/demo
+jupyter/tmpnbpublic | automated build6STARS3.1 KPULLSDETAILS,docker pull jupyter/tmpnb
+niaquinto/grailspublic | automated build6STARS104PULLSDETAILS,docker pull niaquinto/grails
+mahnunchik/keystonejspublic | automated build6STARS4.6 KPULLSDETAILS,docker pull mahnunchik/keystonejs
+dockerbase/androidpublic | automated build6STARS287PULLSDETAILS,docker pull dockerbase/android
+appcontainers/prestashoppublic | automated build6STARS1.4 KPULLSDETAILS,docker pull appcontainers/prestashop
+tomaskral/chronospublic | automated build6STARS5.2 KPULLSDETAILS,docker pull tomaskral/chronos
+dylanlindgren/docker-phpfpmpublic | automated build6STARS398PULLSDETAILS,docker pull dylanlindgren/docker-phpfpm
+kameshsampath/liferaypublic | automated build6STARS269PULLSDETAILS,docker pull kameshsampath/liferay
+spiddy/dind-jenkins-slavepublic | automated build6STARS461PULLSDETAILS,docker pull spiddy/dind-jenkins-slave
+citizenstig/dvwapublic | automated build6STARS246PULLSDETAILS,docker pull citizenstig/dvwa
+dylanlindgren/docker-laravel-artisanpublic | automated build6STARS3.9 KPULLSDETAILS,docker pull dylanlindgren/docker-laravel-artisan
+consol/tomcat-6.0public | automated build6STARS594PULLSDETAILS,docker pull consol/tomcat-6.0
+atlassian/bamboo-java-agentpublic6STARS1.6 KPULLSDETAILS,docker pull atlassian/bamboo-java-agent
+usman/docker-seyrenpublic | automated build6STARS894PULLSDETAILS,docker pull usman/docker-seyren
+mischief/docker-golangpublic | automated build6STARS3.8 KPULLSDETAILS,docker pull mischief/docker-golang
+mazzolino/armhf-ubuntupublic6STARS923PULLSDETAILS,docker pull mazzolino/armhf-ubuntu
+pcting/hadoop-single-nodepublic | automated build6STARS935PULLSDETAILS,docker pull pcting/hadoop-single-node
+alexeiled/java7-maven-gitpublic | automated build6STARS827PULLSDETAILS,docker pull alexeiled/java7-maven-git
+fabric8/fabric8public | automated build6STARS4.3 KPULLSDETAILS,docker pull fabric8/fabric8
+promptworks/ruby-2.0.0public | automated build6STARS427PULLSDETAILS,docker pull promptworks/ruby-2.0.0
+brutasse/graphite-apipublic | automated build6STARS253PULLSDETAILS,docker pull brutasse/graphite-api
+dhrp/sshdpublic6STARS3.3 KPULLSDETAILS,docker pull dhrp/sshd
+orchardup/redispublic | automated build6STARS4.0 KPULLSDETAILS,docker pull orchardup/redis
+aostanin/subsonicpublic | automated build6STARS521PULLSDETAILS,docker pull aostanin/subsonic

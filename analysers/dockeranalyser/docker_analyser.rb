@@ -15,13 +15,32 @@ class DockerAnalyser
   @vulnerabilities = {}
   @sharp_packagelist = {}
   @fuzzy_packagelist = {}
+  @image_name = nil
   
   def initialize()
     @docker_model = DockerModel.new("base_image_ids.csv")
     @vulnerabilities = Hash.new
   end
   
-  def analyse(test_id)
+  def analyse(package_name,pull_command)
+    result = `#{pull_command}`
+    
+    @image_name = pull_command.split(" ").last
+     
+    if result 
+      
+      image_id = Docker::Image.get(@image_name)
+      return analyse_image_id(image_id.id)
+      
+    end
+      
+    # should clean up as well
+   
+    
+  end
+  
+  def analyse_image_id(test_id)
+    
     flavour = determine_baseimage_flavour(test_id)
     puts flavour
     
@@ -32,7 +51,21 @@ class DockerAnalyser
       packages = list_packages(test_id,flavour)
       
       ##return analyse_sharp(packages) && analyse_fuzzy(packages)
-      return analyse_fuzzy(packages)
+      result = analyse_fuzzy(packages)
+      
+      if result != nil
+        # Store them into the database
+      
+        database_URL = ENV["SB_DBURL"]
+        url = "http://admin:admin@#{database_URL}/analytics/vulnerabilities"
+        puts url
+        response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
+        #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
+        puts response
+          
+      end
+      
+      
       # found = analyse_sharp(packages)
 #
 #       if found == false
@@ -50,41 +83,10 @@ class DockerAnalyser
 
     
   end
-  
-    #result.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }
-  
+   
   ## Currently only a test method. 
   def test()
-    test_id = '8c100304a4f9'
- 
-    puts ENV["DBURL"]
-    if analyse(test_id)
-      puts "HEUREKA"
-
-      @vulnerabilities.each do |name, vulnerability|
-        puts "Found vulnerability for #{name}"
-        puts "Specifics are"
-
-        vulnerability = JSON.parse(vulnerability)
-        vulnerability.each do |details|
-          puts "For package #{details["vulnerable_software"]} with the following #{details["summary"]}"
-        end
-
-
-        puts @fuzzy_packagelist[name]
-
-
-      end
-    else
-      puts "SHARP"
-      puts @sharp_packagelist
-      puts "FUZZY"
-      puts @fuzzy_packagelist
-
-    end
-
-    return true
-    
+  
   end
   
   
@@ -110,11 +112,31 @@ class DockerAnalyser
     
     packages.each do |name,version|
       
-      
-      # TODO this needs to be injected of course
       cveurl = ENV["SB_CVEHUB"]
       # response = RestClient.get 'http://0.0.0.0:8000/cves', {:params => {'name' => name}}#, 'version' => version}}
-      response = RestClient.get "http://#{cveurl}/cves", {:params => {'name' => name}}#, 'version' => version}}
+      
+      #(\d+\.)?(\d+\.)?(\*|\d+)
+      
+      # Parse version
+      # First we check wheter it is an aggregated package or not then we apply some basic regex
+      if version.is_a?(Array)
+        # We just take the first version we find
+        checking = version.flatten
+        checking.each do |candidate|
+          version = candidate.match(/(\d+\.)?(\d+\.)?(\*|\d+)/)
+          if version != nil
+            version = version.to_s
+            break
+          end
+          
+          
+        end
+        
+      else
+        version = version.match(/(\d+\.)?(\d+\.)?(\*|\d+)/).to_s
+      end
+      
+      response = RestClient.get "http://#{cveurl}/cves", {:params => {'name' => name, 'version' => version}}
       
       
       if response != "[]"

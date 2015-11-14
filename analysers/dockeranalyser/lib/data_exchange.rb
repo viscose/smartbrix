@@ -4,7 +4,11 @@ class DataExchange
     
   def initialize(topic)
     
-    host = ENV["SB_MQ"]
+    endpoint = ENV["SB_MQ"]
+    host = endpoint
+    # endpoint = endpoint.split(":")
+  #   host = endpoint[0]
+  #   port = endpoint[1]
  
     @connection = Bunny.new(:host => host)
     @connection.start

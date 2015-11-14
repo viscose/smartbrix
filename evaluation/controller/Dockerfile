@@ -14,24 +14,17 @@ RUN cd /root/src/ruby-2.2.2; ./configure; make install
 RUN gem update --system
 RUN gem install bundler
 
-# SqLite
-RUN apt-get -y install sqlite3 libsqlite3-dev
 
 COPY Gemfile* /tmp/
 WORKDIR /tmp
 RUN bundle install
 
 # Add assets
-ADD ./ /dockeranalyser
-WORKDIR /dockeranalyser
-
-# RUN bundle install
-#
-ADD docker_start.sh /opt/start.sh
-RUN chmod +x /opt/start.sh
-
-# EXPOSE 8000
+ADD ./ /controller
+WORKDIR /controller
 
 
-ENTRYPOINT ["/opt/start.sh"]
-# CMD ["/usr/local/bin/foreman","start","-d","/root/sinatra"]
+
+
+#ENTRYPOINT ["/opt/start.sh"]
+CMD ["/usr/local/bin/foreman","start","-d","/root/sinatra"]

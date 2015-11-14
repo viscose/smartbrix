@@ -21,8 +21,17 @@ class DockerAnalyserService < Sinatra::Application
   end
   
   get '/analyse' do
-    "To be implemented"
-    @docker_analyser.test
+    # name = nil;
+    # command = nil;
+    # if params.has_key?('name')
+    #   params['name']
+    # end
+    #
+    # if params.has_key?('command')
+    #
+    # end
+    puts "Analyzing #{params["name"]} with #{params["command"]}"
+    @docker_analyser.analyse(params["name"],params["command"])
   end
 
 
