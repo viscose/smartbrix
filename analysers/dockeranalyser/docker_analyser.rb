@@ -23,19 +23,36 @@ class DockerAnalyser
   end
   
   def analyse(package_name,pull_command)
-    result = `#{pull_command}`
+    puts "Trying to pull #{package_name} with #{pull_command}"
+    # result = `#{pull_command}`
     
     @image_name = pull_command.split(" ").last
-     
+    
+    puts @image_name
+    
+    result = Docker::Image.create('fromImage' => @image_name)
+    
+
+    image = nil 
     if result 
       
-      image_id = Docker::Image.get(@image_name)
-      return analyse_image_id(image_id.id)
+      puts result
       
+      image = Docker::Image.get(@image_name)
+      
+      puts "Analysing image with: #{image}"
+      analyse_image_id(image.id)
+      
+    else
+      puts "Could not pull image #{@image_name}"
     end
+    
+    
       
     # should clean up as well
-   
+    image.remove(:force => true)
+    puts "Finished and cleaned up"
+    return true
     
   end
   
@@ -53,6 +70,7 @@ class DockerAnalyser
       ##return analyse_sharp(packages) && analyse_fuzzy(packages)
       result = analyse_fuzzy(packages)
       
+      puts "Finished analysis tyring to store them"
       if result != nil
         # Store them into the database
       
@@ -62,7 +80,7 @@ class DockerAnalyser
         response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
         #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
         puts response
-          
+        return true  
       end
       
       
@@ -116,7 +134,7 @@ class DockerAnalyser
       # response = RestClient.get 'http://0.0.0.0:8000/cves', {:params => {'name' => name}}#, 'version' => version}}
       
       #(\d+\.)?(\d+\.)?(\*|\d+)
-      
+      puts "Analysing package list"
       # Parse version
       # First we check wheter it is an aggregated package or not then we apply some basic regex
       if version.is_a?(Array)
@@ -136,6 +154,8 @@ class DockerAnalyser
         version = version.match(/(\d+\.)?(\d+\.)?(\*|\d+)/).to_s
       end
       
+      puts "Trying to query cves from #{cveurl}"
+      
       response = RestClient.get "http://#{cveurl}/cves", {:params => {'name' => name, 'version' => version}}
       
       
@@ -151,6 +171,8 @@ class DockerAnalyser
       end
       
     end
+    
+    puts "Finished analytics"
     
     return found
   end
@@ -204,6 +226,7 @@ class DockerAnalyser
     puts shellcommand
     result = `#{shellcommand}`
     puts "Run finished"
+    puts result
     
     
     case flavour
@@ -234,7 +257,6 @@ class DockerAnalyser
 
   
   def parse_dpkg_response(result)
-    
     
     packages = {}
     

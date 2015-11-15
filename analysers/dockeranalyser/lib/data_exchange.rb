@@ -37,7 +37,7 @@ class DataExchange
            puts " [x] Received '#{body}'"
            # imitate some work
            callback.process(body)
-           ch.ack(delivery_info.delivery_tag)
+           @channel.ack(delivery_info.delivery_tag)
          end
       rescue Interrupt => _
         @channel.close
