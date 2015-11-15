@@ -46,3 +46,9 @@ docker-machine create --driver generic\
     --generic-ssh-user ubuntu\
     --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
     smartbrix-eval-1
+
+
+
+### QUERIES
+
+{ vulnerabilities: {$exists: true, $gt: {$size: 0}} }
