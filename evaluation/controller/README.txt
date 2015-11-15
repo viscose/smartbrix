@@ -14,7 +14,7 @@ docker run \
   --volume=/var/run:/var/run:rw \
   --volume=/sys:/sys:ro \
   --volume=/var/lib/docker/:/var/lib/docker:ro \
-  --publish=8080:8080 \
+  --publish=8010:8080 \
   --detach=true \
   --name=cadvisor \
   google/cadvisor:latest
@@ -24,7 +24,25 @@ docker run \
 
 docker rm -v $(docker ps -a -q -f status=exited)
 
+docker rmi $(docker images -f "dangling=true" -q)
+
 # Delete all containers
 docker rm $(docker ps -a -q)
 # Delete all images
 docker rmi $(docker images -q)
+
+
+
+--- General creation commands ---
+
+docker-machine create --driver generic\
+  --generic-ip-address 128.130.172.213\
+  --generic-ssh-user ubuntu\
+  --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+  smartbrix-controller
+  
+  docker-machine create --driver generic\
+    --generic-ip-address 128.130.172.190\
+    --generic-ssh-user ubuntu\
+    --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+    smartbrix-eval-1

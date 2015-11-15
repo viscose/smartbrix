@@ -30,7 +30,7 @@ class DockerAnalyser
     
     puts @image_name
     
-    result = Docker::Image.create('fromImage' => @image_name)
+    result = Docker::Image.create('fromImage' => "#{@image_name}:latest")
     
 
     image = nil 
@@ -44,14 +44,17 @@ class DockerAnalyser
       analyse_image_id(image.id)
       
     else
-      puts "Could not pull image #{@image_name}"
+      puts "Could not pull image #{@image_name}:latest"
     end
     
     
       
     # should clean up as well
-    image.remove(:force => true)
-    puts "Finished and cleaned up"
+    #image.remove(:force => true)
+    if system("docker rmi #{@image_name}:latest")
+      puts "Cleaned up"
+    end
+    puts "Finished"
     return true
     
   end

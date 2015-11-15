@@ -17,3 +17,9 @@ docker-machine create --driver generic\
   --generic-ssh-user ubuntu\
   --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
   smartbrix-controller
+  
+  docker-machine create --driver generic\
+    --generic-ip-address 128.130.172.190\
+    --generic-ssh-user ubuntu\
+    --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
+    smartbrix-eval-1
