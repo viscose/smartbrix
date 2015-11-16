@@ -23,39 +23,45 @@ class DockerAnalyser
   end
   
   def analyse(package_name,pull_command)
-    puts "Trying to pull #{package_name} with #{pull_command}"
-    # result = `#{pull_command}`
+    begin
+      puts "Trying to pull #{package_name} with #{pull_command}"
+      # result = `#{pull_command}`
     
-    @image_name = pull_command.split(" ").last
+      @image_name = pull_command.split(" ").last
     
-    puts @image_name
+      puts @image_name
     
-    result = Docker::Image.create('fromImage' => "#{@image_name}:latest")
+      result = Docker::Image.create('fromImage' => "#{@image_name}:latest")
     
 
-    image = nil 
-    if result 
+      image = nil 
+      if result 
       
-      puts result
+        puts result
       
-      image = Docker::Image.get(@image_name)
+        image = Docker::Image.get(@image_name)
       
-      puts "Analysing image with: #{image}"
-      analyse_image_id(image.id)
+        puts "Analysing image with: #{image}"
+        analyse_image_id(image.id)
       
-    else
-      puts "Could not pull image #{@image_name}:latest"
-    end
+      else
+        puts "Could not pull image #{@image_name}:latest"
+      end
     
     
       
-    # should clean up as well
-    #image.remove(:force => true)
-    if system("docker rmi #{@image_name}:latest")
-      puts "Cleaned up"
+      # should clean up as well
+      #image.remove(:force => true)
+      if system("docker rmi #{@image_name}:latest")
+        puts "Cleaned up"
+      end
+      puts "Finished"
+      return true 
+    rescue => e
+      puts "Exception while trying to pull the image #{e.inspect}"
+      return false
     end
-    puts "Finished"
-    return true
+  
     
   end
   
@@ -80,10 +86,18 @@ class DockerAnalyser
         database_URL = ENV["SB_DBURL"]
         url = "http://admin:admin@#{database_URL}/analytics/vulnerabilities"
         puts url
-        response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
+        
+        begin
+        
+          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
         #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
-        puts response
-        return true  
+          puts response
+          
+          return true  
+        rescue => e
+          puts "Couldnt store data due to #{e.inspect}"
+          return false
+        end
       end
       
       
