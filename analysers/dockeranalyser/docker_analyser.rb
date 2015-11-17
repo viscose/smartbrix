@@ -33,8 +33,8 @@ class DockerAnalyser
     
       puts @image_name
     
-      result = Docker::Image.create('fromImage' => "#{@image_name}:latest")
-    
+      #result = Docker::Image.create('fromImage' => "#{@image_name}:latest")
+      result = system("#{pull_command}:latest")
 
       image = nil 
       if result 
@@ -57,9 +57,9 @@ class DockerAnalyser
       if system("docker rmi #{@image_name}:latest")
         puts "Cleaned up"
       end
-      if system("docker rmi $(docker images -f \"dangling=true\" -q)")
-        puts "Cleaned up dangling"
-      end
+      # if system("docker rmi $(docker images -q)")
+ #        puts "Cleaned up dangling"
+ #      end
       if system("docker rm -v $(docker ps -a -q -f status=dead)")
         puts "Cleaned up dead containers"
       end
@@ -75,7 +75,7 @@ class DockerAnalyser
       if system("docker rmi #{@image_name}:latest")
         puts "Cleaned up"
       end
-      if system("docker rmi $(docker images -f \"dangling=true\" -q)")
+      if system("docker rmi $(docker images -q)")
         puts "Cleaned up dangling"
       end
       if system("docker rm -v $(docker ps -a -q -f status=dead)")

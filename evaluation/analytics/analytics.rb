@@ -2,6 +2,7 @@ require 'csv'
 require 'json'
 require 'mongo'
 require 'gnuplot'
+require 'influxdb'
 
 
 # file = File.read('./datasets/vulnerabilities.json')
@@ -9,15 +10,22 @@ require 'gnuplot'
 #
 # puts "done"
 
-client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'analytics')
+# client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'analytics')
+#
+# analysed = client[:vulnerabilities].find()
+#
+#
+# client[:vulnerabilities].find().each do |document|
+#   #=> Yields a BSON::Document.
+#   puts document[:image_name]
+# end
 
-analysed = client[:vulnerabilities].find()
+# Influx 
+#
+smartbrix_eval_1_influx = "128.130.172.190"
+influxdb = InfluxDB::Client.new(host: smartbrix_eval_1_influx, port: "8086", user:"root", password:"root")
 
-
-client[:vulnerabilities].find().each do |document|
-  #=> Yields a BSON::Document.
-  puts document[:image_name]
-end
+influxdb.list_databases
 
 # Gnuplot.open do |gp|
 #   Gnuplot::Plot.new( gp ) do |plot|

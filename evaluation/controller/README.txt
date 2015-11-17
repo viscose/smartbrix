@@ -47,7 +47,11 @@ docker rm $(docker ps -a -q)
 # Delete all images
 docker rmi $(docker images -q)
 
+# Clean up exploding image handles
 
+sudo ls /var/lib/docker/tmp
+
+sudo rm /var/lib/docker/tmp/*
 
 --- General creation commands ---
 
@@ -68,6 +72,8 @@ docker-machine create --driver generic\
     --generic-ssh-user ubuntu\
     --generic-ssh-key $HOME/.ssh/dsg-cloud.pem\
     smartbrix-eval-2
+
+
 
 
 
