@@ -16,6 +16,8 @@ class DockerAnalyser
   @sharp_packagelist = {}
   @fuzzy_packagelist = {}
   @image_name = nil
+  @image_history = nil
+  @pull_command = nil
   
   def initialize()
     @docker_model = DockerModel.new("base_image_ids.csv")
@@ -26,7 +28,7 @@ class DockerAnalyser
     begin
       puts "Trying to pull #{package_name} with #{pull_command}"
       # result = `#{pull_command}`
-    
+      @pull_command = pull_command
       @image_name = pull_command.split(" ").last
     
       puts @image_name
@@ -40,7 +42,7 @@ class DockerAnalyser
         puts result
       
         image = Docker::Image.get(@image_name)
-      
+        @image_history = image.history
         puts "Analysing image with: #{image}"
         analyse_image_id(image.id)
       
@@ -55,10 +57,32 @@ class DockerAnalyser
       if system("docker rmi #{@image_name}:latest")
         puts "Cleaned up"
       end
+      if system("docker rmi $(docker images -f \"dangling=true\" -q)")
+        puts "Cleaned up dangling"
+      end
+      if system("docker rm -v $(docker ps -a -q -f status=dead)")
+        puts "Cleaned up dead containers"
+      end
+      if system("docker rm -v $(docker ps -a -q -f status=exited)")
+        puts "Cleaned up dead containers"
+      end
+      
       puts "Finished"
       return true 
     rescue => e
       puts "Exception while trying to pull the image #{e.inspect}"
+      puts "Trying to cleanup anyway"
+      if system("docker rmi #{@image_name}:latest")
+        puts "Cleaned up"
+      end
+      if system("docker rmi $(docker images -f \"dangling=true\" -q)")
+        puts "Cleaned up dangling"
+      end
+      if system("docker rm -v $(docker ps -a -q -f status=dead)")
+        puts "Cleaned up dead containers"
+      end
+      
+      
       return false
     end
   
@@ -66,6 +90,8 @@ class DockerAnalyser
   end
   
   def analyse_image_id(test_id)
+    
+    starttime = Time.now
     
     flavour = determine_baseimage_flavour(test_id)
     puts flavour
@@ -80,6 +106,7 @@ class DockerAnalyser
       result = analyse_fuzzy(packages)
       
       puts "Finished analysis tyring to store them"
+      endtime = Time.now
       if result != nil
         # Store them into the database
       
@@ -88,8 +115,8 @@ class DockerAnalyser
         puts url
         
         begin
-        
-          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
+          elapsed_time = (endtime - starttime)*1000
+          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'pull_command' => @pull_command,'flavour' => flavour, 'runtime' => elapsed_time,'history' => @image_history,'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
         #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
           puts response
           
@@ -99,6 +126,7 @@ class DockerAnalyser
           return false
         end
       end
+      
       
       
       # found = analyse_sharp(packages)

@@ -7,6 +7,11 @@ docker run -d -p 27017:27017 --name mongodb -v /data/db:/data/db mongo:3.0
 
 docker run -d -p 8080:8080 --name restheart --link mongodb:mongodb softinstigate/restheart
 
+# Move to emph volume with docker 
+
+echo 'DOCKER_OPTS="-g /mnt"' |sudo tee -a /etc/default/docker
+sudo service docker restart
+
 # Cadivor
 
 docker run \

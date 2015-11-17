@@ -1,0 +1,22 @@
+source 'https://rubygems.org'
+
+# data
+
+gem 'json'
+
+# Connect to the database
+
+gem 'mongo'
+gem 'influxdb'
+
+# Vis
+
+gem 'gnuplot'
+
+# For better dev console
+gem 'pry'
+
+
+
+
+
