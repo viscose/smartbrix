@@ -2,7 +2,6 @@ require 'csv'
 require 'json'
 require 'mongo'
 require 'gnuplot'
-require 'influxdb'
 
 
 # file = File.read('./datasets/vulnerabilities.json')
@@ -10,23 +9,21 @@ require 'influxdb'
 #
 # puts "done"
 
-# client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'analytics')
-#
-# analysed = client[:vulnerabilities].find()
-#
-#
-# client[:vulnerabilities].find().each do |document|
+client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'analytics')
+
+analysed = client[:vulnerabilities].find()
+#{ vulnerabilities: {$exists: true, $gt: {$size: 0}} }
+vulnerable = client[:vulnerabilities].find({'vulnerabilities' => {"$exists" => true, "$gt" => {"$size" => 0}}})
+
+# client[:vulnerabilities].find({'flavour' => "ubuntu" }).each do |document|
 #   #=> Yields a BSON::Document.
 #   puts document[:image_name]
 # end
 
-# Influx 
+puts "From #{analysed.count} images we found #{vulnerable.count} with potential vulnerabilities "
+percentage_of_vulnerable = 100/analysed.count.to_f * vulnerable.count.to_f
+puts percentage_of_vulnerable
 #
-smartbrix_eval_1_influx = "128.130.172.190"
-influxdb = InfluxDB::Client.new(host: smartbrix_eval_1_influx, port: "8086", user:"root", password:"root")
-
-influxdb.list_databases
-
 # Gnuplot.open do |gp|
 #   Gnuplot::Plot.new( gp ) do |plot|
 #
