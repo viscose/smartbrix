@@ -23,6 +23,23 @@ vulnerable = client[:vulnerabilities].find({'vulnerabilities' => {"$exists" => t
 puts "From #{analysed.count} images we found #{vulnerable.count} with potential vulnerabilities "
 percentage_of_vulnerable = 100/analysed.count.to_f * vulnerable.count.to_f
 puts percentage_of_vulnerable
+
+vulnerable.each do |document|
+  puts "#{document[:image_name]} from basetype #{document[:flavour]}"
+  puts document[:vulnerabilities]
+  puts document[:packages]
+end
+
+processing_time = 0
+analysed.each do |document|
+  processing_time += document[:runtime]/1000
+  
+end
+puts processing_time/analysed.count
+
+
+
+
 #
 # Gnuplot.open do |gp|
 #   Gnuplot::Plot.new( gp ) do |plot|
