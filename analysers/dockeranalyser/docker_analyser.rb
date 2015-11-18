@@ -102,8 +102,12 @@ class DockerAnalyser
       puts "got command:#{command}"
       packages = list_packages(test_id,flavour)
       
+      # We need to remove the . from the keys otherwise we cant store them in mongodb.
+      corrected_packages = Hash[packages.map { |k, v| [k.gsub(/\./,"_"), v] }]
       ##return analyse_sharp(packages) && analyse_fuzzy(packages)
       result = analyse_fuzzy(packages)
+      
+      
       
       puts "Finished analysis tyring to store them"
       endtime = Time.now
@@ -116,7 +120,7 @@ class DockerAnalyser
         
         begin
           elapsed_time = (endtime - starttime)*1000
-          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'pull_command' => @pull_command,'flavour' => flavour, 'runtime' => elapsed_time,'history' => @image_history,'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
+          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'pull_command' => @pull_command,'flavour' => flavour, 'runtime' => elapsed_time,'history' => @image_history,'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'packages_hash' => corrected_packages,'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
         #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
           puts response
           
