@@ -47,6 +47,7 @@ class DockerCompensation
  #    end
   end
   
+  # Adapted from CenturyLinks
   def generate_docker_file(image_id)
     tags = Docker::Image.all.each_with_object({}) do |image, hsh|
       tag = image.info['RepoTags'].first
@@ -54,6 +55,7 @@ class DockerCompensation
     end
 
     loop do
+      # TODO update this part
       # If the current ID has a tag, render FROM instruction and break
       # (unless this is the first command)
       # if !options[:full] && @commands && tags.key?(image_id)

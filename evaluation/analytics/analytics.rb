@@ -4,11 +4,6 @@ require 'mongo'
 require 'gnuplot'
 
 
-# file = File.read('./datasets/vulnerabilities.json')
-# data_hash = JSON.parse(file)
-#
-# puts "done"
-
 def verify_vulnerability(packages,vulnerabilities)
   package, cpe = vulnerabilities.first
   cpe = JSON.parse(cpe)
@@ -54,15 +49,38 @@ puts "From #{analysed.count} images we found #{vulnerable.count} with potential 
 percentage_of_vulnerable = 100/analysed.count.to_f * vulnerable.count.to_f
 puts percentage_of_vulnerable
 
+verified_vulnerabilities = []
+
 vulnerable.each do |document|
   vulnerabilities = verify_vulnerability(document[:packages_hash],document[:vulnerabilities])
   if !vulnerabilities.empty?
-    puts "#{document[:image_name]} from basetype #{document[:flavour]} vulnerable"
+    puts "#{document[:image_name]} from basetype #{document[:flavour]} vulnerable #{vulnerabilities}"
+    verified_vulnerabilities << document
   else
     puts "#{document[:image_name]} from basetype #{document[:flavour]} not vulnerable"
   end
   
 end
+
+puts verified_vulnerabilities.count
+
+grouped_by_flavour = verified_vulnerabilities.group_by{|x| x[:flavour]}
+
+grouped_by_flavour.each do |flavour,elements|
+  puts flavour
+  puts elements.count
+end
+
+grouped_by_vulnerable_packages = verified_vulnerabilities.group_by{|x| x[:vulnerabilities]}
+
+grouped_by_vulnerable_packages.each do |package,cves|
+  puts package.keys.first
+  # puts packagename
+  puts cves.count
+end
+# puts grouped_by_flavour
+
+# packages = packages.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }
 
 
 
@@ -75,7 +93,39 @@ end
 # puts processing_time/analysed.count
 
 
-
+# Gnuplot.open do |gp|
+#   Gnuplot::Plot.new(gp) do |plot|
+#
+#     plot.terminal "gif"
+#     plot.output ("./sin_wave.gif")
+#     plot.title  "Histogram example"
+#     plot.style  "data histograms"
+#     plot.xtics  "nomirror rotate by -45"
+#
+#
+#     titles = %w{decade Austria Hungary  Belgium}
+#     data = [
+#       ["1891-1900",  234081,  181288,  18167],
+#       ["1901-1910",  668209,  808511,  41635],
+#       ["1911-1920",  453649,  442693,  33746],
+#       ["1921-1930",  32868,   30680,   15846],
+#       ["1931-1940",  3563,    7861,    4817],
+#       ["1941-1950",  24860,   3469,    12189],
+#       ["1951-1960",  67106,   36637,   18575],
+#       ["1961-1970",  20621,   5401,    9192],
+#     ]
+#
+#     x = data.collect{|arr| arr.first}
+#     (1..3).each do |col|
+#       y = data.collect{|arr| arr[col]}
+#       plot.data << Gnuplot::DataSet.new( [x, y] ) do |ds|
+#         ds.using = "2:xtic(1)"
+#         ds.title = titles[col]
+#       end
+#     end
+#
+#   end
+# end
 
 #
 # Gnuplot.open do |gp|
