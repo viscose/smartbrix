@@ -9,6 +9,36 @@ require 'gnuplot'
 #
 # puts "done"
 
+def verify_vulnerability(packages,vulnerabilities)
+  package, cpe = vulnerabilities.first
+  cpe = JSON.parse(cpe)
+  checklist = []
+  verified_vulnerabilities = []
+  packages.each do |name,versions|
+    if name =~/^#{package}/    
+      checklist << versions[/^\d*.\d*\.\d*/]
+    end
+  end
+  
+  if !checklist.empty?
+    checklist.each do |version|
+      # p ary.find { |h| h['product'] == 'bcx' }['href']
+      cpe.each do |vulnerability|
+        # puts vulnerability
+        if vulnerability["vulnerable_configurations"][/#{version}/] == version || vulnerability["vulnerable_configurations"][/#{version}/] == version
+          # puts "Valid vulnerable configuration"
+          verified_vulnerabilities << vulnerability
+        end
+      end
+      
+    end
+  end
+  
+  return verified_vulnerabilities
+end
+
+
+
 client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'analytics')
 
 analysed = client[:vulnerabilities].find()
@@ -25,17 +55,24 @@ percentage_of_vulnerable = 100/analysed.count.to_f * vulnerable.count.to_f
 puts percentage_of_vulnerable
 
 vulnerable.each do |document|
-  puts "#{document[:image_name]} from basetype #{document[:flavour]}"
-  puts document[:vulnerabilities]
-  puts document[:packages]
-end
-
-processing_time = 0
-analysed.each do |document|
-  processing_time += document[:runtime]/1000
+  vulnerabilities = verify_vulnerability(document[:packages_hash],document[:vulnerabilities])
+  if !vulnerabilities.empty?
+    puts "#{document[:image_name]} from basetype #{document[:flavour]} vulnerable"
+  else
+    puts "#{document[:image_name]} from basetype #{document[:flavour]} not vulnerable"
+  end
   
 end
-puts processing_time/analysed.count
+
+
+
+#
+# processing_time = 0
+# analysed.each do |document|
+#   processing_time += document[:runtime]/1000
+#
+# end
+# puts processing_time/analysed.count
 
 
 

@@ -1,3 +1,4 @@
 dockeranalyser.tar
 .Rproj.user
 handlers/dockercompensation/dockerfiles
+.Rhistory
