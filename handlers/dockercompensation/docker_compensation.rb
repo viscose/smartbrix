@@ -35,16 +35,99 @@ class DockerCompensation
     
   end
   
+  def determine_base_image_flavour(commands)
+    
+    flavour = nil
+    run_commands = commands.select{|command| command.start_with?("RUN")}
+    
+    run_commands.each do |command|
+      
+      if(command.include?("apk"))
+        flavour = "alpine"
+      end
+      if(command.include?("yum"))
+        flavour = "fedora"
+      end
+      if(command.include?("apt"))
+        flavour = "ubuntu"
+      end
+      
+    end
+    
+    puts "Found the following base flavour:#{flavour}"
+    return flavour
+    
+  end
+  
   def build_image_from_commands()
     File.open("./dockerfiles/Dockerfile","w+") do |f|
       f.puts(@commands.reverse)
     end
+    
+    
     
     # Docker::Image.build(@commands.reverse.to_s) # do |v|
  #      if (log = JSON.parse(v)) && log.has_key?("stream")
  #        $stdout.puts log["stream"]
  #      end
  #    end
+  end
+  
+  
+  def auto_compensate_image(commands)
+    
+    variant_a = nil
+    variant_b = nil
+    
+    flavour = determine_base_image_flavour(commands)
+    if(flavour !=nil)
+      if flavour == "ubuntu"
+        variant_a = commands.map(&:clone)
+        variant_b = commands.map(&:clone)
+        
+        
+        variant_a[0]="FROM #{flavour}"
+        variant_b[0]="FROM debian"
+      end
+      if flavour == "fedora"
+        variant_a = commands.map(&:clone)
+        variant_b = commands.map(&:clone)
+        
+        
+        variant_a[0]="FROM #{flavour}"
+        variant_b[0]="FROM centos"
+      end
+      
+      variant_a = commands.map(&:clone)
+      variant_a[0]="FROM #{flavour}"
+      
+    else
+      return false
+    end
+    
+    #Check if there is a copy command
+    copy_index = variant_a.index{|x| x.start_with?("COPY")}
+    if copy_index != nil
+      return false
+    end
+    
+    #Check if there is another add
+    add_index = variant_a.index{|x| x.start_with?("ADD")}
+    if add_index != nil
+      return false
+    end
+    
+    File.open("./dockerfiles/Dockerfile_variant_a","w+") do |f|
+      f.puts(variant_a)
+    end
+    
+    if variant_b != nil
+      File.open("./dockerfiles/Dockerfile_variant_b","w+") do |f|
+        f.puts(variant_b)
+      end
+    end
+    return true
+    
   end
   
   # Adapted from CenturyLinks
@@ -58,10 +141,10 @@ class DockerCompensation
       # TODO update this part
       # If the current ID has a tag, render FROM instruction and break
       # (unless this is the first command)
-      # if !options[:full] && @commands && tags.key?(image_id)
-      #   @commands << "FROM #{tags[image_id]}"
-      #   break
-      # end
+      # if @commands && tags.key?(image_id)
+ #        @commands << "FROM #{tags[image_id]}"
+ #        break
+ #      end
 
       begin
         image = Docker::Image.get(image_id)
@@ -90,8 +173,10 @@ end
 compensation = DockerCompensation.new
 compensation.generate_docker_file('6ec3b2e516f4')
 puts compensation.get_commands()
+puts compensation.auto_compensate_image(compensation.get_commands())
 puts "Trying to build an image" 
-compensation.build_image_from_commands
-test = DockerModel.new("base_image_ids.csv")
-puts test.determine_flavour('3037fa9e903e9ae5338ac1dd3adf8d3ff2d165d3a9b550c64879651582c77dc4')
+compensation.determine_base_image_flavour(compensation.get_commands())
+# compensation.build_image_from_commands
+# test = DockerModel.new("base_image_ids.csv")
+# puts test.determine_flavour('689d21049d4e')
 
