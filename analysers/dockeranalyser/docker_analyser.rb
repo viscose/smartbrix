@@ -18,6 +18,10 @@ class DockerAnalyser
   @image_name = nil
   @image_history = nil
   @pull_command = nil
+  @all_time_start = nil
+  @all_time_end = nil
+  @image_creation_date = nil
+  @virtual_image_size = nil
   
   def initialize()
     @docker_model = DockerModel.new("base_image_ids.csv")
@@ -25,11 +29,13 @@ class DockerAnalyser
   end
   
   def analyse(package_name,pull_command)
+    @all_time_start = Time.now
     begin
       puts "Trying to pull #{package_name} with #{pull_command}"
       # result = `#{pull_command}`
       @pull_command = pull_command
       @image_name = pull_command.split(" ").last
+      
     
       puts @image_name
     
@@ -40,9 +46,12 @@ class DockerAnalyser
       if result 
       
         puts result
-      
+
         image = Docker::Image.get(@image_name)
         @image_history = image.history
+        @image_creation_date= `docker inspect -f '{{.Created}}' #{image.id}`
+        @virtual_image_size= `docker inspect -f '{{.VirtualSize}}' #{image.id}`
+        #docker inspect -f '{{.Created}}' d08adb7aae54
         puts "Analysing image with: #{image}"
         analyse_image_id(image.id)
       
@@ -120,7 +129,8 @@ class DockerAnalyser
         
         begin
           elapsed_time = (endtime - starttime)*1000
-          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'pull_command' => @pull_command,'flavour' => flavour, 'runtime' => elapsed_time,'history' => @image_history,'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'packages_hash' => corrected_packages,'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
+          @all_time_end = Time.now
+          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'pull_command' => @pull_command,'flavour' => flavour, 'runtime' => elapsed_time,'image_creation_date' => @image_creation_date,'virtual_image_size' => @virtual_image_size,'complete_runtime' => (@all_time_end-@all_time_start),'history' => @image_history,'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'packages_hash' => corrected_packages,'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
         #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
           puts response
           
@@ -165,10 +175,14 @@ class DockerAnalyser
     
   end
   
-  
+  #TODO Adapt to analytics !!!!
+  #docker inspect -f '{{.Created}}' f348
   def analyse_fuzzy(packages)
     
-    packages = packages.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }
+    combined_packages = packages.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }.inject({}) { |i, k| i[k[0]] = k[1][0][1];  i } 
+    packages = combined_packages.merge(packages)
+  
+    # packages = packages.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }
     @fuzzy_packagelist = packages
     analyse_packages(packages)
     
@@ -186,23 +200,24 @@ class DockerAnalyser
       puts "Analysing package list"
       # Parse version
       # First we check wheter it is an aggregated package or not then we apply some basic regex
-      if version.is_a?(Array)
-        # We just take the first version we find
-        checking = version.flatten
-        checking.each do |candidate|
-          version = candidate.match(/(\d+\.)?(\d+\.)?(\*|\d+)/)
-          if version != nil
-            version = version.to_s
-            break
-          end
-          
-          
-        end
-        
-      else
-        version = version.match(/(\d+\.)?(\d+\.)?(\*|\d+)/).to_s
-      end
-      
+      # Retired
+      # if version.is_a?(Array)
+ #        # We just take the first version we find
+ #        checking = version.flatten
+ #        checking.each do |candidate|
+ #          version = candidate.match(/(\d+\.)?(\d+\.)?(\*|\d+)/)
+ #          if version != nil
+ #            version = version.to_s
+ #            break
+ #          end
+ #
+ #
+ #        end
+ #
+ #      else
+ #        version = version.match(/(\d+\.)?(\d+\.)?(\*|\d+)/).to_s
+ #      end
+      version = version.match(/(?:[^:]+:)?([\d\w]+(?:\.[\d\w]+)*)(?:-.+)?/)[1]
       puts "Trying to query cves from #{cveurl}"
       
       response = RestClient.get "http://#{cveurl}/cves", {:params => {'name' => name, 'version' => version}}

@@ -2,6 +2,7 @@ require 'csv'
 require 'json'
 require 'mongo'
 require 'gnuplot'
+require 'rest-client'
 
 
 def verify_vulnerability(packages,vulnerabilities)
@@ -32,6 +33,51 @@ def verify_vulnerability(packages,vulnerabilities)
   return verified_vulnerabilities
 end
 
+@vulnerabilities = Hash.new
+def analyse_packages(packages)
+  found = false
+
+  # packages.group_by{|x| x[0].split("-").first}#.select { |k,v| v.length > 1 }
+  combined_packages = packages.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }.inject({}) { |i, k| i[k[0]] = k[1][0][1];  i } 
+  packages = combined_packages.merge(packages)
+  packages.each do |name,version|
+    
+    cveurl = "localhost:8020"
+    # response = RestClient.get 'http://0.0.0.0:8000/cves', {:params => {'name' => name}}#, 'version' => version}}
+    
+    #(\d+\.)?(\d+\.)?(\*|\d+)
+    # puts "Analysing package list"
+    # Parse version
+    # First we check wheter it is an aggregated package or not then we apply some basic regex
+    
+    version = version.match(/(?:[^:]+:)?([\d\w]+(?:\.[\d\w]+)*)(?:-.+)?/)[1]
+    name = name.gsub(/_/,".")
+    
+    # puts "Trying to query cves from #{cveurl}"
+    
+    
+    response = RestClient.get "http://#{cveurl}/cves", {:params => {'name' => name, 'version' => version}}
+    
+    
+    if response != "[]"
+      # puts response
+      response = JSON.parse(response)
+      if name != nil
+        puts "Trying to insert: #{name}:#{version}:#{response.map{|e| e["cve"]} rescue response}"
+        @vulnerabilities["#{name}"] = response
+      end
+      found = true
+    else
+     # puts "#{name} without vulnerability"
+    end
+    
+  end
+  
+  puts "Finished analytics"
+  
+  return found
+end
+
 
 
 client = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'analytics')
@@ -44,40 +90,63 @@ vulnerable = client[:vulnerabilities].find({'vulnerabilities' => {"$exists" => t
 #   #=> Yields a BSON::Document.
 #   puts document[:image_name]
 # end
+#
+# puts "From #{analysed.count} images we found #{vulnerable.count} with potential vulnerabilities "
+# percentage_of_vulnerable = 100/analysed.count.to_f * vulnerable.count.to_f
+# puts percentage_of_vulnerable
+#
+# verified_vulnerabilities = []
+#
+# vulnerable.each do |document|
+#   vulnerabilities = verify_vulnerability(document[:packages_hash],document[:vulnerabilities])
+#   if !vulnerabilities.empty?
+#     puts "#{document[:image_name]} from basetype #{document[:flavour]} vulnerable #{vulnerabilities}"
+#     verified_vulnerabilities << document
+#   else
+#     puts "#{document[:image_name]} from basetype #{document[:flavour]} not vulnerable"
+#   end
+#
+# end
+#
+# puts verified_vulnerabilities.count
+#
+# grouped_by_flavour = verified_vulnerabilities.group_by{|x| x[:flavour]}
+#
+# grouped_by_flavour.each do |flavour,elements|
+#   puts flavour
+#   puts elements.count
+# end
+#
+# grouped_by_vulnerable_packages = verified_vulnerabilities.group_by{|x| x[:vulnerabilities]}
+#
+# grouped_by_vulnerable_packages.each do |package,cves|
+#
+#   puts package.keys
+#   # puts packagename
+#   puts cves.count
+# end
+#
+# puts "Verified vulnerabilities #{verified_vulnerabilities.count} of #{analysed.count}"
+count = 0
 
-puts "From #{analysed.count} images we found #{vulnerable.count} with potential vulnerabilities "
-percentage_of_vulnerable = 100/analysed.count.to_f * vulnerable.count.to_f
-puts percentage_of_vulnerable
+analysed.each do |document|
+  # document[:packages_hash].keys.each do |package_name|
+#     puts "#{package_name.gsub(/_/,".")}:#{document[:packages_hash][package_name]}"
+#
+#
+#
+#
+#   end
 
-verified_vulnerabilities = []
-
-vulnerable.each do |document|
-  vulnerabilities = verify_vulnerability(document[:packages_hash],document[:vulnerabilities])
-  if !vulnerabilities.empty?
-    puts "#{document[:image_name]} from basetype #{document[:flavour]} vulnerable #{vulnerabilities}"
-    verified_vulnerabilities << document
-  else
-    puts "#{document[:image_name]} from basetype #{document[:flavour]} not vulnerable"
+  if analyse_packages(document[:packages_hash])
+    count = count+1
   end
+  
   
 end
 
-puts verified_vulnerabilities.count
+puts "Found #{count} vulnerabilities was #{vulnerable.count} for #{analysed.count}"
 
-grouped_by_flavour = verified_vulnerabilities.group_by{|x| x[:flavour]}
-
-grouped_by_flavour.each do |flavour,elements|
-  puts flavour
-  puts elements.count
-end
-
-grouped_by_vulnerable_packages = verified_vulnerabilities.group_by{|x| x[:vulnerabilities]}
-
-grouped_by_vulnerable_packages.each do |package,cves|
-  puts package.keys.first
-  # puts packagename
-  puts cves.count
-end
 # puts grouped_by_flavour
 
 # packages = packages.group_by{|x| x[0].split("-").first}.select { |k,v| v.length > 1 }

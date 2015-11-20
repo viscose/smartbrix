@@ -84,3 +84,9 @@ docker-machine create --driver generic\
 ### QUERIES
 
 { vulnerabilities: {$exists: true, $gt: {$size: 0}} }
+
+# Official
+{ image_name: {$regex: '^[^/]*$'} }
+
+# Not official
+{ image_name: {$regex: '.+/.+'} }

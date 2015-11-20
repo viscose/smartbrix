@@ -9,6 +9,8 @@ gem 'json'
 gem 'mongo'
 gem 'influxdb'
 
+gem 'rest-client'
+
 # Vis
 
 gem 'gnuplot'

@@ -23,6 +23,22 @@ class SmartbrixManagerService < Sinatra::Application
   get '/analyse' do
     "To be implemented"
   end
+  
+  get '/inspection' do
+    
+    
+  end
+  
+  get '/introspection' do
+    
+  end
+  
+  
+  get '/' do
+    "Hello yo"
+    erb :'/home'
+    
+  end
 
 
 end
