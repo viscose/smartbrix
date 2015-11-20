@@ -22,12 +22,35 @@ require 'csv'
 #   puts "Message #{message} sent to #{@topic} with #{key}"
 # end
 
-file = "./dockerurls.csv"
+#file = "./dockerurls.csv"
+file = "./dockerurls_set3.csv"
 puts file
+i = 0
+start_at=0
+
+commands = []
+
 CSV.foreach(file) do |row|
-
-  name = row[0].split(" ").first
-  msg= "#{name},#{row[1]}"
-  @queue.publish(msg,:persistent => true)
-
+  if i == 2001
+   break
+  end
+  if i > start_at
+    name = row[0].split(" ").first
+    msg= "#{name},#{row[1]}" 
+    puts msg
+    commands << msg 
+    # @queue.publish(msg,:persistent => true)
+  end 
+  i=i+1
 end
+
+# Shuffle 
+
+commands = commands.shuffle
+
+commands.each do |msg|
+  @queue.publish(msg,:persistent => true)
+end
+
+
+
