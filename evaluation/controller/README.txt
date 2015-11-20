@@ -90,3 +90,8 @@ docker-machine create --driver generic\
 
 # Not official
 { image_name: {$regex: '.+/.+'} }
+
+
+#INFLUXDB
+
+curl -G 'http://128.130.172.190:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where container_name = 'reverent_dijkstra' and time > '2015-11-20 10:00:01.232'"

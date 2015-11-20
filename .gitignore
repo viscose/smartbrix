@@ -2,3 +2,4 @@ dockeranalyser.tar
 .Rproj.user
 handlers/dockercompensation/dockerfiles
 .Rhistory
+evaluation/analytics/performance_data
