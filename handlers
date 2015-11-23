@@ -29,7 +29,7 @@ class DataExchange
     @threads = []
     
     @threads << Thread.new {
-      @queue = @channel.queue("task_queue",:durable => true)
+      @queue = @channel.queue("compensation_queue",:durable => true)
      
       @channel.prefetch(1)
       begin
