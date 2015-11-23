@@ -1,0 +1,23 @@
+source 'https://rubygems.org'
+
+
+gem 'docker-api'
+
+# To query the cve hub
+
+gem 'rest-client'
+
+# For better dev console
+gem 'pry'
+
+# # For the service interface
+# gem 'sinatra'
+
+# Rabbit MQ
+gem 'bunny'
+
+
+
+
+
+
