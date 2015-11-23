@@ -27,11 +27,12 @@ file = "./dockerurls_set3.csv"
 puts file
 i = 0
 start_at=0
+break_at=251
 
 commands = []
 
 CSV.foreach(file) do |row|
-  if i == 2001
+  if i == 251
    break
   end
   if i > start_at

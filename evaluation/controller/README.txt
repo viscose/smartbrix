@@ -36,6 +36,10 @@ docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 --name influ
 
 docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --publish=8010:8080 --detach=true --link influxsrv:influxsrv --name=cadvisor google/cadvisor:latest -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086
 
+# Cadvisor with remote Influx
+
+docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --publish=8010:8080 --detach=true --name=cadvisor google/cadvisor:latest -storage_driver=influxdb -storage_driver_db=cadvisor -storage_driver_host=10.99.0.43:8086
+
 # Grafana
 
 docker run -d -p 3000:3000 -e INFLUXDB_HOST=localhost -e INFLUXDB_PORT=8086 -e INFLUXDB_NAME=cadvisor -e INFLUXDB_USER=root -e INFLUXDB_PASS=root --link influxsrv:influxsrv --name grafana grafana/grafana
@@ -94,4 +98,7 @@ docker-machine create --driver generic\
 
 #INFLUXDB
 
-curl -G 'http://128.130.172.190:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where container_name = 'reverent_dijkstra' and time > '2015-11-20 10:00:01.232'"
+curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-22 01:00:01.232'" > eval_run_500
+
+curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-22 01:00:01.232'" > eval_run_500
+
