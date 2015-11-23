@@ -100,5 +100,5 @@ docker-machine create --driver generic\
 
 curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-22 01:00:01.232'" > eval_run_500
 
-curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-22 01:00:01.232'" > eval_run_500
+curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-23 11:00:01.232'" > eval_run_250_half
 
