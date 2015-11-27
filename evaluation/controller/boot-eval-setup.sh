@@ -10,11 +10,11 @@ set -e
 docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/bin/docker -e SB_CVEHUB=192.168.99.100:8020 -e SB_DBURL=192.168.99.100:8080 -e SB_MQ=192.168.99.100 -t smartbrix/dockeranalyser)
 
 
-#Remote
+#Remote Analyser
 docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/bin/docker -e SB_CVEHUB=10.99.0.43:8020 -e SB_DBURL=10.99.0.43:8080 -e SB_MQ=10.99.0.43 -t smartbrix/dockeranalyser)
 
 #Remote Compensation
-docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/bin/docker -e SB_C_STRAT=file -e SB_DBURL=10.99.0.43:8080 -e SB_MQ=10.99.0.43 -t smartbrix/dockercompensation)
+docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/bin/docker -e SB_CVEHUB=10.99.0.43:8020 -e SB_C_STRAT=image -e SB_DBURL=10.99.0.43:8080 -e SB_MQ=10.99.0.43 -t smartbrix/dockercompensation)
 
 
 

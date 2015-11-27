@@ -5,6 +5,7 @@ require 'docker'
 
 require 'rest-client'
 require './docker_model.rb'
+require './docker_verification.rb'
 
 require 'securerandom'
 
@@ -58,10 +59,11 @@ class DockerCompensation
    #    @virtual_image_size= `docker inspect -f '{{.VirtualSize}}' #{image.id}`
    #     #docker inspect -f '{{.Created}}' d08adb7aae54
       puts "Analysing image with: #{image}"
-      
+      database_URL = ENV["SB_DBURL"]
       if compensation_strategy == "file"
+        puts "File compensation"
         generate_docker_file(image.id)
-        database_URL = ENV["SB_DBURL"]
+       
         commands = get_commands()
         if commands.empty? == false
           result = auto_compensate_via_file(commands)
@@ -83,14 +85,16 @@ class DockerCompensation
       if compensation_strategy == "image"
         generate_docker_file(image.id)
         commands = get_commands()
-        
+        puts "Image Compensation"
         if commands.empty? == false
           flavour = determine_base_image_flavour(commands)
           # Upgrade
           # Generate uniquid
           compensated_id = SecureRandom.hex
           if(flavour == "ubuntu")
+            puts "Trying to run ubuntu compensation"
             container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image.id} -c \'apt-get update && apt-get -y upgrade\'`
+            puts "Ubuntu compensation finished"
           end
           if(flavour == "alpine")
              container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image.id} -c \'apk --update upgrade\'`
@@ -108,21 +112,33 @@ class DockerCompensation
           command = `docker inspect -f "{{.Config.Cmd}}" #{image.id}`.chomp
           puts "Received Command: #{command}"
           command = command[1..-2]
-          #Re marshall stuff
-          #captures = Hash[ matches.names.zip( matches.captures ) 
-          matches = /(\w+)/.match(command)
+          if command == "nil"
+            command ="[]"
+          else
+            #Re marshall stuff
+            #captures = Hash[ matches.names.zip( matches.captures ) 
+            matches = /(\w+)/.match(command)
           
-          matches.captures.each do |match|
-            command.sub!(match,"\"#{match}\"")
+            matches.captures.each do |match|
+              command.sub!(match,"\"#{match}\"")
             
+            end
           end
           puts command
           
+          
           #docker commit -c 'ENTRYPOINT []' -c 'CMD ["/bin/bash"]' abbdae181e21 wurst12333
           puts "Committing image with #{entry_point} and #{command}"
+          
           compensated_image_id = `docker commit -c 'ENTRYPOINT #{entry_point}' -c 'CMD #{command}'  #{compensated_id} compensated/#{@image_name}:#{compensated_id}`
-          removed = `docker rm #{compensated_id}`
+          # removed = `docker rm #{compensated_id}`
           puts "Successfully compensated #{compensated_image_id} for #{@image_name}"
+          elapsed_time = (Time.now - @starttime)*1000
+          verification = DockerVerification.new
+          verification.analyse_image_id(compensated_image_id,flavour,@image_name,object_id)
+          puts "Finished verification"
+          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/compensations",{ 'image_name' => @image_name,'image_id' => image.id, 'pull_command' => @pull_command, 'runtime' => elapsed_time,'timestamp' => "#{DateTime.now.to_s}", 'object_id' => id, "compensated_image_id" => compensated_image_id, 'compensations' => "image"}.to_json, :content_type => :json, :accept => :json
+          puts response
         else
           puts "Unable to compensate #{@image_name}"
         end

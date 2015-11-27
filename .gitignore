@@ -4,3 +4,4 @@ handlers/dockercompensation/dockerfiles
 .Rhistory
 evaluation/analytics/performance_data
 evaluation/analytics/normalised_results
+evaluation/analytics/results/oneinstance

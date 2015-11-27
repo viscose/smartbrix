@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     amq-protocol (1.9.2)
+    bson (3.2.6)
     bunny (1.7.0)
       amq-protocol (>= 1.9.2)
     coderay (1.1.0)
@@ -11,6 +12,8 @@ GEM
       domain_name (~> 0.5)
     method_source (0.8.2)
     mime-types (2.6.2)
+    mongo (2.1.2)
+      bson (~> 3.0)
     netrc (0.11.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -30,5 +33,6 @@ PLATFORMS
 
 DEPENDENCIES
   bunny
+  mongo
   pry
   rest-client

@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 
 gem 'rest-client'
 gem 'bunny'
+gem 'mongo'
 
 # For better dev console
 gem 'pry'

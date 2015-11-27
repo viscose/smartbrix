@@ -12,4 +12,20 @@ options(digits.secs = 3)
 df$date<-as.POSIXct(df$time/1000, origin="1970-01-01", tz="UTC")
 
 # Convert to timerseries
-as.xts(df)
+qxts <- xts(df, order.by=df$date)
+
+# Calculate means
+# function for computing mean, DS, max and min values
+min.mean.sd.max <- function(x) {
+  r <- c(min(x), mean(x) - sd(x), mean(x), mean(x) + sd(x), max(x))
+  names(r) <- c("ymin", "lower", "middle", "upper", "ymax")
+  r
+}
+
+min.max.mean <- function(x) c(min = min(x), med = median(x), mean = mean(x), max = max(x))
+
+sapply(d, mode)
+
+keeps <- c("runtime","complete_runtime","size")
+DF[keeps]
+

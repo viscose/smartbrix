@@ -55,6 +55,10 @@ docker rm $(docker ps -a -q)
 # Delete all images
 docker rmi $(docker images -q)
 
+# Stop but exclude
+
+d rm $(d ps -a -q | grep -v 9333d2c19605 | grep -v 87cd580f7cd9)
+
 # Clean up exploding image handles
 
 sudo ls /var/lib/docker/tmp
@@ -82,9 +86,6 @@ docker-machine create --driver generic\
     smartbrix-eval-2
 
 
-
-
-
 ### QUERIES
 
 { vulnerabilities: {$exists: true, $gt: {$size: 0}} }
@@ -100,5 +101,5 @@ docker-machine create --driver generic\
 
 curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-22 01:00:01.232'" > eval_run_500
 
-curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-23 11:00:01.232'" > eval_run_250_half
+curl -G 'http://128.130.172.213:8086/db/cadvisor/series?u=root&p=root&pretty=true' --data-urlencode "q=select * from stats where time > '2015-11-25 09:00:01.232' and time <'2015-11-26 01:00:01.232'" > eval_run_250_1
 

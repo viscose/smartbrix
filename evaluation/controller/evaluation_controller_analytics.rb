@@ -5,7 +5,7 @@ require 'csv'
 
 
 #
-@connection = Bunny.new(:host => "192.168.99.100")
+@connection = Bunny.new(:host => "10.99.0.43")
 @connection.start
 @channel = @connection.create_channel
 
