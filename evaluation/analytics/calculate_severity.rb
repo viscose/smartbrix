@@ -40,7 +40,7 @@ vulnerabilities.each do |document|
       score = cve["cvss"]["score"]
     
       if score.to_f > 8 
-        puts "Severe"
+        puts "Severe:#{cvss}"
         severe = true
         break
       end

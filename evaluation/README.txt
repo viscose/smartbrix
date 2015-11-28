@@ -96,6 +96,12 @@ docker-machine create --driver generic\
 # Not official
 { image_name: {$regex: '.+/.+'} }
 
+db.coll.find({"$and": [                                                                     
+            { "fld1": { "$exists": true }}                                              
+            , { "fld2": { "$exists": true }}                                            
+            , { "fld3": { "$exists": true }}                                            
+]})  
+
 
 #INFLUXDB
 

@@ -23,6 +23,8 @@ class DockerCompensation
   @commands = []
   @docker_model = nil
   @startime=nil
+  @pulltime=nil
+  @processingtime=nil
   @endtime=nil
   @compenesation_variants= {}
 
@@ -45,6 +47,11 @@ class DockerCompensation
   def compensate(pull_command,id)
     @starttime=Time.now
     result = system("#{pull_command}:latest")
+    if result == true
+      @pulltime = Time.now - @starttime      
+    else
+      puts "Pull failed for #{pull_command}"
+    end
     @pull_command = pull_command
     @image_name = pull_command.split(" ").last
     compensation_strategy = ENV["SB_C_STRAT"]
@@ -53,24 +60,28 @@ class DockerCompensation
     
       puts result
 
-      image = Docker::Image.get(@image_name)
+      # image = Docker::Image.get(@image_name)
+      # call = "docker images -q #{@image_name}"
+   #    image_id = sane_sys_call(call)
+      image_id = `docker images -q #{@image_name}`.chomp
+
       # @image_history = image.history
       # @image_creation_date= `docker inspect -f '{{.Created}}' #{image.id}`
    #    @virtual_image_size= `docker inspect -f '{{.VirtualSize}}' #{image.id}`
    #     #docker inspect -f '{{.Created}}' d08adb7aae54
-      puts "Analysing image with: #{image}"
+      puts "Analysing image with: #{image_id}"
       database_URL = ENV["SB_DBURL"]
       if compensation_strategy == "file"
         puts "File compensation"
-        generate_docker_file(image.id)
+        generate_docker_file(image_id)
        
         commands = get_commands()
         if commands.empty? == false
           result = auto_compensate_via_file(commands)
           if result == true
-            elapsed_time = (Time.now - @starttime)*1000
+            elapsed_time = (Time.now - @starttime)
         
-            response = RestClient.post "http://admin:admin@#{database_URL}/analytics/compensations",{ 'image_name' => @image_name,'image_id' => image.id, 'pull_command' => @pull_command, 'runtime' => elapsed_time,'timestamp' => "#{DateTime.now.to_s}", 'object_id' => id, 'compensations' => @compenesation_variants}.to_json, :content_type => :json, :accept => :json
+            response = RestClient.post "http://admin:admin@#{database_URL}/analytics/compensations",{ 'image_name' => @image_name,'image_id' => image_id, 'pull_command' => @pull_command, 'runtime_total' => elapsed_time, 'pull_time' => @pulltime, 'timestamp' => "#{DateTime.now.to_s}", 'object_id' => id, 'compensations' => @compenesation_variants}.to_json, :content_type => :json, :accept => :json
           #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
             puts response
           
@@ -83,65 +94,62 @@ class DockerCompensation
       end
       
       if compensation_strategy == "image"
-        generate_docker_file(image.id)
-        commands = get_commands()
+        # generate_docker_file(image_id)
+#         commands = get_commands()
         puts "Image Compensation"
-        if commands.empty? == false
-          flavour = determine_base_image_flavour(commands)
-          # Upgrade
-          # Generate uniquid
-          compensated_id = SecureRandom.hex
-          if(flavour == "ubuntu")
-            puts "Trying to run ubuntu compensation"
-            container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image.id} -c \'apt-get update && apt-get -y upgrade\'`
-            puts "Ubuntu compensation finished"
-          end
-          if(flavour == "alpine")
-             container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image.id} -c \'apk --update upgrade\'`
-          end
-          if(flavour == "fedora")
-            container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image.id} -c \'yum -y update\'`
-          end
-          entry_point = `docker inspect -f "{{ .Config.Entrypoint }}" #{image.id}`.chomp
-          puts "Received EP: #{entry_point}}"
-          if entry_point == "<nil>"
-            entry_point ="[]"
-          else
-            entry_point = entry_point[1..-2]
-          end
-          command = `docker inspect -f "{{.Config.Cmd}}" #{image.id}`.chomp
-          puts "Received Command: #{command}"
-          command = command[1..-2]
-          if command == "nil"
-            command ="[]"
-          else
-            #Re marshall stuff
-            #captures = Hash[ matches.names.zip( matches.captures ) 
-            matches = /(\w+)/.match(command)
-          
-            matches.captures.each do |match|
-              command.sub!(match,"\"#{match}\"")
-            
-            end
-          end
-          puts command
-          
-          
-          #docker commit -c 'ENTRYPOINT []' -c 'CMD ["/bin/bash"]' abbdae181e21 wurst12333
-          puts "Committing image with #{entry_point} and #{command}"
-          
-          compensated_image_id = `docker commit -c 'ENTRYPOINT #{entry_point}' -c 'CMD #{command}'  #{compensated_id} compensated/#{@image_name}:#{compensated_id}`
-          # removed = `docker rm #{compensated_id}`
-          puts "Successfully compensated #{compensated_image_id} for #{@image_name}"
-          elapsed_time = (Time.now - @starttime)*1000
-          verification = DockerVerification.new
-          verification.analyse_image_id(compensated_image_id,flavour,@image_name,object_id)
-          puts "Finished verification"
-          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/compensations",{ 'image_name' => @image_name,'image_id' => image.id, 'pull_command' => @pull_command, 'runtime' => elapsed_time,'timestamp' => "#{DateTime.now.to_s}", 'object_id' => id, "compensated_image_id" => compensated_image_id, 'compensations' => "image"}.to_json, :content_type => :json, :accept => :json
-          puts response
-        else
-          puts "Unable to compensate #{@image_name}"
+        
+        flavour = determine_baseimage_flavour_via_image_id(image_id)
+        # Upgrade
+        # Generate uniquid
+        compensated_id = SecureRandom.hex
+        if(flavour == "ubuntu")
+          puts "Trying to run ubuntu compensation"
+          container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image_id} -c \'apt-get update && apt-get -y upgrade\'`.chomp
         end
+        if(flavour == "alpine")
+           container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image_id} -c \'apk --update upgrade\'`.chomp
+        end
+        if(flavour == "fedora")
+          container_id = `docker run --name=#{compensated_id} --entrypoint=\/bin\/sh -it #{image_id} -c \'yum -y update\'`.chomp
+        end
+        entry_point = `docker inspect -f "{{ .Config.Entrypoint }}" #{image_id}`.chomp
+        puts "Received EP: #{entry_point}}"
+        if entry_point == "<nil>"
+          entry_point ="[]"
+        else
+          entry_point = entry_point[1..-2]
+        end
+        command = `docker inspect -f "{{.Config.Cmd}}" #{image_id}`.chomp
+        puts "Received Command: #{command}"
+        command = command[1..-2]
+        if command == "nil"
+          command ="[]"
+        else
+          #Re marshall stuff
+          #captures = Hash[ matches.names.zip( matches.captures ) 
+          matches = /(\w+)/.match(command)
+        
+          matches.captures.each do |match|
+            command.sub!(match,"\"#{match}\"")
+          
+          end
+        end
+        puts command
+        
+        
+        #docker commit -c 'ENTRYPOINT []' -c 'CMD ["/bin/bash"]' abbdae181e21 wurst12333
+        puts "Committing image with #{entry_point} and #{command}"
+        
+        compensated_image_id = `docker commit -c 'ENTRYPOINT #{entry_point}' -c 'CMD #{command}'  #{compensated_id} compensated/#{@image_name}:#{compensated_id}`.chomp
+        # removed = `docker rm #{compensated_id}`
+        puts "Successfully compensated #{compensated_image_id} for #{@image_name}"
+        elapsed_time = (Time.now - @starttime)*1000
+        verification = DockerVerification.new
+        verification.analyse_image_id(compensated_image_id,flavour,@image_name,object_id)
+        puts "Finished verification"
+        response = RestClient.post "http://admin:admin@#{database_URL}/analytics/compensations",{ 'image_name' => @image_name,'image_id' => image_id, 'pull_command' => @pull_command, 'runtime_total' => elapsed_time,'pull_time' => @pulltime,'timestamp' => "#{DateTime.now.to_s}", 'object_id' => id, "compensated_image_id" => compensated_image_id, 'compensations' => "image"}.to_json, :content_type => :json, :accept => :json
+        puts response
+     
         
       end
  
@@ -152,6 +160,32 @@ class DockerCompensation
     end 
   
   end
+
+  
+  def determine_baseimage_flavour_via_image_id(image_id)
+    
+    flavour = nil
+  
+    puts "Determining flavour via which"
+    
+    # command = "docker run --entrypoint=\/bin\/sh -it --rm #{image_id} -c \'which dpkg\'"
+#     puts command
+
+    if system("docker run --entrypoint=\/bin\/sh -it --rm #{image_id} -c \'which dpkg\'")
+      flavour = "ubuntu"
+    end
+    if system("docker run --entrypoint=\/bin\/sh -it --rm #{image_id} -c \'which yum\'")
+      flavour = "centos"
+    end
+    if system("docker run --entrypoint=\/bin\/sh -it --rm #{image_id} -c \'which apk\'")
+      flavour = "alpine"
+    end
+
+    puts "Found #{flavour}"
+    return flavour
+  
+  end
+  
   
   def determine_base_image_flavour(commands)
     
@@ -306,7 +340,9 @@ class DockerCompensation
   
 end
 
+# "puts starting local compensation"
 # compensation = DockerCompensation.new
+# compensation.compensate("docker pull cantino/huginn","123")
 # compensation.generate_docker_file('6ec3b2e516f4')
 # puts compensation.get_commands()
 # puts compensation.auto_compensate_image(compensation.get_commands())

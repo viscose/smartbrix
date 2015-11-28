@@ -84,12 +84,13 @@ class DockerAnalyser
       if system("docker rmi #{@image_name}:latest")
         puts "Cleaned up"
       end
-      if system("docker rmi $(docker images -q)")
-        puts "Cleaned up dangling"
-      end
-      if system("docker rm -v $(docker ps -a -q -f status=dead)")
-        puts "Cleaned up dead containers"
-      end
+      # #TODO REMOVE
+#       if system("docker rmi $(docker images -q)")
+#         puts "Cleaned up dangling"
+#       end
+#       if system("docker rm -v $(docker ps -a -q -f status=dead)")
+#         puts "Cleaned up dead containers"
+#       end
       
       
       return false
