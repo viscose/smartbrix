@@ -5,3 +5,4 @@ handlers/dockercompensation/dockerfiles
 evaluation/analytics/performance_data
 evaluation/analytics/normalised_results
 evaluation/analytics/results/oneinstance
+evaluation/analytics/results/compensations
