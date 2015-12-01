@@ -125,13 +125,14 @@ class DockerAnalyser
         # Store them into the database
       
         database_URL = ENV["SB_DBURL"]
-        url = "http://admin:admin@#{database_URL}/analytics/vulnerabilities"
+        collection_NAME = ENV["SB_DBCOLL"]
+        url = "http://admin:admin@#{database_URL}/analytics/#{collection_NAME}"
         puts url
         
         begin
           elapsed_time = (endtime - starttime)*1000
           @all_time_end = Time.now
-          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/vulnerabilities",{ 'image_name' => @image_name,'image_id' => test_id, 'pull_command' => @pull_command,'flavour' => flavour, 'runtime' => elapsed_time,'image_creation_date' => @image_creation_date,'virtual_image_size' => @virtual_image_size,'complete_runtime' => (@all_time_end-@all_time_start),'history' => @image_history,'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'packages_hash' => corrected_packages,'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
+          response = RestClient.post "http://admin:admin@#{database_URL}/analytics/#{collection_NAME}",{ 'image_name' => @image_name,'image_id' => test_id, 'pull_command' => @pull_command,'flavour' => flavour, 'runtime' => elapsed_time,'image_creation_date' => @image_creation_date,'virtual_image_size' => @virtual_image_size,'complete_runtime' => (@all_time_end-@all_time_start),'history' => @image_history,'timestamp' => "#{DateTime.now.to_s}", 'packages' => packages.flatten.to_s, 'packages_hash' => corrected_packages,'vulnerabilities' => @vulnerabilities }.to_json, :content_type => :json, :accept => :json
         #RestClient.post "http://admin:admin@192.168.99.100:8080/analytics/vulnerabilities",{ 'image_id' => 1}.to_json, :content_type => :json, :accept => :json
           puts response
           

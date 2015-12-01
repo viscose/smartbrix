@@ -58,6 +58,8 @@ docker rmi $(docker images -q)
 # Stop but exclude
 
 d rm $(d ps -a -q | grep -v 9333d2c19605 | grep -v 87cd580f7cd9)
+d rmi $(d images -a -q | grep -v b4c8072705d4 | grep -v c8d33e4583de | grep -v a1c47b5aade9)
+d rmi $(d images -a -q | grep -v 8b2dd081fbe5 | grep -v a1c47b5aade9)
 
 # Clean up exploding image handles
 
