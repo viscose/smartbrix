@@ -105,11 +105,11 @@ def generate_csv_files(set_size,csv_file_name,csv_digest_name,csv_condensed_name
   # #Average runtime / Overall runtime Digests
   #
 
-  # CSV.open(csv_digest,"wb") do |csv|
-  #   csv << ["total","analysed","vulnerabilities","official","inofficial","official_vulnerable","inofficial_vulnerable","time_to_finish"]
-  #   csv << [set_size,analytics.count,official_vulnerable.count + inofficial_vulnerable.count,official.count,inofficial.count,official_vulnerable.count,inofficial_vulnerable.count,end_time-start_time]
-  #
-  # end
+  CSV.open(csv_digest,"wb") do |csv|
+    csv << ["total","analysed","vulnerabilities","official","inofficial","official_vulnerable","inofficial_vulnerable"]
+    csv << [set_size,analytics.count,official_vulnerable.count + inofficial_vulnerable.count,official.count,inofficial.count,official_vulnerable.count,inofficial_vulnerable.count]
+
+  end
 
 
   # lowest = arr.min
