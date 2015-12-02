@@ -162,7 +162,7 @@ target_folder = './consolidated/'
 
 set_size = 250
 oneinstance=["oneinstance_250_1","oneinstance_250_2","oneinstance_500_1","oneinstance_1000_1"]
-twoinstances=["twoinstances_250_1","twoinstances_250_2","twoinstances_250_3","twoinstances_500_1","twoinstances_500_2","twoinstances_1000_1","twoinstances_1000_2"]
+twoinstances=["twoinstances_250_1","twoinstances_250_2","twoinstances_250_3","twoinstances_500_1","twoinstances_500_2","twoinstances_500_3","twoinstances_1000_1","twoinstances_1000_2","twoinstances_1000_3"]
 
 
 twoinstances.each do |instance|
