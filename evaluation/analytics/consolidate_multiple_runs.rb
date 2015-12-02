@@ -161,8 +161,8 @@ target_folder = './consolidated/'
 
 
 set_size = 250
-oneinstance=["oneinstance_250_1","oneinstance_250_2","oneinstance_500_1","oneinstance_1000_1"]
-twoinstances=["twoinstances_250_1","twoinstances_250_2","twoinstances_250_3","twoinstances_500_1","twoinstances_500_2","twoinstances_500_3","twoinstances_1000_1","twoinstances_1000_2","twoinstances_1000_3"]
+oneinstance=["oneinstance_250_1","oneinstance_250_2","oneinstance_500_1","oneinstance_500_2","oneinstance_1000_1"]
+twoinstances=["twoinstances_250_1","twoinstances_250_2","twoinstances_250_3","twoinstances_250_4","twoinstances_500_1","twoinstances_500_2","twoinstances_500_3","twoinstances_1000_1","twoinstances_1000_2","twoinstances_1000_3"]
 
 
 twoinstances.each do |instance|
@@ -175,4 +175,16 @@ twoinstances.each do |instance|
   generate_csv_files(set_size,csv_file_name,csv_digest_name,csv_condensed_name,instance)
   
 end
+
+oneinstance.each do |instance|
+  set_size = instance.split("_")[1]
+  csv_file_name = target_folder+"oneinstance/"+instance+".csv"
+  csv_digest_name = target_folder+"oneinstance/"+instance+"_digest.csv"
+  csv_condensed_name = target_folder+"oneinstance/"+instance+"_condensed.csv"
+  
+  puts "Outputting #{instance} with #{csv_file_name} and #{csv_digest_name} and #{csv_condensed_name} and set: #{set_size}"
+  generate_csv_files(set_size,csv_file_name,csv_digest_name,csv_condensed_name,instance)
+end
+
+
 
