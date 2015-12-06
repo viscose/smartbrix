@@ -150,6 +150,18 @@ class DockerCompensation
         response = RestClient.post "http://admin:admin@#{database_URL}/analytics/compensations",{ 'image_name' => @image_name,'image_id' => image_id, 'pull_command' => @pull_command, 'runtime_total' => elapsed_time,'pull_time' => @pulltime,'timestamp' => "#{DateTime.now.to_s}", 'object_id' => id, "compensated_image_id" => compensated_image_id, 'compensations' => "image"}.to_json, :content_type => :json, :accept => :json
         puts response
      
+        #Clean up code
+   
+        if system("docker rm -v $(docker ps -a -q -f status=dead)")
+          puts "Cleaned up dead containers"
+        end
+        if system("docker rm -v $(docker ps -a -q -f status=exited)")
+          puts "Cleaned up dead containers"
+        end
+        
+        
+        system("docker rmi #{compensated_image_id}")  
+        system("docker rmi #{@image_name}:latest")
         
       end
  
@@ -157,7 +169,10 @@ class DockerCompensation
     
     else
       puts "Could not pull image #{@image_name}:latest"
+      system("docker rmi #{@image_name}:latest")
     end 
+    
+  
   
   end
 
