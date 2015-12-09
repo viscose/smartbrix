@@ -11,12 +11,12 @@ docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock
 
 
 #Remote Analyser
-docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/bin/docker -e SB_CVEHUB=10.99.0.43:3000 -e SB_DBURL=10.99.0.43:8080  -e SB_DBCOLL=vulnerabilities -e SB_MQ=10.99.0.43 -t smartbrix/dockeranalyser)
+docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/bin/docker -e SB_CVEHUB=10.99.0.43:8020 -e SB_DBURL=10.99.0.43:8080  -e SB_DBCOLL=vulnerabilities -e SB_MQ=10.99.0.43 -t smartbrix/dockeranalyser)
 
 
 
 #Remote Compensation
-docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/bin/docker -e SB_CVEHUB=10.99.0.43:8020 -e SB_C_STRAT=image -e SB_DBURL=10.99.0.43:8080 -e SB_MQ=10.99.0.43 -t smartbrix/dockercompensation)
+docker_container_id=$(docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /usr/local/bin/docker:/bin/docker -e SB_CVEHUB=10.99.0.43:3000 -e SB_C_STRAT=image -e SB_DBURL=10.99.0.43:8080 -e SB_MQ=10.99.0.43 -t smartbrix/dockercompensation)
 
 
 
